@@ -1,4 +1,4 @@
-# BAKD.me Investment Platform
+# BAKD Investment Platform
 Source code for the BAKD Web App Version 0.1.0-alpha
 
 # Join the Team
