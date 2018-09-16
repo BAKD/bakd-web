@@ -78,7 +78,7 @@
             @endif
 
             <div class="content">
-                <h1>BAKD.me</h1>
+                <h1>BAKD.me (Test)</h1>
                 <div class="title m-b-md">
                     Coming Soon...
                 </div>
