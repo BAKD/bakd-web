@@ -78,10 +78,10 @@
             @endif
 
             <div class="content">
+                <h1>BAKD</h1>
                 <div class="title m-b-md">
-                    BAKD.me Coming Soon...
+                    Coming Soon...
                 </div>
-
                 <div class="links">
                     <a href="mailto: developers@bakd.io">developers@bakd.io</a>
                     <a href="mailto: investors@bakd.io">investors@bakd.io</a>
