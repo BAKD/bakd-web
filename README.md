@@ -1,4 +1,4 @@
-# BAKD Investment Platform
+# BAKD | ICO Management Platform
 Source code for the BAKD Web App Version 0.1.0-alpha
 
 # Join the Team
