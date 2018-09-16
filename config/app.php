@@ -161,6 +161,7 @@ return [
         BAKD\Providers\BroadcastServiceProvider::class,
         BAKD\Providers\EventServiceProvider::class,
         BAKD\Providers\RouteServiceProvider::class,
+        BAKD\Providers\NovaServiceProvider::class,
         
     ],
 
