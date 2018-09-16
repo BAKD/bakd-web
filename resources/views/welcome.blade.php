@@ -78,17 +78,14 @@
             @endif
 
             <div class="content">
+                <h1>BAKD</h1>
                 <div class="title m-b-md">
-                    Laravel
+                    Coming Soon...
                 </div>
-
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="mailto: developers@bakd.io">developers@bakd.io</a>
+                    <a href="mailto: investors@bakd.io">investors@bakd.io</a>
+                    <a href="mailto: support@bakd.io">support@bakd.io</a>
                 </div>
             </div>
         </div>
