@@ -60,7 +60,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "./admin"
+            "url": "./manage"
         }
     ],
     "minimum-stability": "dev",
