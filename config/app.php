@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'BAKD'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://bakd.me'),
 
     /*
     |--------------------------------------------------------------------------
@@ -150,13 +150,15 @@ return [
         /*
          * Package Service Providers...
          */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
          */
         BAKD\Providers\AppServiceProvider::class,
         BAKD\Providers\AuthServiceProvider::class,
-        // BAKD\Providers\BroadcastServiceProvider::class,
+        BAKD\Providers\BroadcastServiceProvider::class,
         BAKD\Providers\EventServiceProvider::class,
         BAKD\Providers\RouteServiceProvider::class,
 
@@ -208,6 +210,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Package Facades...
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

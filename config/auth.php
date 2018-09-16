@@ -69,11 +69,6 @@ return [
             'driver' => 'eloquent',
             'model' => BAKD\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

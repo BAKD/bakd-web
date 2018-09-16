@@ -12,4 +12,5 @@ npm-debug.log
 yarn-error.log
 .env
 .env.production
+.env.local
 .phpunit.result.cache
