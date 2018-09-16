@@ -146,22 +146,23 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        
         /*
-         * Package Service Providers...
-         */
+        * Package Service Providers...
+        */
         Barryvdh\Debugbar\ServiceProvider::class,
-
-
+        
+        
         /*
-         * Application Service Providers...
-         */
+        * Application Service Providers...
+        */
         BAKD\Providers\AppServiceProvider::class,
         BAKD\Providers\AuthServiceProvider::class,
         BAKD\Providers\BroadcastServiceProvider::class,
         BAKD\Providers\EventServiceProvider::class,
         BAKD\Providers\RouteServiceProvider::class,
-
+        BAKD\Providers\NovaServiceProvider::class,
+        
     ],
 
     /*
