@@ -1,14 +1,31 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 // Variables
 @import 'variables';
 
+// BAKD Theme Variables
+@import 'theme';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
+// Third Party Misc Styles & Library Files
+@import 'vendor/import';
+
+// Theme/Sitewide Styles
+@import 'layouts/import';
+
+// Component Styles
+@import 'components/import';
+
+// Page-Specific Styles
+@import 'pages/import';
+
+
+.navbar-bakd {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }

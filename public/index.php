@@ -1,13 +1,17 @@
 <?php
 
 /**
- * Laravel - A PHP Framework For Web Artisans
+ * BAKD | ICO Management & Networking Platform
+ * Built with Laravel - A PHP Framework For Web Artisans
  *
- * @package  Laravel
+ * @package BAKD/bakd-web
+ * @author Thomas Grenier <tom@bakd.io>
+ *
+ * @package  Laravel 5.7
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
-define('LARAVEL_START', microtime(true));
+define('BAKD_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------

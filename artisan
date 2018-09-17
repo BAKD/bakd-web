@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-define('LARAVEL_START', microtime(true));
+define('BAKD_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
