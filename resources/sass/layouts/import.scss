@@ -1,3 +1,7 @@
 // Theme/Template Style File Imports
-@import "default";
-@import "default_responsive";
+// TODO: Refactor, improve, remove
+@import "themeforest";
+@import "themeforest_responsive";
+
+// Default frontend layout styles
+@import "frontend";

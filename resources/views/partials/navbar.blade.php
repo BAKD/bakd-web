@@ -4,7 +4,7 @@
             <div class="logo pd-btm">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="bakd-logo" src="{{ asset('images/branding/icon.png') }}" />
-                    {{--  {{ config('app.name', 'BAKD') }}  --}}
+                    {{ config('app.name', 'BAKD') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
