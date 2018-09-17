@@ -22,10 +22,10 @@ Route::name('frontend.')->group(function () {
 
             // Frontend routes for all public static pages.
             Route::get('/',          'PageController@index')->name('home');
-            Route::get('about',      'PageController@index')->name('about');
-            Route::get('privacy',    'PageController@index')->name('privacy');
-            Route::get('terms',      'PageController@index')->name('terms');
-            Route::get('contact-us', 'PageController@index')->name('contact');
+            Route::get('about',      'PageController@about')->name('about');
+            Route::get('privacy',    'PageController@privacy')->name('privacy');
+            Route::get('terms',      'PageController@terms')->name('terms');
+            Route::get('contact-us', 'PageController@contact')->name('contact');
 
         });
     });
