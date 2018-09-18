@@ -11,14 +11,16 @@
             </div>
             <div class="forum-bar user-types-nav">
                 <ul>
-                    {{--  <li>
+                    {{--
+                    <li>
                         <a href="#" title="Investor Dashboard">Investors</a>
                     </li>
                     <li>
                         <a href="#" title="Campaign Dashboard">Campaigns</a>
-                    </li>  --}}
+                    </li>
+                    --}}
                     <li>
-                        <a href="#" title="List Your Campaign" class="ask-question">{{  __('Get Funded') }}</a>
+                        <a href="#" title="List Your Campaign" class="ask-question"><i class="fa fa-users"></i> {{  __('Start Campaign') }}</a>
                     </li>
                 </ul>
             </div>
@@ -27,10 +29,10 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="btn btn-secondary" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Login') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="btn btn-secondary" href="{{ route('register') }}"><i class="fa fa-edit"></i> {{ __('Register') }}</a>
                         </li>
                     @else
                         <li class="nav-item dropdown">

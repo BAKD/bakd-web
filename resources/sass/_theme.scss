@@ -33,3 +33,15 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// Animation transition speeds
+$transition-speed: 0.25s;
+$transition-speed-slow: 0.5s;
+$transition-speed-fast: 0.125s;
+
+
+/* ==================================================================================
+								Fonts
+===================================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i');

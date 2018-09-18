@@ -13,19 +13,25 @@
 
                         <div class="forum-questions">
 
-                            @include('components/user-post')
+                            <?php for($i=0; $i<20; $i++) : ?>
+                                {{--  @include('components/post-card')  --}}
+                            <?php endfor; ?>
 
                         </div>
-                        @include('partials/pagination/buttons')
+
+                        {{--  @include('partials/pagination/buttons')  --}}
+
                     </div>
                     <div class="col-lg-4">
 
-                        @include('components/top-influencers')
+                        {{--  @include('components/top-influencers')  --}}
 
-
+                        {{--
                         <div class="widget widget-adver">
                             <img src="http://via.placeholder.com/370x270" alt="">
                         </div>
+                        --}}
+
                     </div>
                 </div>
             </div>

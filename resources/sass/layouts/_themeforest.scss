@@ -35,12 +35,6 @@
 
 
 /* ==================================================================================
-								Fonts
-===================================================================================== */
-
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i');
-
-/* ==================================================================================
 										Reset Css
 ===================================================================================== */
 
@@ -172,11 +166,11 @@ nav ul li a,
 .next-prev > a,
 nav ul li:hover > ul,
 .user-pro-img > a i {
-	-webkit-transition: all 0.4s ease-in;
-	-moz-transition: all 0.4s ease-in;
-	-ms-transition: all 0.4s ease-in;
-	-o-transition: all 0.4s ease-in;
-	transition: all 0.4s ease-in;
+	-webkit-transition: all $transition-speed ease-in;
+	-moz-transition: all $transition-speed ease-in;
+	-ms-transition: all $transition-speed ease-in;
+	-o-transition: all $transition-speed ease-in;
+	transition: all $transition-speed ease-in;
 }
 
 

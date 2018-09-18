@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-Privacy Policy Page
+<div class="container">
+    Privacy Policy Page
+</div>
 @endsection

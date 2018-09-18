@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-Terms & Conditions Page
+<div class="container">
+    Terms & Conditions Page
+</div>
 @endsection

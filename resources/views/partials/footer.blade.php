@@ -9,22 +9,26 @@
                 </li>
                 <li>
                     <a href="{{ route('frontend.about') }}">
-                        <i class="fa fa-users"></i> {{ __('About Us') }}
-                    </a>
+                            {{ __('About') }}
+                            {{--  <i class="fa fa-users"></i> {{ __('About Us') }}  --}}
+                        </a>
                 </li>
                 <li>
                     <a href="{{ route('frontend.terms') }}">
-                        <i class="fa fa-file-text"></i> {{ __('Terms & Conditions') }}
+                        {{ __('Terms') }}
+                        {{--  <i class="fa fa-file-text"></i> {{ __('Terms & Conditions') }}  --}}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('frontend.privacy') }}">
-                        <i class="fa fa-cubes"></i> {{ __('Privacy Policy') }}
+                        {{ __('Privacy') }}
+                        {{--  <i class="fa fa-cubes"></i> {{ __('Privacy Policy') }}  --}}
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('frontend.contact') }}">
-                        <i class="fa fa-envelope"></i> {{ __('Contact Us') }}
+                        {{ __('Contact') }}
+                        {{--  <i class="fa fa-envelope"></i> {{ __('Contact Us') }}  --}}
                     </a>
                 </li>
             </ul>

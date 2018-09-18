@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Open+Sans);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i);/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Open+Sans);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i);/* ==================================================================================
+								Fonts
+===================================================================================== */
+
+/*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -30710,10 +30714,6 @@ span.flatpickr-weekday {
 =============================================================*/
 
 /* ==================================================================================
-								Fonts
-===================================================================================== */
-
-/* ==================================================================================
 										Reset Css
 ===================================================================================== */
 
@@ -30943,8 +30943,8 @@ nav ul li a,
 .next-prev > a,
 nav ul li:hover > ul,
 .user-pro-img > a i {
-  -webkit-transition: all 0.4s ease-in;
-  transition: all 0.4s ease-in;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
 }
 
 /* ============== DEFAULT BORDER RADIUS =========== */
@@ -37386,6 +37386,13 @@ a:hover {
   }
 }
 
+body {
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  display: block;
+}
+
 .checkbox-label span {
   float: left;
   display: inline;
@@ -37408,6 +37415,22 @@ a:hover {
 .invalid-feedback {
   color: red;
   font-size: 11px;
+}
+
+main {
+  min-height: 100vh;
+}
+
+main.wrapper.overlay:after {
+  overflow: hidden;
+  position: absolute;
+  z-index: 11;
+}
+
+.bakd-logo {
+  max-width: 325px;
+  width: 100%;
+  height: auto;
 }
 
 header {
@@ -37460,22 +37483,6 @@ footer {
 
 footer .bakd-logo {
   max-width: 125px;
-  width: 100%;
-  height: auto;
-}
-
-main {
-  min-height: 100vh;
-}
-
-main.wrapper.overlay:after {
-  overflow: hidden;
-  position: absolute;
-  z-index: 11;
-}
-
-.bakd-logo {
-  max-width: 325px;
   width: 100%;
   height: auto;
 }

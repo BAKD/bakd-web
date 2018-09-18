@@ -1,10 +1,13 @@
-
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * Main BAKD Javascript Lib
+ * Version: 0.1
+ *
+ * Main entry point for most BAKD libraries, third party plugins,
+ * and misc. config.
  */
 
+// TODO: Go through these themeforest lib includes and either completely
+// remove them, or add their npm counterpart lib instead.
 require('./bootstrap');
 require('./lib/flatpickr.min');
 require('./lib/jquery.mCustomScrollbar');
@@ -12,73 +15,66 @@ require('./lib/jquery.range-min');
 require('./lib/slick/slick.min');
 
 jQuery = $ = require('jquery');
-
 window.Vue = require('vue');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+// Basic vue app instance, to be expanded upon in future versions
+// of the app.
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// const app = new Vue({
+//     el: '#app'
+// });
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Use bootstrap tooltips
+$('[data-toggle="tooltip"]').tooltip();
 
-const app = new Vue({
-    el: '#app'
-});
+// --------------------------
+// TODO: REFACTOR ME ASAP
+// --------------------------
 
-
-
-$(window).on("load", function(){
-		$('.rn-slider').jRange({
-    from: 0,
-    to: 100,
-    step: 1,
-    scale: [],
-    format: '%s',
-    width: 300,
-    showLabels: true,
-    isRange : true
-});
-
-})
-
-$(window).on("load", function(){
+// TODO: Misc junk below is from the themeforest base template. It needs to be
+// thoroughly reviewed and refactored.
+$(window).on("load", function () {
     $('.rn-slider').jRange({
-from: 0,
-to: 100,
-step: 1,
-scale: [],
-format: '%s',
-width: 300,
-showLabels: true,
-isRange : true
-});
-
+        from: 0,
+        to: 100,
+        step: 1,
+        scale: [],
+        format: '%s',
+        width: 300,
+        showLabels: true,
+        isRange: true
+    });
 })
 
+$(window).on("load", function () {
+    $('.rn-slider').jRange({
+        from: 0,
+        to: 100,
+        step: 1,
+        scale: [],
+        format: '%s',
+        width: 300,
+        showLabels: true,
+        isRange: true
+    });
+})
 
-
-$(window).on("load",function(){
+$(window).on("load", function () {
     $(".chat-hist, .messages-line").mCustomScrollbar();
-        axis:"yx"
+    axis: "yx"
 });
 
-
-
-$(window).on("load", function() {
+$(window).on("load", function () {
     "use strict";
-
-
 
     //  ============= POST PROJECT POPUP FUNCTION =========
 
-    $(".post_project").on("click", function(){
+    $(".post_project").on("click", function () {
         $(".post-popup.pst-pj").addClass("active");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".post-project > a").on("click", function(){
+    $(".post-project > a").on("click", function () {
         $(".post-popup.pst-pj").removeClass("active");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -86,12 +82,12 @@ $(window).on("load", function() {
 
     //  ============= POST JOB POPUP FUNCTION =========
 
-    $(".post-jb").on("click", function(){
+    $(".post-jb").on("click", function () {
         $(".post-popup.job_post").addClass("active");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".post-project > a").on("click", function(){
+    $(".post-project > a").on("click", function () {
         $(".post-popup.job_post").removeClass("active");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -99,34 +95,34 @@ $(window).on("load", function() {
 
     //  ============= SIGNIN CONTROL FUNCTION =========
 
-    $('.sign-control li').on("click", function(){
+    $('.sign-control li').on("click", function () {
         var tab_id = $(this).attr('data-tab');
         $('.sign-control li').removeClass('current');
         $('.sign_in_sec').removeClass('current');
         $(this).addClass('current animated fadeIn');
-        $("#"+tab_id).addClass('current animated fadeIn');
+        $("#" + tab_id).addClass('current animated fadeIn');
         return false;
     });
 
     //  ============= SIGNIN TAB FUNCTIONALITY =========
 
-    $('.signup-tab ul li').on("click", function(){
+    $('.signup-tab ul li').on("click", function () {
         var tab_id = $(this).attr('data-tab');
         $('.signup-tab ul li').removeClass('current');
         $('.dff-tab').removeClass('current');
         $(this).addClass('current animated fadeIn');
-        $("#"+tab_id).addClass('current animated fadeIn');
+        $("#" + tab_id).addClass('current animated fadeIn');
         return false;
     });
 
     //  ============= SIGNIN SWITCH TAB FUNCTIONALITY =========
 
-    $('.tab-feed ul li').on("click", function(){
+    $('.tab-feed ul li').on("click", function () {
         var tab_id = $(this).attr('data-tab');
         $('.tab-feed ul li').removeClass('active');
         $('.product-feed-tab').removeClass('current');
         $(this).addClass('active animated fadeIn');
-        $("#"+tab_id).addClass('current animated fadeIn');
+        $("#" + tab_id).addClass('current animated fadeIn');
         return false;
     });
 
@@ -139,12 +135,12 @@ $(window).on("load", function() {
 
     //  ============= OVERVIEW EDIT FUNCTION =========
 
-    $(".overview-open").on("click", function(){
+    $(".overview-open").on("click", function () {
         $("#overview-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#overview-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -152,12 +148,12 @@ $(window).on("load", function() {
 
     //  ============= EXPERIENCE EDIT FUNCTION =========
 
-    $(".exp-bx-open").on("click", function(){
+    $(".exp-bx-open").on("click", function () {
         $("#experience-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#experience-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -165,12 +161,12 @@ $(window).on("load", function() {
 
     //  ============= EDUCATION EDIT FUNCTION =========
 
-    $(".ed-box-open").on("click", function(){
+    $(".ed-box-open").on("click", function () {
         $("#education-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#education-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -178,12 +174,12 @@ $(window).on("load", function() {
 
     //  ============= LOCATION EDIT FUNCTION =========
 
-    $(".lct-box-open").on("click", function(){
+    $(".lct-box-open").on("click", function () {
         $("#location-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#location-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -191,12 +187,12 @@ $(window).on("load", function() {
 
     //  ============= SKILLS EDIT FUNCTION =========
 
-    $(".skills-open").on("click", function(){
+    $(".skills-open").on("click", function () {
         $("#skills-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#skills-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -204,12 +200,12 @@ $(window).on("load", function() {
 
     //  ============= ESTABLISH EDIT FUNCTION =========
 
-    $(".esp-bx-open").on("click", function(){
+    $(".esp-bx-open").on("click", function () {
         $("#establish-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#establish-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -217,12 +213,12 @@ $(window).on("load", function() {
 
     //  ============= CREATE PORTFOLIO FUNCTION =========
 
-    $(".gallery_pt > a").on("click", function(){
+    $(".gallery_pt > a").on("click", function () {
         $("#create-portfolio").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#create-portfolio").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -230,12 +226,12 @@ $(window).on("load", function() {
 
     //  ============= EMPLOYEE EDIT FUNCTION =========
 
-    $(".emp-open").on("click", function(){
+    $(".emp-open").on("click", function () {
         $("#total-employes").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#total-employes").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -243,12 +239,12 @@ $(window).on("load", function() {
 
     //  =============== Ask a Question Popup ============
 
-    $(".ask-question").on("click", function(){
+    $(".ask-question").on("click", function () {
         $("#question-box").addClass("open");
         $(".wrapper").addClass("overlay");
         return false;
     });
-    $(".close-box").on("click", function(){
+    $(".close-box").on("click", function () {
         $("#question-box").removeClass("open");
         $(".wrapper").removeClass("overlay");
         return false;
@@ -258,11 +254,11 @@ $(window).on("load", function() {
     //  ============== ChatBox ==============
 
 
-    $(".chat-mg").on("click", function(){
+    $(".chat-mg").on("click", function () {
         $(this).next(".conversation-box").toggleClass("active");
         return false;
     });
-    $(".close-chat").on("click", function(){
+    $(".close-chat").on("click", function () {
         $(".conversation-box").removeClass("active");
         return false;
     });
@@ -270,7 +266,7 @@ $(window).on("load", function() {
     //  ================== Edit Options Function =================
 
 
-    $(".ed-opts-open").on("click", function(){
+    $(".ed-opts-open").on("click", function () {
         $(this).next(".ed-options").toggleClass("active");
         return false;
     });
@@ -278,7 +274,7 @@ $(window).on("load", function() {
 
     // ============== Menu Script =============
 
-    $(".menu-btn > a").on("click", function(){
+    $(".menu-btn > a").on("click", function () {
         $("nav").toggleClass("active");
         return false;
     });
@@ -286,26 +282,26 @@ $(window).on("load", function() {
 
     //  ============ Notifications Open =============
 
-    $(".not-box-open").on("click", function(){
+    $(".not-box-open").on("click", function () {
         $(this).next(".notification-box").toggleClass("active");
     });
 
     // ============= User Account Setting Open ===========
 
-    $(".user-info").on("click", function(){
+    $(".user-info").on("click", function () {
         $(this).next(".user-account-settingss").toggleClass("active");
     });
 
     //  ============= FORUM LINKS MOBILE MENU FUNCTION =========
 
-    $(".forum-links-btn > a").on("click", function(){
+    $(".forum-links-btn > a").on("click", function () {
         $(".forum-links").toggleClass("active");
         return false;
     });
-    $("html").on("click", function(){
+    $("html").on("click", function () {
         $(".forum-links").removeClass("active");
     });
-    $(".forum-links-btn > a, .forum-links").on("click", function(){
+    $(".forum-links-btn > a, .forum-links").on("click", function () {
         e.stopPropagation();
     });
 
@@ -313,49 +309,41 @@ $(window).on("load", function() {
 
     $('.profiles-slider').slick({
         slidesToShow: 3,
-        slck:true,
+        slck: true,
         slidesToScroll: 1,
-        prevArrow:'<span class="slick-previous"></span>',
-        nextArrow:'<span class="slick-nexti"></span>',
+        prevArrow: '<span class="slick-previous"></span>',
+        nextArrow: '<span class="slick-nexti"></span>',
         autoplay: true,
         dots: false,
         autoplaySpeed: 2000,
-        responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: false
-          }
-        },
-        {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
-
+        responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
 
     });
 
-
-
-
-
 });
-
-
