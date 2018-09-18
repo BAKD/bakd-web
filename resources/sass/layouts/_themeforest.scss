@@ -264,7 +264,7 @@ nav ul li:hover > ul,
 header {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 .header-data {
 	float: left;
@@ -295,12 +295,12 @@ header {
 .ask-question {
 	background-color: #fff;
 	padding: 10px 25px;
-	color: #e44d3a !important;
+	color: $primary !important;
 	font-size: 14px;
 	font-weight: 600;
 }
 .ask-question:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 
 .forum-bar ul li {
@@ -378,7 +378,7 @@ header {
 	border: 0;
 }
 .search-bar form button i {
-	color: #e44d3a;
+	color: $primary;
 	font-size: 20px;
 	font-weight: bold;
 }
@@ -405,7 +405,7 @@ nav ul ul {
 	top: 100%;
 	left: 0;
 	width: 200px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	text-align: left;
 	padding: 20px 0 10px 0;
 	opacity: 0;
@@ -505,7 +505,7 @@ nav ul ul li a {
 	text-transform: capitalize;
 	font-weight: 600;
 	text-align: center;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 18px 0;
 }
 nav ul li span {
@@ -614,7 +614,7 @@ nav > ul > li > a:hover {
 .search_form form button {
 	color: #f2f2f2;
 	font-size: 14px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 0 10px;
 	height: 100%;
 	position: absolute;
@@ -725,7 +725,7 @@ main {
 .username-dt {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding-top: 40px;
 }
 .user-data {
@@ -798,7 +798,7 @@ main {
 	font-size: 20px;
 }
 .user-fw-status li a {
-	color: #e44d3a;
+	color: $primary;
 	font-size: 14px;
 	font-weight: 600;
 }
@@ -873,7 +873,7 @@ main {
 	cursor: pointer;
 }
 .suggestion-usd > span i:hover {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 .view-more {
@@ -883,12 +883,12 @@ main {
 	padding-top: 10px;
 }
 .view-more > a {
-	color: #e44d3a;
+	color: $primary;
 	font-size: 14px;
 	font-weight: 700;
 }
 .view-more > a:hover {
-	color: #e44d3a
+	color: $primary
 }
 
 
@@ -922,7 +922,7 @@ main {
 	font-weight: 500;
 }
 .tags-sec ul li a:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 .cp-sec {
 	float: left;
@@ -963,7 +963,7 @@ main {
 	width: 100%;
 	padding: 23px 20px;
 	background-color: #fff;
-	border-top: 4px solid #e44d3a;
+	border-top: 4px solid $primary;
 	border-left: 1px solid #e4e4e4;
 	border-bottom: 1px solid #e4e4e4;
 	border-right: 1px solid #e4e4e4;
@@ -1005,7 +1005,7 @@ main {
 }
 .post-st ul li a:hover,
 .post-st ul li a.active {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 
@@ -1088,7 +1088,7 @@ main {
 	font-weight: 600;
 }
 .ed-opts > a:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 .usy-name {
 	float: left;
@@ -1159,7 +1159,7 @@ main {
 	line-height: 30px;
 }
 .bk-links li i.la-envelope {
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 .bid_now {
 	color: #fff;
@@ -1226,7 +1226,7 @@ main {
 	margin-bottom: 20px;
 }
 .job_descp > p a {
-	color: #e44d3a;
+	color: $primary;
 	font-weight: 600;
 }
 
@@ -1277,10 +1277,10 @@ main {
 	margin-right: 5px;
 }
 .like-com li a:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 .like-com li a.active {
-	color: #e44d3a;
+	color: $primary;
 }
 .like-com li a i {
 	margin-right: 2px;
@@ -1293,7 +1293,7 @@ main {
 	font-size: 13px;
 	width: 30px;
 	height: 30px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	line-height: 30px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
@@ -1425,7 +1425,7 @@ main {
 	background-color: #53d690;
 }
 .envlp {
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 .envlp img {
 	float: none;
@@ -1444,7 +1444,7 @@ main {
 	font-weight: 600;
 }
 .user-profy > a:hover {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 .slick-slide img {
@@ -1512,7 +1512,7 @@ main {
 }
 .slick-previous:hover:before,
 .slick-nexti:hover:before {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 	border-color: transparent;
 }
@@ -1615,7 +1615,7 @@ main {
 }
 .comment > a.active,
 .comment > a:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 .comment > a i {
 	font-weight: 600;
@@ -1651,7 +1651,7 @@ main {
 .comment_box form button {
 	float: right;
 	color: #fff;
-	background-color: #e44d3a;
+	background-color: $primary;
 	height: 40px;
 	padding: 0 10px;
 	text-align: center;
@@ -1733,12 +1733,12 @@ main {
 }
 .sign_link > a {
 	display: inline-block;
-	color: #e44d3a;
+	color: $primary;
 	font-size: 14px;
 	font-weight: 500;
 }
 .sign_link > a:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 
 /* ============== Widget Jobs ============ */
@@ -1827,7 +1827,7 @@ main {
 .post-project h3 {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 	text-align: center;
 	font-size: 18px;
@@ -1876,7 +1876,7 @@ main {
 	margin-right: 15px;
 }
 .post-project-fields form ul li button.active {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 .post-project-fields form ul li button,
@@ -1892,7 +1892,7 @@ main {
 }
 .post-project-fields form ul li button:hover,
 .post-project-fields form ul li a:hover {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -1961,7 +1961,7 @@ select {
 /* ================= sign-in ================ */
 
 .sign-in {
-	background-color: #e75348;
+	background-color: $primary;
 }
 .sign-in-page {
 	float: left;
@@ -2108,7 +2108,7 @@ select {
 	font-size: 14px;
 	font-weight: 600;
 	background-color: #e5e5e5;
-	padding: 7px 10px;
+	padding: 10px 15px;
 	display: inline-block;
 	-webkit-border-radius: 4px 0 0 4px;
 	-moz-border-radius: 4px 0 0 4px;
@@ -2124,7 +2124,7 @@ select {
 	border-radius: 0 4px 4px 0;
 }
 .sign-control li.current a {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 .sign_in_sec {
@@ -2152,7 +2152,7 @@ select {
 	left: 0;
 	width: 30px;
 	height: 2px;
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 
 
@@ -2217,8 +2217,8 @@ select {
 .sign_in_sec form button {
 	color: #ffffff;
 	font-size: 16px;
-	background-color: #e44d3a;
-	padding: 12px 27px;
+	background-color: $primary;
+	padding: 8px 27px;
 	border:0;
 	font-weight: 500;
 	margin-top: 30px;
@@ -2251,12 +2251,15 @@ select {
 	width: 15px;
 	height: 15px;
 	position: relative;
-	border:1px solid #e7e7e7;
+	border:1px solid #aaaaaa;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	-ms-border-radius: 100px;
 	-o-border-radius: 100px;
-	border-radius: 100px;
+    border-radius: 100px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .fgt-sec input[type="checkbox"] + label span:before {
 	content: '';
@@ -2271,7 +2274,7 @@ select {
 	color: #ffffff;
 	opacity: 0;
 	visibility: hidden;
-	background-color: #e44d3a;
+	background-color: $primary;
 	position: absolute;
 	font-family: fontawesome;
 	top: 50%;
@@ -2280,7 +2283,10 @@ select {
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
 	-o-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    &:hover {
+        cursor: pointer;
+    }
 }
 .fgt-sec input[type="checkbox"]:checked + label span:before {
 	opacity: 1;
@@ -2334,7 +2340,7 @@ select {
 	color: #ffffff;
 	opacity: 0;
 	visibility: hidden;
-	background-color: #e44d3a;
+	background-color: $primary;
 	position: absolute;
 	font-family: fontawesome;
 	top: 49%;
@@ -2397,7 +2403,7 @@ select {
 	display: inline-block;
 }
 .signup-tab ul li.current a {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 }
 .signup-tab ul li:last-child a {
@@ -2510,7 +2516,7 @@ footer {
 }
 .fl-rgt {
 	float: right;
-	margin-top: 34px;
+	margin-top: 28px;
 	padding-right: 30px;
 }
 
@@ -2521,10 +2527,10 @@ footer {
 }
 .cover-sec > a {
 	display: inline-block;
-	color: #e44d3a;
+	color: $primary;
 	font-size: 16px;
 	background-color: #fff;
-	border: 1px solid #e44d3a;
+	border: 1px solid $primary;
 	position: absolute;
 	top: 30px;
 	right: 0;
@@ -2565,7 +2571,7 @@ footer {
 	border-radius: 100px;
 	color: #fff;
 	line-height: 40px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	position: absolute;
 	top: 0;
 	left: 60%;
@@ -2765,7 +2771,7 @@ footer {
 	filter: grayscale(0);
 }
 .tab-feed ul li.active span {
-	color: #e44d3a;
+	color: $primary;
 }
 .tab-feed ul li img {
 	float: none;
@@ -2794,7 +2800,7 @@ footer {
 	display: inline-block;
 	color: #ffffff;
 	font-size: 16px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 12px;
 }
 .message-btn a:hover {
@@ -3107,7 +3113,7 @@ footer {
 	padding: 15px;
 }
 .save {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 	border-color: transparent;
 }
@@ -3268,7 +3274,7 @@ a:hover {
 }
 .billing-method ul li i {
 	font-size: 13px;
-	color: #e44d3a;
+	color: $primary;
 }
 .lt-sec {
 	float: left;
@@ -3290,7 +3296,7 @@ a:hover {
 	display: inline-block;
 	color: #ffffff;
 	font-size: 16px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 10px 25px;
 }
 
@@ -3385,7 +3391,7 @@ a:hover {
 	left: 24px;
 	width: 7px;
 	height: 7px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
 	-ms-border-radius: 100px;
@@ -3402,7 +3408,7 @@ a:hover {
 .payment_methods form button {
 	color: #ffffff;
 	font-size: 16px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 10px 15px;
 	border: 0;
 	cursor: pointer;
@@ -3546,7 +3552,7 @@ a:hover {
 	background-color: #53d690;
 }
 .message-us {
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 .hire-us {
 	background-color: #51a5fb;
@@ -3595,7 +3601,7 @@ a:hover {
 	position: absolute;
 	top: 0;
 	right: 0;
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #ffffff;
 	font-size: 16px;
 	font-weight: 500;
@@ -3734,7 +3740,7 @@ a:hover {
 	-ms-border-radius: 100px;
 	-o-border-radius: 100px;
 	border-radius: 100px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	top: 3px;
 	left: 3px;
 }
@@ -3778,7 +3784,7 @@ a:hover {
 	-ms-border-radius: 100px;
 	-o-border-radius: 100px;
 	border-radius: 100px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	border: 2px solid #e3e3e3;
 	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,0.43);
 	-moz-box-shadow: 1px 2px 3px rgba(0,0,0,0.43);
@@ -3864,7 +3870,7 @@ a:hover {
 	right: 10px;
 	width: 20px;
 	height: 20px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	text-align: center;
 	font-size: 12px;
 	color: #fff;
@@ -3918,7 +3924,7 @@ a:hover {
 .con-title {
 	float: left;
 	width: 100%;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 15px 25px;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
@@ -3988,7 +3994,7 @@ a:hover {
 	right: 0;
 }
 .activee {
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 .usy-info {
 	display: table-cell;
@@ -4045,7 +4051,7 @@ a:hover {
 .chat-msg p {
 	color: #ffffff;
 	font-size: 14px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	line-height: 18px;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -4147,7 +4153,7 @@ a:hover {
 	resize: none;
 }
 .typing-msg form button {
-	color: #e44d3a;
+	color: $primary;
 	font-size: 18px;
 	font-weight: 600;
 	position: absolute;
@@ -4253,7 +4259,7 @@ a:hover {
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
 	background-color: inherit;
-	color: #e44d3a;
+	color: $primary;
 	border-color: inherit;
 }
 
@@ -4339,7 +4345,7 @@ a:hover {
 	cursor: pointer;
 }
 .save-stngs ul li button:hover {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 	border-color: transparent;
 }
@@ -4540,7 +4546,7 @@ a:hover {
 	padding-left: 15px;
 }
 .bx-info h3 {
-	color: #e44d3a;
+	color: $primary;
 	font-size: 20px;
 	font-weight: 600;
 	margin-bottom: 5px;
@@ -4667,7 +4673,7 @@ a:hover {
 	-ms-border-radius: 100px;
 	-o-border-radius: 100px;
 	border-radius: 100px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	position: absolute;
 	top: -3px;
 	right: 0;
@@ -4832,7 +4838,7 @@ a:hover {
 .message-inner-dt > p {
 	float: right;
 	width: 60%;
-	background-color: #e44d3a;
+	background-color: $primary;
 	font-size: 14px;
 	line-height: 22px;
 	padding: 10px 35px 10px 35px;
@@ -4895,7 +4901,7 @@ a:hover {
 .mf-field button {
 	float: left;
 	width: 17%;
-	background-color: #e44d3a;
+	background-color: $primary;
 	height: 45px;
 	text-align: center;
 	color: #fff;
@@ -4940,10 +4946,10 @@ a:hover {
 	border-bottom: 2px solid transparent;
 }
 .forum-links ul li.active {
-	border-color:#e44d3a;
+	border-color:$primary;
 }
 .forum-links ul li.active a {
-	color: #e44d3a;
+	color: $primary;
 }
 .forum-links ul li a {
 	display: inline-block;
@@ -5026,7 +5032,7 @@ a:hover {
 	font-weight: 600;
 }
 .react-links li a:hover {
-	color: #e44d3a;
+	color: $primary;
 }
 .react-links li a i {
 	padding-right: 10px;
@@ -5049,7 +5055,7 @@ a:hover {
 .quest-tags li a {
 	display: inline-block;
 	color: #ffffff;
-	background-color: #53d690;
+	background-color: $primary;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	-ms-border-radius: 30px;
@@ -5094,7 +5100,7 @@ a:hover {
 	color: #b2b2b2;
 }
 .pagination li .page-link.active {
-	background-color: #e44d3a;
+	background-color: $primary;
 	color: #fff;
 	border-color: transparent;
 }
@@ -5275,7 +5281,7 @@ a:hover {
 .post_comment_sec form button {
 	color: #ffffff;
 	font-size: 14px;
-	background-color: #e44d3a;
+	background-color: $primary;
 	padding: 10px 25px;
 	border: 0;
 	font-weight: 600;
@@ -5304,7 +5310,7 @@ a:hover {
 }
 .next-prev > a:hover {
 	color: #fff;
-	background-color: #e44d3a;
+	background-color: $primary;
 }
 .fl-left {
 	float: left;
@@ -5343,7 +5349,7 @@ a:hover {
 	color: #53d690;
 }
 .widget-feat ul li i.fa-comment {
-	color: #e44d3a;
+	color: $primary;
 }
 .widget-feat ul li i.fa-share-alt {
 	color: #51a5fb;

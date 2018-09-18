@@ -1,0 +1,22 @@
+.checkbox-label {
+    span {
+        float: left;
+        display: inline;
+    }
+    small {
+        float: right;
+        display: inline;
+        &:hover,
+        &:active,
+        &:focus {
+            transition: opacity 0.2s ease-in;
+            opacity: 0.85;
+            cursor: pointer;
+        }
+    }
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 11px;
+}

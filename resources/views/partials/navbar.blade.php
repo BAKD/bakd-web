@@ -1,26 +1,24 @@
 <header>
     <div class="container">
-        <div class="header-data navbar navbar-expand-md">
-            <div class="logo pd-btm">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="bakd-logo" src="{{ asset('images/branding/logo-white.png') }}" />
-                    {{ config('app.name', 'BAKD') }}
+        <div class="header-data navbar-bakd navbar navbar-expand-md">
+            <div class="bakd-logo pd-btm">
+                <a class="navbar-brand" href="{{ route('frontend.home') }}">
+                    <img class="bakd-logo" src="{{ config('bakd.logo.regular') }}" alt="{{ config('bakd.logo.alt') }}" title="{{ config('bakd.logo.alt') }}" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="forum-bar">
-                {{--  <h2>{{ config('app.name', 'BAKD') }}</h2>  --}}
+            <div class="forum-bar user-types-nav">
                 <ul>
-                    <li>
+                    {{--  <li>
                         <a href="#" title="Investor Dashboard">Investors</a>
                     </li>
                     <li>
-                        <a href="#" title="Startup Dashboard">Startups</a>
-                    </li>
+                        <a href="#" title="Campaign Dashboard">Campaigns</a>
+                    </li>  --}}
                     <li>
-                        <a href="#" title="" class="ask-question">{{  __('List Campaign') }}</a>
+                        <a href="#" title="List Your Campaign" class="ask-question">{{  __('Get Funded') }}</a>
                     </li>
                 </ul>
             </div>
@@ -55,13 +53,7 @@
                     @endguest
                 </ul>
             </div>
-            <div class="search-bar st2">
-                <form>
-                    <input type="text" name="search" placeholder="Search...">
-                    <button type="submit"><i class="la la-search"></i></button>
-                </form>
-            </div><!--search-bar end-->
-        </div><!--header-data end-->
+        </div>
     </div>
 </header>
 

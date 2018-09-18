@@ -1,4 +1,8 @@
 footer {
+    border-top: 1px solid $primary;
+    position: fixed;
+    bottom: 0;
+
     .bakd-logo {
         max-width: 125px;
         width: 100%;

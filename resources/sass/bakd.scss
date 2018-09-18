@@ -1,3 +1,6 @@
+// ------------------------------
+// BAKD SCSS Main Styles
+// ------------------------------
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
@@ -18,8 +21,24 @@
 // Theme/Sitewide Styles
 @import 'layouts/import';
 
+// Page-Specific Styles
+@import 'pages/import';
+
 // Component Styles
 @import 'components/import';
 
-// Page-Specific Styles
-@import 'pages/import';
+main {
+    min-height: 100vh;
+    
+    &.wrapper.overlay:after {
+        overflow: hidden;
+        position: absolute;
+        z-index: 11;
+    }
+}
+
+.bakd-logo {
+    max-width: 325px;
+    width: 100%;
+    height: auto;
+}

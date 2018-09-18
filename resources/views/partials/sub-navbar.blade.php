@@ -2,13 +2,12 @@
     <div class="container">
         <div class="forum-links">
             <ul>
-                <li class="active"><a href="#" title="">Latest</a></li>
-                <li><a href="#" title="">Unanswered</a></li>
-                <li><a href="#" title="">Treading</a></li>
-                <li><a href="#" title="">Popular This Week</a></li>
-                <li><a href="#" title="">Popular of Month</a></li>
+                <li class="active"><a href="#" title=""><i class="fa fa-clock-o"></i> Live Feed</a></li>
+                <li><a href="#" title=""><i class="fa fa-calendar"></i> Popular This Week</a></li>
+                <li><a href="#" title=""><i class="fa fa-bar-chart"></i> Trending Campaigns</a></li>
+                <li><a href="#" title=""><i class="fa fa-trophy"></i> Featured Campaigns</a></li>
             </ul>
-        </div><!--forum-links end-->
+        </div>
         <div class="forum-links-btn">
             <a href="#" title=""><i class="fa fa-bars"></i></a>
         </div>

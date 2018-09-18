@@ -31026,7 +31026,7 @@ nav ul li:hover > ul,
 header {
   float: left;
   width: 100%;
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 .header-data {
@@ -31064,13 +31064,13 @@ header {
 .ask-question {
   background-color: #fff;
   padding: 10px 25px;
-  color: #e44d3a !important;
+  color: #F59118 !important;
   font-size: 14px;
   font-weight: 600;
 }
 
 .ask-question:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .forum-bar ul li {
@@ -31160,7 +31160,7 @@ header {
 }
 
 .search-bar form button i {
-  color: #e44d3a;
+  color: #F59118;
   font-size: 20px;
   font-weight: bold;
 }
@@ -31190,7 +31190,7 @@ nav ul ul {
   top: 100%;
   left: 0;
   width: 200px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   text-align: left;
   padding: 20px 0 10px 0;
   opacity: 0;
@@ -31309,7 +31309,7 @@ nav ul ul li a {
   text-transform: capitalize;
   font-weight: 600;
   text-align: center;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 18px 0;
 }
 
@@ -31429,7 +31429,7 @@ nav > ul > li > a:hover {
 .search_form form button {
   color: #f2f2f2;
   font-size: 14px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 0 10px;
   height: 100%;
   position: absolute;
@@ -31539,7 +31539,7 @@ main {
 .username-dt {
   float: left;
   width: 100%;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding-top: 40px;
 }
 
@@ -31619,7 +31619,7 @@ main {
 }
 
 .user-fw-status li a {
-  color: #e44d3a;
+  color: #F59118;
   font-size: 14px;
   font-weight: 600;
 }
@@ -31701,7 +31701,7 @@ main {
 }
 
 .suggestion-usd > span i:hover {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -31713,13 +31713,13 @@ main {
 }
 
 .view-more > a {
-  color: #e44d3a;
+  color: #F59118;
   font-size: 14px;
   font-weight: 700;
 }
 
 .view-more > a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 /* ============== tags-sec ============= */
@@ -31756,7 +31756,7 @@ main {
 }
 
 .tags-sec ul li a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .cp-sec {
@@ -31800,7 +31800,7 @@ main {
   width: 100%;
   padding: 23px 20px;
   background-color: #fff;
-  border-top: 4px solid #e44d3a;
+  border-top: 4px solid #F59118;
   border-left: 1px solid #e4e4e4;
   border-bottom: 1px solid #e4e4e4;
   border-right: 1px solid #e4e4e4;
@@ -31849,7 +31849,7 @@ main {
 
 .post-st ul li a:hover,
 .post-st ul li a.active {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -31938,7 +31938,7 @@ main {
 }
 
 .ed-opts > a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .usy-name {
@@ -32025,7 +32025,7 @@ main {
 }
 
 .bk-links li i.la-envelope {
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 .bid_now {
@@ -32096,7 +32096,7 @@ main {
 }
 
 .job_descp > p a {
-  color: #e44d3a;
+  color: #F59118;
   font-weight: 600;
 }
 
@@ -32149,11 +32149,11 @@ main {
 }
 
 .like-com li a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .like-com li a.active {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .like-com li a i {
@@ -32168,7 +32168,7 @@ main {
   font-size: 13px;
   width: 30px;
   height: 30px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   line-height: 30px;
   border-radius: 30px;
   float: left;
@@ -32304,7 +32304,7 @@ main {
 }
 
 .envlp {
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 .envlp img {
@@ -32327,7 +32327,7 @@ main {
 }
 
 .user-profy > a:hover {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -32394,7 +32394,7 @@ main {
 
 .slick-previous:hover:before,
 .slick-nexti:hover:before {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
   border-color: transparent;
 }
@@ -32502,7 +32502,7 @@ main {
 
 .comment > a.active,
 .comment > a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .comment > a i {
@@ -32543,7 +32543,7 @@ main {
 .comment_box form button {
   float: right;
   color: #fff;
-  background-color: #e44d3a;
+  background-color: #F59118;
   height: 40px;
   padding: 0 10px;
   text-align: center;
@@ -32633,13 +32633,13 @@ main {
 
 .sign_link > a {
   display: inline-block;
-  color: #e44d3a;
+  color: #F59118;
   font-size: 14px;
   font-weight: 500;
 }
 
 .sign_link > a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 /* ============== Widget Jobs ============ */
@@ -32734,7 +32734,7 @@ main {
 .post-project h3 {
   float: left;
   width: 100%;
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
   text-align: center;
   font-size: 18px;
@@ -32792,7 +32792,7 @@ main {
 }
 
 .post-project-fields form ul li button.active {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -32810,7 +32810,7 @@ main {
 
 .post-project-fields form ul li button:hover,
 .post-project-fields form ul li a:hover {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -32892,7 +32892,7 @@ select {
 /* ================= sign-in ================ */
 
 .sign-in {
-  background-color: #e75348;
+  background-color: #F59118;
 }
 
 .sign-in-page {
@@ -33036,7 +33036,7 @@ select {
   font-size: 14px;
   font-weight: 600;
   background-color: #e5e5e5;
-  padding: 7px 10px;
+  padding: 10px 15px;
   display: inline-block;
   border-radius: 4px 0 0 4px;
 }
@@ -33046,7 +33046,7 @@ select {
 }
 
 .sign-control li.current a {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -33078,7 +33078,7 @@ select {
   left: 0;
   width: 30px;
   height: 2px;
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 /* ============= sign_in_sec ============= */
@@ -33145,8 +33145,8 @@ select {
 .sign_in_sec form button {
   color: #ffffff;
   font-size: 16px;
-  background-color: #e44d3a;
-  padding: 12px 27px;
+  background-color: #F59118;
+  padding: 8px 27px;
   border: 0;
   font-weight: 500;
   margin-top: 30px;
@@ -33186,8 +33186,12 @@ select {
   width: 15px;
   height: 15px;
   position: relative;
-  border: 1px solid #e7e7e7;
+  border: 1px solid #aaaaaa;
   border-radius: 100px;
+}
+
+.fgt-sec input[type="checkbox"] + label span:hover {
+  cursor: pointer;
 }
 
 .fgt-sec input[type="checkbox"] + label span:before {
@@ -33199,13 +33203,17 @@ select {
   color: #ffffff;
   opacity: 0;
   visibility: hidden;
-  background-color: #e44d3a;
+  background-color: #F59118;
   position: absolute;
   font-family: fontawesome;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+}
+
+.fgt-sec input[type="checkbox"] + label span:before:hover {
+  cursor: pointer;
 }
 
 .fgt-sec input[type="checkbox"]:checked + label span:before {
@@ -33257,7 +33265,7 @@ select {
   color: #ffffff;
   opacity: 0;
   visibility: hidden;
-  background-color: #e44d3a;
+  background-color: #F59118;
   position: absolute;
   font-family: fontawesome;
   top: 49%;
@@ -33320,7 +33328,7 @@ select {
 }
 
 .signup-tab ul li.current a {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
 }
 
@@ -33449,7 +33457,7 @@ footer {
 
 .fl-rgt {
   float: right;
-  margin-top: 34px;
+  margin-top: 28px;
   padding-right: 30px;
 }
 
@@ -33461,10 +33469,10 @@ footer {
 
 .cover-sec > a {
   display: inline-block;
-  color: #e44d3a;
+  color: #F59118;
   font-size: 16px;
   background-color: #fff;
-  border: 1px solid #e44d3a;
+  border: 1px solid #F59118;
   position: absolute;
   top: 30px;
   right: 0;
@@ -33503,7 +33511,7 @@ footer {
   border-radius: 100px;
   color: #fff;
   line-height: 40px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   position: absolute;
   top: 0;
   left: 60%;
@@ -33736,7 +33744,7 @@ footer {
 }
 
 .tab-feed ul li.active span {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .tab-feed ul li img {
@@ -33769,7 +33777,7 @@ footer {
   display: inline-block;
   color: #ffffff;
   font-size: 16px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 12px;
 }
 
@@ -34105,7 +34113,7 @@ footer {
 }
 
 .save {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
   border-color: transparent;
 }
@@ -34284,7 +34292,7 @@ a:hover {
 
 .billing-method ul li i {
   font-size: 13px;
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .lt-sec {
@@ -34310,7 +34318,7 @@ a:hover {
   display: inline-block;
   color: #ffffff;
   font-size: 16px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 10px 25px;
 }
 
@@ -34404,7 +34412,7 @@ a:hover {
   left: 24px;
   width: 7px;
   height: 7px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   border-radius: 100px;
 }
 
@@ -34418,7 +34426,7 @@ a:hover {
 .payment_methods form button {
   color: #ffffff;
   font-size: 16px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 10px 15px;
   border: 0;
   cursor: pointer;
@@ -34580,7 +34588,7 @@ a:hover {
 }
 
 .message-us {
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 .hire-us {
@@ -34633,7 +34641,7 @@ a:hover {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #ffffff;
   font-size: 16px;
   font-weight: 500;
@@ -34776,7 +34784,7 @@ a:hover {
   width: 7px;
   height: 7px;
   border-radius: 100px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   top: 3px;
   left: 3px;
 }
@@ -34816,7 +34824,7 @@ a:hover {
   width: 17px;
   height: 17px;
   border-radius: 100px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   border: 2px solid #e3e3e3;
   -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.43);
   -ms-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.43);
@@ -34903,7 +34911,7 @@ a:hover {
   right: 10px;
   width: 20px;
   height: 20px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   text-align: center;
   font-size: 12px;
   color: #fff;
@@ -34953,7 +34961,7 @@ a:hover {
 .con-title {
   float: left;
   width: 100%;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 15px 25px;
   border-radius: 10px 10px 0 0;
 }
@@ -35020,7 +35028,7 @@ a:hover {
 }
 
 .activee {
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 .usy-info {
@@ -35087,7 +35095,7 @@ a:hover {
 .chat-msg p {
   color: #ffffff;
   font-size: 14px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   line-height: 18px;
   border-radius: 15px;
   padding: 10px 15px;
@@ -35195,7 +35203,7 @@ a:hover {
 }
 
 .typing-msg form button {
-  color: #e44d3a;
+  color: #F59118;
   font-size: 18px;
   font-weight: 600;
   position: absolute;
@@ -35303,7 +35311,7 @@ a:hover {
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   background-color: inherit;
-  color: #e44d3a;
+  color: #F59118;
   border-color: inherit;
 }
 
@@ -35399,7 +35407,7 @@ a:hover {
 }
 
 .save-stngs ul li button:hover {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
   border-color: transparent;
 }
@@ -35631,7 +35639,7 @@ a:hover {
 }
 
 .bx-info h3 {
-  color: #e44d3a;
+  color: #F59118;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -35773,7 +35781,7 @@ a:hover {
 
 .msg-status {
   border-radius: 100px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   position: absolute;
   top: -3px;
   right: 0;
@@ -35945,7 +35953,7 @@ a:hover {
 .message-inner-dt > p {
   float: right;
   width: 60%;
-  background-color: #e44d3a;
+  background-color: #F59118;
   font-size: 14px;
   line-height: 22px;
   padding: 10px 35px 10px 35px;
@@ -36012,7 +36020,7 @@ a:hover {
 .mf-field button {
   float: left;
   width: 17%;
-  background-color: #e44d3a;
+  background-color: #F59118;
   height: 45px;
   text-align: center;
   color: #fff;
@@ -36063,11 +36071,11 @@ a:hover {
 }
 
 .forum-links ul li.active {
-  border-color: #e44d3a;
+  border-color: #F59118;
 }
 
 .forum-links ul li.active a {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .forum-links ul li a {
@@ -36161,7 +36169,7 @@ a:hover {
 }
 
 .react-links li a:hover {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .react-links li a i {
@@ -36188,7 +36196,7 @@ a:hover {
 .quest-tags li a {
   display: inline-block;
   color: #ffffff;
-  background-color: #53d690;
+  background-color: #F59118;
   border-radius: 30px;
   padding: 7px 25px;
 }
@@ -36237,7 +36245,7 @@ a:hover {
 }
 
 .pagination li .page-link.active {
-  background-color: #e44d3a;
+  background-color: #F59118;
   color: #fff;
   border-color: transparent;
 }
@@ -36440,7 +36448,7 @@ a:hover {
 .post_comment_sec form button {
   color: #ffffff;
   font-size: 14px;
-  background-color: #e44d3a;
+  background-color: #F59118;
   padding: 10px 25px;
   border: 0;
   font-weight: 600;
@@ -36470,7 +36478,7 @@ a:hover {
 
 .next-prev > a:hover {
   color: #fff;
-  background-color: #e44d3a;
+  background-color: #F59118;
 }
 
 .fl-left {
@@ -36516,7 +36524,7 @@ a:hover {
 }
 
 .widget-feat ul li i.fa-comment {
-  color: #e44d3a;
+  color: #F59118;
 }
 
 .widget-feat ul li i.fa-share-alt {
@@ -37378,20 +37386,96 @@ a:hover {
   }
 }
 
+.checkbox-label span {
+  float: left;
+  display: inline;
+}
+
+.checkbox-label small {
+  float: right;
+  display: inline;
+}
+
+.checkbox-label small:hover,
+.checkbox-label small:active,
+.checkbox-label small:focus {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 11px;
+}
+
+header {
+  background-color: #f5f5f5;
+  border-top: 2px solid #F59118;
+  border-bottom: 1px solid #dcdbdb;
+  z-index: 10;
+}
+
+header .bakd-logo {
+  max-width: 250px;
+}
+
+header .forum-bar {
+  float: left;
+  margin-top: unset;
+  width: 100%;
+}
+
+header .forum-bar li a {
+  color: #222;
+}
+
+header .navbar-nav .nav-item a {
+  color: #222;
+  border-color: #222;
+}
+
+header + section {
+  z-index: 9;
+  -webkit-box-shadow: 1px 1px 32px -12px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 32px -12px rgba(0, 0, 0, 0.25);
+}
+
+.user-types-nav a {
+  color: #767575;
+}
+
 .bakd-logo {
   max-width: 325px;
   width: 100%;
   height: auto;
 }
 
-.navbar-bakd {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+footer {
+  border-top: 1px solid #F59118;
+  position: fixed;
+  bottom: 0;
 }
 
 footer .bakd-logo {
   max-width: 125px;
+  width: 100%;
+  height: auto;
+}
+
+main {
+  min-height: 100vh;
+}
+
+main.wrapper.overlay:after {
+  overflow: hidden;
+  position: absolute;
+  z-index: 11;
+}
+
+.bakd-logo {
+  max-width: 325px;
   width: 100%;
   height: auto;
 }

@@ -1,10 +1,48 @@
+header {
+    background-color: $secondary;
+    border-top: 2px solid $primary;
+    border-bottom: 1px solid darken($secondary, 10%);
+    // position: fixed;
+    z-index: 10;
+
+    .bakd-logo {
+        max-width: 250px;
+    }
+
+    .forum-bar {
+        float: left;
+        margin-top: unset;
+        width: 100%;
+        
+        li a {
+            color: #222;
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+            a {
+                color: #222;
+                border-color: #222;
+            }
+        }
+    }
+
+    & + section {
+        z-index: 9;
+        // position: fixed;
+        box-shadow: 1px 1px 32px -12px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.user-types-nav {
+    a {
+        color: darken($secondary, 50%);
+    }
+}
+
 .bakd-logo {
     max-width: 325px;
     width: 100%;
     height: auto;
 }
-
-.navbar-bakd {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  }
