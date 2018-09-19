@@ -19,7 +19,7 @@
         </p>
         <br />
         <strong><em>
-            - BAKD Development Team
+            The BAKD Development Team
         </em></strong>
         <br /><br />
       </div>
