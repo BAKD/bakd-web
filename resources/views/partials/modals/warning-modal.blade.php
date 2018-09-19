@@ -24,7 +24,7 @@
         <br /><br />
       </div>
       <div class="modal-footer">
-        <button onclick="javascript: window.location='https://google.com';" type="button" class="btn btn-secondary">Get me outta here...</button>
+        <button onclick="javascript: window.location='https://bakd.io';" type="button" class="btn btn-secondary">Get me outta here...</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Awesome!</button>
       </div>
     </div>
