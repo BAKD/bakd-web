@@ -17,6 +17,10 @@ require('./lib/slick/slick.min');
 jQuery = $ = require('jquery');
 window.Vue = require('vue');
 
+// TODO: Remove Me
+// Temporary welcome modal explaining the mess of a website
+$('#welcome-modal').modal('show');
+
 // Basic vue app instance, to be expanded upon in future versions
 // of the app.
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));

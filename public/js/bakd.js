@@ -13905,6 +13905,10 @@ __webpack_require__(41);
 jQuery = $ = __webpack_require__(1);
 window.Vue = __webpack_require__(42);
 
+// TODO: Remove Me
+// Temporary welcome modal explaining the mess of a website
+$('#welcome-modal').modal('show');
+
 // Basic vue app instance, to be expanded upon in future versions
 // of the app.
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
