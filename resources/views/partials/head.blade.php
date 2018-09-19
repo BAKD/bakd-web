@@ -10,4 +10,12 @@
     <script src="{{ asset('js/bakd.js') }}" defer type="text/javascript"></script>
 
     <link href="{{ asset('css/bakd.css') }}" type="text/css" rel="stylesheet">
+
+    <script>
+        //*************************
+        // Copyright 2018 BAKD.me
+        //      tom@bakd.io
+        //       ¯\_(ツ)_/¯
+        //*************************
+    </script>
 </head>
