@@ -6,11 +6,13 @@
         @include('partials/navbar')
         @include('partials/sub-navbar')
         <main class="wrapper py-4">
-            @include('partials/notifications/flash-message')
+            <div class="container">
+                @include('partials/notifications/flash-message')
+            </div>
             @yield('content')
         </main>
     </div>
     @include('partials/footer')
-    @include('partials/modals/overview')
+    @include('partials/modals/all')
 </body>
 </html>

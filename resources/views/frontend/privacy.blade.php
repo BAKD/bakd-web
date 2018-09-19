@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    Privacy Policy Page
+    Privacy Policy Coming Soon...
 </div>
 @endsection

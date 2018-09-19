@@ -11,6 +11,6 @@
         </main>
     </div>
     @include('partials/footer')
-    @include('partials/modals/overview')
+    @include('partials/modals/all')
 </body>
 </html>

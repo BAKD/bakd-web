@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    Contact Us Page
+    Contact Us Coming Soon...
 </div>
 @endsection

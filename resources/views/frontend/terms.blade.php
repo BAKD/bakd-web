@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    Terms & Conditions Page
+    Terms & Conditions Coming Soon...
 </div>
 @endsection

@@ -1,5 +1,5 @@
 <div class="widget widget-user">
-    <h3 class="title-wd">Top Influencers</h3>
+    <h3 class="title-wd"><i class="fa fa-trophy"></i> Top Influencers</h3>
     <ul>
         <li>
             <div class="usr-msg-details">

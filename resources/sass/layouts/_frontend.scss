@@ -30,6 +30,55 @@ body {
     transition: all $transition-speed ease;
 }
 
+.form-group.row {
+    margin-bottom: 1rem;
+}
+
+header .navbar-nav .nav-item a {
+    color: #222;
+    background: #fff;
+    border-radius: 50px;
+    padding: 11px 30px;
+    line-height: 8px;
+    font-weight: 500;
+    height: unset;
+    min-height: unset;
+    margin: unset;
+    border-color: #dadada !important;
+}
+
+.forum-links ul li { 
+
+    .active,
+    &:active,
+    &:hover,
+    &:focus {
+        border-color: $primary;
+        color: $primary;
+        transition: all $transition-speed ease;
+    }
+}
+
+header {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f5f5+48,f5f5f5+48,aaaaaa+100&1+0,0.38+100 */
+    background: -moz-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(245,245,245,0.35) 25%, rgba(170,170,170,0.15) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(245,245,245,1) 0%,rgba(245,245,245,0.35) 25%,rgba(170,170,170,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(245,245,245,1) 0%,rgba(245,245,245,0.35) 25%,rgba(170,170,170,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#61aaaaaa',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-campaign-cta {
+    font-weight: 700;
+    padding: 9px 30px;
+    border: 1px solid #dadada;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: $primary;
+    border-color: $primary;
+}
+
 main {
     min-height: 100vh;
 

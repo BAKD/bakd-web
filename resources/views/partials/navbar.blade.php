@@ -3,7 +3,7 @@
         <div class="header-data navbar-bakd navbar navbar-expand-md">
             <div class="bakd-logo pd-btm">
                 <a class="navbar-brand" href="{{ route('frontend.home') }}">
-                    <img class="bakd-logo" src="{{ config('bakd.logo.regular') }}" alt="{{ config('bakd.logo.alt') }}" title="{{ config('bakd.logo.alt') }}" />
+                    <img class="bakd-logo" src="{{ config('bakd.logo.regular') }}" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -11,16 +11,14 @@
             </div>
             <div class="forum-bar user-types-nav">
                 <ul>
-                    {{--
-                    <li>
-                        <a href="#" title="Investor Dashboard">Investors</a>
+                    {{--  <li>
+                        <a href="#" title="Continue as Investor">Investors</a>
                     </li>
                     <li>
-                        <a href="#" title="Campaign Dashboard">Campaigns</a>
-                    </li>
-                    --}}
-                    <li>
-                        <a href="#" title="List Your Campaign" class="ask-question"><i class="fa fa-users"></i> {{  __('Start Campaign') }}</a>
+                        <a href="#" title="Continue as Project">Projects</a>
+                    </li>  --}}
+                    <li data-toggle="tooltip"  data-title="Campaigns Are Absolutely Free to Run & Participate In!">
+                        <a href="#" class="ask-question btn-campaign-cta">{{  __('Start Campaign') }}</a>
                     </li>
                 </ul>
             </div>
