@@ -3,14 +3,16 @@
         <div class="usy-dst">
             <img src="http://via.placeholder.com/120x120" alt="">
             <div class="usy-name">
-                <h3>xTrawesome Poorlyfunded Company, Inc.</h3>
+                <h3>
+                    {{ $project->name }}
+                </h3>
                 <span><img src="images/clock.png" title="{{ \Carbon\Carbon::now()->subWeeks(3)->diffForHumans() }}">3 weeks ago</span>
                 <div class="funding-progress-wrapper">
                     <div class="title">
-                        $2,000.31 of $2,500,000!
+                        {{ $project->funding->reached }} of {{ $project->funding->goal->high }}!
                     </div>
-                    <div class="progress" style='height: 22px;'>
-                        <div class="progress-bar progress-bar-animated bg-success progress-bar-striped" style="width:70%;"></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-animated bg-success progress-bar-striped" style="width: {{ $campaign->progress }};"></div>
                     </div>
                 </div>
             </div>
@@ -38,18 +40,22 @@
         </ul>
     </div>
     <div class="job_descp">
-        <h3>Decentralized Autonomous Heart Transplanting Robot Babies</h3>
+        <h3>
+            {{ $project->name }}
+        </h3>
         <ul class="job-dt">
-            <li>Goal of <span>$300,000 - $2,500,000</span></li>
+            <li>Goal of <span>{{ $project->funding->goal->low }} - {{ $project->funding->goal->high }}</span></li>
         </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at. Etiam id magna sit amet... <a href="#" title="">view more</a></p>
+        <p>
+            {{ $project->description }}
+        </p>
         <ul class="skill-tags">
             <li><a href="#" title="">Crypto</a></li>
             <li><a href="#" title="">Ethereum</a></li>
             <li><a href="#" title="">Startup</a></li>
             <li><a href="#" title="">5-10 Employees</a></li>
-            <li><a href="#" title="">SaaS</a></li> 	
-            <li><a href="#" title="">DAO</a></li> 	
+            <li><a href="#" title="">SaaS</a></li>
+            <li><a href="#" title="">DAO</a></li>
         </ul>
     </div>
     <div class="job-status-bar">
@@ -58,7 +64,7 @@
                 <a href="#" title="" class="active"><i class="la la-heart"></i> Like</a>
                 <img src="images/liked-img.png" alt="">
                 <span>115</span>
-            </li> 
+            </li>
             <li><a href="#" title="" class="com"><img src="images/com.png" alt=""> Comment 215</a></li>
         </ul>
         <a><i class="la la-eye"></i>Views 22,357</a>

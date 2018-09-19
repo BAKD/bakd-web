@@ -3,5 +3,14 @@
 @import "themeforest";
 @import "themeforest_responsive";
 
+// Default authenticated superadmin member layout styles
+@import "manage";
+
+// Default authenticated member layout styles
+@import "member";
+
 // Default frontend layout styles
 @import "frontend";
+
+// Landing page styles
+@import "landers/import";
