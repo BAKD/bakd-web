@@ -37520,6 +37520,20 @@ body {
   padding-right: unset;
 }
 
+.cm-logo {
+  width: 100%;
+  padding: 20px 25px;
+  margin-bottom: 120px;
+  float: unset;
+  text-align: center;
+}
+
+.cm-logo img.bakd-logo {
+  float: unset;
+  margin: 20px auto 50px;
+  text-align: center;
+}
+
 .btn-campaign-cta {
   font-weight: 700;
   padding: 9px 30px;

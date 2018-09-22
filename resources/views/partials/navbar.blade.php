@@ -24,10 +24,10 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="btn btn-secondary" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Login') }}</a>
+                            <a class="btn btn-secondary" data-toggle="modal" data-target="#login_modal"><i class="fa fa-user"></i> {{ __('Login') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-secondary" href="{{ route('register') }}"><i class="fa fa-edit"></i> {{ __('Register') }}</a>
+                            <a class="btn btn-secondary" data-toggle="modal" data-target="#login_modal"><i class="fa fa-edit"></i> {{ __('Register') }}</a>
                         </li>
                     @else
                         <li class="nav-item dropdown nav-link dropdown pull-right">
