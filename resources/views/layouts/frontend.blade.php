@@ -14,6 +14,6 @@
     </div>
     @include('partials/footer')
     @include('partials/modals/all')
-    @include('partials/js-includes)
+    @include('partials/js-includes')
 </body>
 </html>
