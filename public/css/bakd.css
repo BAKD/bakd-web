@@ -37424,6 +37424,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.forum-links ul li {
+  padding: 20px 8px 20px 3px;
+}
+
 .forum-links ul li .active,
 .forum-links ul li:active,
 .forum-links ul li:hover,
@@ -37432,6 +37436,7 @@ body {
   color: #F59118;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  padding: 20px 8px 20px 3px;
 }
 
 .row + div {
