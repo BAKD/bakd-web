@@ -67,6 +67,11 @@ body {
     font-weight: 700;
     padding: 9px 30px;
     border: 1px solid #dadada;
+    white-space: nowrap;
+
+    @media(max-width: 768px) {
+        display: none !important;
+    }
 }
 
 .btn-primary {
@@ -106,3 +111,4 @@ main {
         border: none;
     }
 }
+

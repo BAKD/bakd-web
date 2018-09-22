@@ -37524,6 +37524,13 @@ body {
   font-weight: 700;
   padding: 9px 30px;
   border: 1px solid #dadada;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .btn-campaign-cta {
+    display: none !important;
+  }
 }
 
 .btn-primary {
@@ -37705,10 +37712,31 @@ header {
   /* IE6-9 */
 }
 
+@media (max-width: 768px) {
+  .forum-bar {
+    display: none !important;
+  }
+}
+
 .bakd-logo {
-  max-width: 280px;
   width: 100%;
   height: auto;
+}
+
+.bakd-logo img {
+  max-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .bakd-logo {
+    max-width: unset;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .bakd-logo img {
+    margin: 0 auto;
+  }
 }
 
 .nav-item.nav-link.dropdown {

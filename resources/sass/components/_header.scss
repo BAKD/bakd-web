@@ -148,10 +148,29 @@ header {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#61aaaaaa',GradientType=0 ); /* IE6-9 */
 }
 
+@media(max-width: 768px) {
+    .forum-bar {
+        display: none !important;
+    }
+}
+
 .bakd-logo {
-    max-width: 280px;
     width: 100%;
     height: auto;
+
+    img {
+        max-width: 280px;
+    }
+
+    @media(max-width: 768px) {
+        max-width: unset;
+        text-align: center;
+        margin: 0 auto;
+
+        img {
+            margin: 0 auto;
+        }
+    }
 }
 
 .nav-item.nav-link.dropdown {
