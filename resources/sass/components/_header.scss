@@ -12,7 +12,7 @@ header {
     .forum-bar {
         float: left;
         margin-top: unset;
-        width: 100%;
+        width: 50%;
 
         li a {
             color: #222;
@@ -24,6 +24,67 @@ header {
             a {
                 color: #222;
                 border-color: #222;
+                color: #222;
+            }
+
+            .member-avatar {
+                border-radius: 500px;
+                position: relative;
+                display: inline-block;
+                line-height: 32px;
+                height: 32px;
+                top: 2px;
+            }
+
+            .member-name {
+                text-align: left;
+                padding-left: 2px;
+                padding-right: 28px;
+                display: inline-block;
+                line-height: 32px;
+                font-size: 14px;
+                padding: 2px 10px 2px 2px;
+                white-space: nowrap;
+                max-width: 180px;
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+
+                .fa {
+                    padding-left: 40px;
+                    position: absolute;
+                    right: 15px;
+                    line-height: 32px;
+                }
+            }
+
+            a.dropdown-item {
+                border: unset !important;
+                background: unset !important;
+                border-color: unset !important;
+                border-radius: unset !important;
+                color: unset !important;
+            }
+
+            a.logged-in {
+                background: #fff;
+                border-radius: 50px;
+                padding: 5px;
+                min-width: 140px;
+                line-height: 0px;
+                font-weight: 500;
+                height: unset;
+                min-height: unset;
+                margin: unset;
+                border-color: #dadada !important;
+                position: relative;
+                right: 5px;
+                float: right;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 240px;
+                width: 100%;
             }
         }
     }
@@ -67,7 +128,15 @@ header {
 }
 
 .bakd-logo {
-    max-width: 325px;
+    // max-width: 325px;
+    max-width: 280px;
     width: 100%;
     height: auto;
+}
+
+.login_register {
+    position: relative;
+    right: 10px;
+    width: 100%;
+    text-align: right;
 }

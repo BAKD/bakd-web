@@ -3,6 +3,7 @@ body {
     width: 100%;
     min-width: 320px;
     display: block;
+    padding: 0 0 80px 0;
 }
 
 .checkbox-label {
@@ -82,26 +83,6 @@ main {
         position: absolute;
         z-index: 11;
     }
-}
-
-.bakd-logo {
-    max-width: 280px;
-    width: 100%;
-    height: auto;
-}
-
-.member-avatar {
-    border-radius: 500px;
-    position: relative;
-    display: inline-block;
-}
-
-a.dropdown-item {
-    border: unset !important;
-    background: unset !important;
-    border-color: unset !important;
-    border-radius: unset !important;
-    color: unset !important;
 }
 
 .form-group {

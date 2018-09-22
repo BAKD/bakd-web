@@ -31,6 +31,18 @@ $('#welcome-modal').modal('show');
 // Use bootstrap tooltips
 $('[data-toggle="tooltip"]').tooltip();
 
+
+
+
+
+
+
+
+
+
+
+
+
 // --------------------------
 // TODO: REFACTOR ME ASAP
 // --------------------------

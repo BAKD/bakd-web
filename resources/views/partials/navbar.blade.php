@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="login_register">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto pull-right">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -34,7 +34,7 @@
                         </li>
                     @else
                         <li class="nav-item dropdowzn nav-link dropdown">
-                            <a id="navbarDropdown" class="member-dropdown -toggle btn btn-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="member-dropdown logged-in -toggle btn btn-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=32" class="member-avatar"/>
                                 <span class="member-name">
                                     {{ Auth::user()->name }} <i class="fa fa-chevron-down"></i>
