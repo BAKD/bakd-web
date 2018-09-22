@@ -33,9 +33,12 @@
                             <a class="btn btn-secondary" href="{{ route('register') }}"><i class="fa fa-edit"></i> {{ __('Register') }}</a>
                         </li>
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                        <li class="nav-item dropdowzn nav-link dropdown">
+                            <a id="navbarDropdown" class="member-dropdown -toggle btn btn-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=32" class="member-avatar"/>
+                                <span class="member-name">
+                                    {{ Auth::user()->name }} <i class="fa fa-chevron-down"></i>
+                                </span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
