@@ -3,22 +3,22 @@
         <div class="forum-links">
             <ul>
                 <li class="active">
-                    <a href="#" data-placement="top" data-toggle="tooltip" title="Realtime Community Sentiment">
+                    <a href="#">
                         <i class="fa fa-line-chart"></i> Live Feed
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-placement="top" data-toggle="tooltip" title="Popular BAKD Funding Campaigns">
+                    <a href="#">
                         <i class="fa fa-trophy"></i> Popular Campaigns
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-placement="top" data-toggle="tooltip" title="Featured Users of the BAKD Platform">
+                    <a href="#">
                         <i class="fa fa-star"></i> Featured Members
                     </a>
                 </li>
                 <li>
-                    <a href="#" data-placement="top" data-toggle="tooltip" title="Search for Projects, Members and More!">
+                    <a href="#">
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
