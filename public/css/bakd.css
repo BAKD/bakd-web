@@ -37546,6 +37546,22 @@ main.wrapper.overlay:after {
   padding-right: 15px;
 }
 
+.user-account-settingss {
+  opacity: unset;
+  visibility: inherit;
+  top: 0px;
+  border-top: 1px solid #e5e5e5;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute;
+    background: none;
+    border: none;
+  }
+}
+
 header {
   background-color: #f5f5f5;
   border-top: 2px solid #F59118;
@@ -37567,6 +37583,16 @@ header .forum-bar li a {
   color: #222;
 }
 
+header .auth-links-wrapper {
+  padding: 0;
+}
+
+header .auth-links-wrapper .dropdown-nav-link {
+  right: 0;
+  position: relative;
+  padding: 0;
+}
+
 header .navbar-nav .nav-item a {
   color: #222;
   border-color: #222;
@@ -37579,7 +37605,6 @@ header .navbar-nav .nav-item .member-avatar {
   display: inline-block;
   line-height: 32px;
   height: 32px;
-  top: 2px;
 }
 
 header .navbar-nav .nav-item .member-name {
@@ -37589,7 +37614,6 @@ header .navbar-nav .nav-item .member-name {
   display: inline-block;
   line-height: 32px;
   font-size: 14px;
-  padding: 2px 10px 2px 2px;
   white-space: nowrap;
   max-width: 180px;
   width: 100%;
@@ -37602,6 +37626,20 @@ header .navbar-nav .nav-item .member-name .fa {
   position: absolute;
   right: 15px;
   line-height: 32px;
+}
+
+header .navbar-nav .nav-item .main-dropdown-btn {
+  white-space: nowrap;
+  padding: inherit 5px;
+}
+
+header .navbar-nav .nav-item .main-dropdown-btn:hover,
+header .navbar-nav .nav-item .main-dropdown-btn:focus,
+header .navbar-nav .nav-item .main-dropdown-btn:active {
+  background: #F59118;
+  color: #fff;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 header .navbar-nav .nav-item a.dropdown-item {
@@ -37673,9 +37711,12 @@ header {
   height: auto;
 }
 
+.nav-item.nav-link.dropdown {
+  padding-right: none;
+}
+
 .login_register {
   position: relative;
-  right: 10px;
   width: 100%;
   text-align: right;
 }

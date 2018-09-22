@@ -23,7 +23,7 @@
                 </ul>
             </div>
             <div class="login_register">
-                <ul class="navbar-nav ml-auto pull-right">
+                <ul class="navbar-nav ml-auto pull-right auth-links-wrapper">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -33,7 +33,8 @@
                             <a class="btn btn-secondary" href="{{ route('register') }}"><i class="fa fa-edit"></i> {{ __('Register') }}</a>
                         </li>
                     @else
-                        <li class="nav-item dropdowzn nav-link dropdown">
+                        <li class="nav-item dropdown nav-link dropdown pull-right">
+
                             <a id="navbarDropdown" class="member-dropdown logged-in -toggle btn btn-secondary" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=32" class="member-avatar"/>
                                 <span class="member-name">
@@ -42,14 +43,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                @include('/partials/member-dropdown')
                             </div>
                         </li>
                     @endguest

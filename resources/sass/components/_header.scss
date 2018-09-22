@@ -19,6 +19,16 @@ header {
         }
     }
 
+    .auth-links-wrapper {
+        padding: 0;
+
+        .dropdown-nav-link {
+            right: 0;
+            position: relative;
+            padding: 0;
+        }
+    }
+
     .navbar-nav {
         .nav-item {
             a {
@@ -33,7 +43,6 @@ header {
                 display: inline-block;
                 line-height: 32px;
                 height: 32px;
-                top: 2px;
             }
 
             .member-name {
@@ -43,7 +52,6 @@ header {
                 display: inline-block;
                 line-height: 32px;
                 font-size: 14px;
-                padding: 2px 10px 2px 2px;
                 white-space: nowrap;
                 max-width: 180px;
                 width: 100%;
@@ -55,6 +63,19 @@ header {
                     position: absolute;
                     right: 15px;
                     line-height: 32px;
+                }
+            }
+
+            .main-dropdown-btn {
+                white-space: nowrap;
+                padding: inherit 5px;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background: $primary;
+                    color: #fff;
+                    transition: all $transition-speed ease;
                 }
             }
 
@@ -128,15 +149,18 @@ header {
 }
 
 .bakd-logo {
-    // max-width: 325px;
     max-width: 280px;
     width: 100%;
     height: auto;
 }
 
+.nav-item.nav-link.dropdown {
+    padding-right: none;
+}
+
 .login_register {
     position: relative;
-    right: 10px;
     width: 100%;
     text-align: right;
 }
+
