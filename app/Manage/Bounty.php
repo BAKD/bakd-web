@@ -48,17 +48,17 @@ class Bounty extends Resource
      */
     public function fields(Request $request)
     {
+        $typeOptions = [];
+
         // TODO: Move to Bounty Type model
-        $typeOptions = collect(\BAKD\BountyType::all())->map(function ($row) { 
-            return [
-                $row->id => $row->name
-            ];
+        $typeOptions = collect(\BAKD\BountyType::all())->map(function ($row) use ($typeOptions) {
+            return [[$row->id] = $row->name];
         })->toArray();
-        
+
         return [
             ID::make('id')->sortable(),
             Avatar::make('Image', 'image')->sortable(),
-            Select::make('Type', 'type_id')->options($typeOptions[0]),
+            Select::make('Type', 'type_id')->options($typeOptions)->displayUsingLabels(),
             Number::make('Reward Amount', 'reward')->min(1)->max(1000000)->step(0.1),
             Number::make('Total Bounty Rewards Allowed', 'reward_total')->min(1)->step(100),
             Text::make('Name', 'name')->sortable(),
