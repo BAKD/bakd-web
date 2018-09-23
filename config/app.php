@@ -216,6 +216,7 @@ return [
          * Package Facades...
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Uuid' => Webpatser\Uuid\Uuid::class,
 
     ],
 

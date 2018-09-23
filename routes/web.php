@@ -43,6 +43,8 @@ Route::name('member.')->group(function () {
                 // A "member" can be any of the following roles: Investor, Campaign Owner, BAKD Employee, etc.
                 Route::get('/', 'PageController@index')->name('home');
 
+                Route::resource('/bounty', 'BountyController');
+
                 // Vanity Subdomain Routing for Investor Profiles
                 // Route::domain('{account}.bakd.me')->group(function () {
                 //     Route::get('user/{id}', function ($account, $id) {

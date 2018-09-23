@@ -1,6 +1,6 @@
 <?php
 
-namespace BAKD\Nova;
+namespace BAKD\Manage;
 
 use Laravel\Nova\Resource as NovaResource;
 use Laravel\Nova\Http\Requests\NovaRequest;

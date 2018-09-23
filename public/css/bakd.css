@@ -37441,6 +37441,10 @@ body {
   padding: 20px 8px 20px 3px;
 }
 
+.bakd-info p.title {
+  padding-top: 10px;
+}
+
 .row + div {
   padding-left: none;
   padding-right: none;
