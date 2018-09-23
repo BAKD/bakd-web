@@ -57,6 +57,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 'matt@bakd.io',
                 'franklin@bakd.io',
                 'suyoga@bakd.io',
+                'timo@bakd.io',
                 'support@bakd.io',
                 'developers@bakd.io'
             ]);
