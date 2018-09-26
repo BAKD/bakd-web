@@ -24,6 +24,27 @@ body {
     }
 }
 
+
+.start-campaign-btn {
+	background-color: #fff;
+	padding: 10px 25px;
+	color: $primary !important;
+	font-size: 14px;
+	font-weight: 600;
+    font-weight: 700;
+    padding: 9px 30px;
+    border: 1px solid #dadada;
+    white-space: nowrap;
+
+    @media(max-width: 768px) {
+        display: none !important;
+    }
+
+    &:hover {
+        color: $primary;
+    }
+}
+
 .invalid-feedback {
     color: red;
     font-size: 12px;
@@ -228,16 +249,6 @@ body {
     }
 }
 
-.btn-campaign-cta {
-    font-weight: 700;
-    padding: 9px 30px;
-    border: 1px solid #dadada;
-    white-space: nowrap;
-
-    @media(max-width: 768px) {
-        display: none !important;
-    }
-}
 
 .btn-primary {
     color: #ffffff;

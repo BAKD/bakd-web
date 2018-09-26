@@ -183,3 +183,20 @@ header {
     text-align: right;
 }
 
+
+
+// TODO: Refactor me
+
+header .navbar-nav .nav-item .member-name {
+    text-align: left;
+    padding-left: 7px;
+    padding-right: 30px;
+    display: inline-block;
+    line-height: 32px;
+    font-size: 14px;
+    white-space: nowrap;
+    max-width: 180px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

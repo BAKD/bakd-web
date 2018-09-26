@@ -31061,18 +31061,6 @@ header {
   margin-top: 0px;
 }
 
-.ask-question {
-  background-color: #fff;
-  padding: 10px 25px;
-  color: #F59118 !important;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.ask-question:hover {
-  color: #F59118;
-}
-
 .forum-bar ul li {
   display: inline-block;
   margin-right: 40px;
@@ -37414,6 +37402,28 @@ body {
   cursor: pointer;
 }
 
+.start-campaign-btn {
+  background-color: #fff;
+  padding: 10px 25px;
+  color: #F59118 !important;
+  font-size: 14px;
+  font-weight: 600;
+  font-weight: 700;
+  padding: 9px 30px;
+  border: 1px solid #dadada;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .start-campaign-btn {
+    display: none !important;
+  }
+}
+
+.start-campaign-btn:hover {
+  color: #F59118;
+}
+
 .invalid-feedback {
   color: red;
   font-size: 12px;
@@ -37672,19 +37682,6 @@ body {
   text-align: center;
 }
 
-.btn-campaign-cta {
-  font-weight: 700;
-  padding: 9px 30px;
-  border: 1px solid #dadada;
-  white-space: nowrap;
-}
-
-@media (max-width: 768px) {
-  .btn-campaign-cta {
-    display: none !important;
-  }
-}
-
 .btn-primary {
   color: #ffffff;
   background-color: #F59118;
@@ -37899,6 +37896,20 @@ header {
   position: relative;
   width: 100%;
   text-align: right;
+}
+
+header .navbar-nav .nav-item .member-name {
+  text-align: left;
+  padding-left: 7px;
+  padding-right: 30px;
+  display: inline-block;
+  line-height: 32px;
+  font-size: 14px;
+  white-space: nowrap;
+  max-width: 180px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 footer {

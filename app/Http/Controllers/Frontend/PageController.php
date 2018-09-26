@@ -74,4 +74,37 @@ class PageController extends FrontendController
     {
         return view('frontend/contact');
     }
+
+
+    /**
+     * Show the application's bounties static page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function bounties()
+    {
+        return view('frontend/bounties');
+    }
+
+
+    /**
+     * Show the application's frontend members static page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function members()
+    {
+        return view('frontend/members');
+    }
+
+
+    /**
+     * Show the application's campaigns static page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function campaigns()
+    {
+        return view('frontend/campaigns');
+    }
 }

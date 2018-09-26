@@ -27,6 +27,11 @@ Route::name('frontend.')->group(function () {
             Route::get('terms',      'PageController@terms')->name('terms');
             Route::get('contact-us', 'PageController@contact')->name('contact');
 
+            // Public/non authed landing pages for each main app resource
+            Route::get('bounties', 'PageController@bounties')->name('bounties');
+            Route::get('campaigns', 'PageController@campaigns')->name('campaigns');
+            Route::get('members', 'PageController@members')->name('members');
+
         });
     });
 });

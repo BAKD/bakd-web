@@ -14,8 +14,8 @@
                     <li>
                         <a href="#" title="Continue as Project">Projects</a>
                     </li>  --}}
-                    <li data-toggle="tooltip"  data-title="Campaigns Are Absolutely Free to Run & Participate In!">
-                        <a href="#" class="ask-question btn-campaign-cta">{{  __('Start Campaign') }}</a>
+                    <li>
+                        <a href="{{ route('frontend.campaigns') }}" class="start-campaign-btn">{{  __('Start Campaign') }}</a>
                     </li>
                 </ul>
             </div>

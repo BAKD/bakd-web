@@ -3,23 +3,23 @@
         <div class="forum-links">
             <ul>
                 <li class="active">
-                    <a href="#">
-                        <i class="fa fa-line-chart"></i> Live Feed
+                    <a href="{{ route('frontend.home') }}">
+                        <i class="fa fa-home"></i> Home
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-trophy"></i> Popular Campaigns
+                    <a href="{{ route('frontend.campaigns') }}">
+                        <i class="fa fa-building-o"></i> Campaigns
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-star"></i> Featured Members
+                    <a href="{{ route('frontend.members') }}">
+                        <i class="fa fa-users"></i> Members
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-search"></i> Search
+                    <a href="{{ route('frontend.bounties') }}">
+                        <i class="fa fa-btc"></i> Bounties <span class="badge badge-danger">NEW</span>
                     </a>
                 </li>
             </ul>

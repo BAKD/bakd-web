@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">About BAKD</div>
+                <div class="card-header">Bounties</div>
 
                 <div class="card-body text-center">
                     @if (session('status'))
