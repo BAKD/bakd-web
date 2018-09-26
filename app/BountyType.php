@@ -44,4 +44,10 @@ class BountyType extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
+    public function bounty()
+    {
+        return $this->belongsTo('BAKD\Bounty');
+    }
+
 }

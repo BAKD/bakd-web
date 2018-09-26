@@ -9,7 +9,7 @@ class Bounty extends Model
 {
     use Traits\Uuids,
         SoftDeletes;
-    
+
     /**
      * The table associated with the model.
      *
@@ -44,4 +44,21 @@ class Bounty extends Model
      * @var array
      */
     protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at', 'deleted_at'];
+
+    public function type()
+    {
+        return $this->hasOne('BAKD\BountyType');
+    }
+
+    public function users()
+    {
+        return $this->hasMany('BAKD\Users');
+    }
+
+    public function claims()
+    {
+        return $this->hasMany('BAKD\BountyClaim');
+    }
+
 }
+

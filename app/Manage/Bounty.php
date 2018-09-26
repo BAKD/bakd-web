@@ -4,6 +4,7 @@ namespace BAKD\Manage;
 
 use Laravel\Nova\Fields\ID as Id;
 use Laravel\Nova\Fields\Text as Text;
+use Laravel\Nova\Fields\Uuid as Uuid;
 use Laravel\Nova\Fields\Markdown as Markdown;
 use Laravel\Nova\Fields\Image as Image;
 use Laravel\Nova\Fields\Number as Number;
@@ -29,7 +30,7 @@ class Bounty extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'Bounties';
 
     /**
      * The columns that should be searched.
@@ -52,17 +53,20 @@ class Bounty extends Resource
 
         // TODO: Move to Bounty Type model
         $typeOptions = collect(\BAKD\BountyType::all())->map(function ($row) use ($typeOptions) {
-            return [[$row->id] = $row->name];
+            return $typeOptions[$row->id] = $row->name;
         })->toArray();
 
         return [
-            ID::make('id')->sortable(),
-            Avatar::make('Image', 'image')->sortable(),
-            Select::make('Type', 'type_id')->options($typeOptions)->displayUsingLabels(),
-            Number::make('Reward Amount', 'reward')->min(1)->max(1000000)->step(0.1),
-            Number::make('Total Bounty Rewards Allowed', 'reward_total')->min(1)->step(100),
-            Text::make('Name', 'name')->sortable(),
-            Trix::make('Description', 'description')->withFiles('/uploads/bounty'),
+            ID::make('ID', 'id')->sortable()->onlyOnDetail(),
+            Avatar::make('Logo', 'image')->sortable(),
+            Text::make('Name', 'name')->sortable()->rules('required'),
+            Select::make('Bounty Type', 'type_id')->options($typeOptions)->displayUsingLabels()->rules('required'),
+            Trix::make('Description', 'description')->withFiles('/uploads/bounty')->rules('required'),
+            Number::make('Reward Amount', 'reward')->min(0)->max(1000000)->step(10)->rules('required'),
+            Number::make('Max Reward Amount', 'reward_total')->min(0)->step(100)->rules('required'),
+            DateTime::make('Starts Date', 'start_date'),
+            DateTime::make('Ends Date', 'end_date'),
+            Text::make('Bounty UUID', 'uuid')->sortable()->exceptOnForms(),
         ];
     }
 

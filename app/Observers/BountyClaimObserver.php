@@ -14,7 +14,6 @@ class BountyClaimObserver
      */
     public function created(BountyClaim $bountyClaim)
     {
-        //
     }
 
     /**

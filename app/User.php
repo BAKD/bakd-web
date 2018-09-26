@@ -42,4 +42,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = ['created_at', 'updated_at'];
+
+    public function bountyClaims()
+    {
+        return $this->hasMany('BAKD\BountyClaim', 'user_id');
+    }
 }

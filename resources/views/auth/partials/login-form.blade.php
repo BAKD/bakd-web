@@ -47,7 +47,7 @@
         </div>
         <div class="col-lg-12 no-pdd text-center">
             <button type="submit" class="btn btn-primary">
-                <i class="fa fa-user"></i> {{ __('Login') }}
+                {{ __('Login') }}
             </button>
         </div>
     </div>
@@ -55,8 +55,7 @@
 <div class="login-resources">
     <h4>Login via Social Networks</h4>
     <ul>
-        <li><a href="#" title="" class="fb"><i class="fa fa-facebook"></i>Login with Facebook</a></li>
-        <li><a href="#" title="" class="tw"><i class="fa fa-twitter"></i>Login with Twitter</a></li>
+            <li><a href="#" title="" class="fb"><i class="fa fa-facebook"></i>Login with Facebook</a></li>
+            <li><a href="#" title="" class="tw"><i class="fa fa-twitter"></i>Login with Twitter</a></li>
     </ul>
 </div>
-

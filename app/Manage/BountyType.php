@@ -23,7 +23,7 @@ class BountyType extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'Bounty Type';
 
     /**
      * The columns that should be searched.
@@ -43,9 +43,10 @@ class BountyType extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make('id')->sortable(),
-            Text::make('Name', 'name')->sortable(),
-            Trix::make('Description', 'description')->withFiles('/uploads/bounty/types'),
+            ID::make('ID', 'id')->sortable(),
+            Text::make('Name', 'name')->sortable()->rules('required'),
+            Trix::make('Description', 'description')->withFiles('/uploads/bounty/types')->rules('required'),
+            Text::make('Bounty UUID', 'uuid')->sortable()->exceptOnForms(),
         ];
     }
 

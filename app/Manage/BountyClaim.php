@@ -2,7 +2,13 @@
 
 namespace BAKD\Manage;
 
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasOne;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number as Number;
+use Laravel\Nova\Fields\Text as Text;
+use Laravel\Nova\Fields\Select as Select;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -20,7 +26,7 @@ class BountyClaim extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'Bounty Claim';
 
     /**
      * The columns that should be searched.
@@ -40,7 +46,9 @@ class BountyClaim extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make('id')->sortable(),
+            ID::make('ID', 'id')->sortable(),
+            BelongsTo::make('User'),
+            BelongsTo::make('Bounty'),
         ];
     }
 
