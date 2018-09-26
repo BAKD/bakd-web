@@ -1,5 +1,5 @@
 <h3>Sign In</h3>
-<form method="POST" action="{{ route('login') }}">
+<form name="login" class="login form" method="POST" action="{{ route('login') }}">
     @csrf
     <div class="row">
         <div class="col-lg-12 no-pdd">
@@ -27,18 +27,11 @@
         <div class="col-lg-12 no-pdd">
             <div class="checky-sec">
                 <div class="fgt-sec">
-                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                     <label class="checkbox-label" for="remember">
                         <span></span>
-                        <small>Remember Me</small>
+                        <small>{{ __('Remember Me') }}</small>
                     </label>
-                    {{--  <div class="form-check">  --}}
-                        {{--  <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>  --}}
-                    {{--  </div>  --}}
                 </div>
                 <a href="{{ route('password.request') }}" title="{{ __('Forgot Your Password?') }}">
                     {{ __('Forgot Your Password?') }}

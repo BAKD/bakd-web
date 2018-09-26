@@ -41,8 +41,6 @@ $('[data-toggle="tooltip"]').tooltip();
 
 
 
-
-
 // --------------------------
 // TODO: REFACTOR ME ASAP
 // --------------------------

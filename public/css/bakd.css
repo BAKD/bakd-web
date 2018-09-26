@@ -37441,6 +37441,14 @@ body {
   padding: 20px 8px 20px 3px;
 }
 
+.sign-control {
+  float: left;
+  width: 100%;
+  text-align: right;
+  padding-right: 50px;
+  margin-bottom: 0px;
+}
+
 .bakd-info p.title {
   padding-top: 10px;
 }

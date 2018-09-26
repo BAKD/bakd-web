@@ -1,7 +1,6 @@
 @extends('layouts.splash')
 
 @section('content')
-
 <div class="sign-in-page">
     <div class="signin-popup">
         <div class="signin-pop">
@@ -19,8 +18,6 @@
                                 BAKD is a revolutionary new way to fund your next cryptocurrency project. BAKD not only helps entrepreneurs crowdsource the funding needed to build their dream project, but it's also a place where entrepreneurs can connect with mentors.
                             </p>
                         </div>
-                        {{--  TODO: Add misc illustrated crowdfund type logo/icon/image here  --}}
-                        {{--  <img src="{{ asset('images/cm-main-img.png') }}" alt="" />  --}}
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -40,26 +37,12 @@
                         <div class="sign_in_sec current" id="tab-1">
                             @include('auth.partials.login-form')
                         </div>
-                        {{--  END SIGNUP TAB  --}}
-
-
-
-
-                        {{--  REGISTER TAB  --}}
                         <div class="sign_in_sec" id="tab-2">
                            @include('auth.partials.registration-form')
                         </div>
-                        {{-- END REGISTER TAB  --}}
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
