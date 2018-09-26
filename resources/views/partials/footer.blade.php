@@ -3,11 +3,6 @@
         <div class="container">
             <ul>
                 <li>
-                    <a data-toggle="tooltip" data-title="Home" href="{{ route('frontend.home') }}">
-                        <i class="fa fa-home"></i> {{ __('Home') }}
-                    </a>
-                </li>
-                <li>
                     <a data-toggle="tooltip" data-title="About Us" href="{{ route('frontend.about') }}">
                             <i class="fa fa-users"></i> {{ __('About') }}
                         </a>

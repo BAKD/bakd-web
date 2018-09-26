@@ -14,9 +14,17 @@
                             <p>
                                 {{ config('bakd.seo.description', 'ICO Management & Networking Platform') }}
                             </p>
+                            <div class="login-resources">
+                                <h4>Login via Social Networks</h4>
+                                <ul class="text-center">
+                                    <li><a href="#" title="" class="fb"><i class="fa fa-facebook"></i>Login with Facebook</a></li>
+                                    <li><a href="#" title="" class="tw"><i class="fa fa-twitter"></i>Login with Twitter</a></li>
+                                </ul>
+                            </div>
                             <p class="text-center" style="font-weight: normal; line-height: 1.75; padding: 10px 0px;">
-                                BAKD is a revolutionary new way to fund your next cryptocurrency project. BAKD not only helps entrepreneurs crowdsource the funding needed to build their dream project, but it's also a place where entrepreneurs can connect with mentors.
+                           asdasd BAKD is a revolutionary new way to fund your next cryptocurrency project. BAKD not only helps entrepreneurs crowdsource the funding needed to build their dream project, but it's also a place where entrepreneurs can connect with mentors.
                             </p>
+
                         </div>
                     </div>
                 </div>

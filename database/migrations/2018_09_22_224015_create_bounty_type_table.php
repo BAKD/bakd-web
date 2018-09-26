@@ -14,7 +14,7 @@ class CreateBountyTypeTable extends Migration
     public function up()
     {
         Schema::create('bounty_type', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->references('type_id')->on('bounty')->onDelete('cascade');;
             $table->uuid('uuid')->index()->comment('Unique identifier string for the Type of Bounty');
             $table->string('name');
             $table->text('description')->nullable();

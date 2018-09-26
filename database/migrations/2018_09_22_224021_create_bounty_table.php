@@ -26,7 +26,7 @@ class CreateBountyTable extends Migration
             $table->timestampTz('end_date')->nullable()->comment('TimeZone Aware Timestamp for when bounty claims for this bounty will become invalid. Null "end_date" date time field is equal to a never ending bounty');
             $table->timestampsTz();     // Handles the automatic Laravel 'created_at' and 'updated_at' fields
             $table->softDeletesTz();    // Handles the internal Laravel 'deleted_at' at soft delete field
-            $table->foreign('type_id')->references('id')->on('bounty_type')->onDelete('cascade');
+            $table->foreign('type_id')->references('id')->on('bounty_type');
         });
     }
 

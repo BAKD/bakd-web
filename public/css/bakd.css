@@ -37441,12 +37441,138 @@ body {
   padding: 20px 8px 20px 3px;
 }
 
+.centered-td > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.fa-red {
+  color: #e3342f;
+}
+
+.bounty-announcements-table.table-responsive {
+  display: inline-table;
+}
+
+.unselectable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.bounty-date {
+  font-style: italic;
+  font-size: 14px;
+}
+
+.table-responsive.bounty-details-table {
+  display: inline-table;
+  width: 100%;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.bounty-details .title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0px 0px 10px 0px;
+}
+
+.bounty-main-image {
+  max-height: 250px;
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.action-links-list {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.action-links-list li {
+  width: unset !important;
+  float: unset !important;
+  text-align: center;
+  display: inline-block;
+}
+
+.bounty-announcements-table {
+  width: 100%;
+  min-width: 100%;
+  max-width: unset;
+}
+
+.bounty-announcements-table tbody {
+  width: 100%;
+  min-width: 100%;
+  max-width: unset;
+}
+
+.bounty-announcements-table thead {
+  width: 100%;
+  min-width: 100%;
+  max-width: unset;
+}
+
+.bounty-announcements-table thead .bold-header {
+  font-weight: 700;
+}
+
+.bounty-announcements-table img {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  background-image: url(/images/icon.png?695245b49caf10e7025de1b1d1479be9);
+  background-size: 22px 22px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+}
+
+.bakd-coin.mini {
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  margin: 2px;
+}
+
+.bakd-coins {
+  font-weight: 700;
+}
+
+.bakd-coins:after {
+  background-image: url(/images/icon.png?695245b49caf10e7025de1b1d1479be9);
+  background-size: 16px 16px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  height: 16px;
+  width: 16px;
+  margin-left: 6px;
+  position: relative;
+  top: 2px;
+  content: '';
+  display: inline-block;
+}
+
+.bakd-coins span {
+  line-height: 32px;
+}
+
 .sign-control {
   float: left;
   width: 100%;
   text-align: right;
   padding-right: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .bakd-info p.title {

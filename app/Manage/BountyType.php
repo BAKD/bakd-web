@@ -46,7 +46,7 @@ class BountyType extends Resource
             ID::make('ID', 'id')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
             Trix::make('Description', 'description')->withFiles('/uploads/bounty/types')->rules('required'),
-            Text::make('Bounty UUID', 'uuid')->sortable()->exceptOnForms(),
+            Text::make('Type UUID', 'uuid')->sortable()->exceptOnForms(),
         ];
     }
 

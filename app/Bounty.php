@@ -43,21 +43,45 @@ class Bounty extends Model
      *
      * @var array
      */
-    protected $dates = ['starts_at', 'ends_at', 'created_at', 'updated_at', 'deleted_at'];
+    protected $dates = ['start_date', 'end_date', 'created_at', 'updated_at', 'deleted_at'];
 
     public function type()
     {
-        return $this->hasOne('BAKD\BountyType');
+        return $this->hasOne('BAKD\BountyType', 'id', 'type_id');
     }
 
     public function users()
     {
-        return $this->hasMany('BAKD\Users');
+        return $this->hasMany('BAKD\Users', 'id', 'user_id');
     }
 
     public function claims()
     {
         return $this->hasMany('BAKD\BountyClaim');
+    }
+
+    // TODO: Finish me.
+    public function wasClaimed()
+    {
+        return false;
+    }
+
+    // TODO: Finish me.
+    public function isOver()
+    {
+        return false;
+    }
+
+    // TODO: Finish me.
+    public function isPaused()
+    {
+        return false;
+    }
+
+    // TODO: Finish me.
+    public function isStarted()
+    {
+        return false;
     }
 
 }

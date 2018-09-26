@@ -10,6 +10,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <?php $project = new stdClass; $project->funding = new stdClass; $project->funding->goal = new stdClass; $campaign = new stdClass; ?>
+                @include('components/bounty-announcement')
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <?php $project = new stdClass; $project->funding = new stdClass; $project->funding->goal = new stdClass; $campaign = new stdClass; ?>
                 @include('components/featured-project', [
                     $campaign->progress = '25%',
                     $project->name = 'FEATURED TEST PROJECT',

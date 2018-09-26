@@ -45,10 +45,3 @@
         </div>
     </div>
 </form>
-<div class="login-resources">
-    <h4>Login via Social Networks</h4>
-    <ul>
-            <li><a href="#" title="" class="fb"><i class="fa fa-facebook"></i>Login with Facebook</a></li>
-            <li><a href="#" title="" class="tw"><i class="fa fa-twitter"></i>Login with Twitter</a></li>
-    </ul>
-</div>

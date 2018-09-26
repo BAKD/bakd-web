@@ -24,7 +24,11 @@ class PageController extends FrontendController
      */
     public function index()
     {
-        return view('frontend/index');
+        $view = [];
+
+        $view['bounties'] = \BAKD\Bounty::all();
+
+        return view('frontend/index', $view);
     }
 
 

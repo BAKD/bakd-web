@@ -36,14 +36,19 @@ Route::name('frontend.')->group(function () {
 // -----------------
 Route::name('member.')->group(function () {
     Route::namespace('Member')->group(function () {
-        Route::prefix('manage')->group(function () {
+        Route::prefix('member')->group(function () {
             Route::middleware(['auth'])->group(function () {  // TODO: Refine middleware selection
 
                 // Member routes for authenticated users of the BAKD Platform.
                 // A "member" can be any of the following roles: Investor, Campaign Owner, BAKD Employee, etc.
                 Route::get('/', 'PageController@index')->name('home');
 
-                Route::resource('/bounty', 'BountyController');
+                // Route::resource('/bounty', 'BountyController');
+
+                Route::get('/bounty', 'BountyController@index')->name('bounty.home');
+                Route::get('/bounty/{id}', 'BountyController@show')->name('bounty.show');
+                Route::get('/bounty/{id}/claim', 'BountyController@claimForm')->name('bounty.claim');
+                Route::post('/bounty/{id}/claim', 'BountyController@claimForm')->name('bounty.claim.post');
 
                 // Vanity Subdomain Routing for Investor Profiles
                 // Route::domain('{account}.bakd.me')->group(function () {
