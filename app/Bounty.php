@@ -73,7 +73,7 @@ class Bounty extends Model
 
     public function getImage()
     {
-        return $this->image ?: asset('images/icon.png');
+        return $this->image ? asset('storage/' . $this->image) : asset('images/icon.png');
     }
 
     public function isOver()
