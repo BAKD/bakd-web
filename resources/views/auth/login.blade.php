@@ -65,6 +65,19 @@
                     </form>
                 </div>
             </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Register') }}</div>
+
+                    <div class="card-body">
+
+                        <p>
+                            Don't have an account? We're allowing registrations for the pre-alpha, but expect to experience significant roadbloacks, as this is early stage, active development!
+                        </p>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

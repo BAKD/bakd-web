@@ -20,6 +20,16 @@ return [
     // TODO: Update me after registration?
     'copyright' => 'BAKD Solutions',
 
+    'dates' => [
+
+        'timezone' => 'America/New_York',
+
+        'announcement' => '08/25/2018',
+
+        'alpha' => '09/14/2018',
+
+    ],
+
     // BAKD branding helper paths
     'logo' => [
 

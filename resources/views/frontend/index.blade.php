@@ -2,14 +2,18 @@
 
 @section('content')
 <section class="main-content">
+
 <div class="container">
+    {{--  Development days notice  --}}
+    @if (!app()->environment('local'))
+        @include('partials/alerts/development-alert')
+    @endif
     <div class="featured-campaign-wrapper">
         {{--  @include('components/featured-campaign')  --}}
     </div>
     <div class="forum-questions-sec">
         <div class="row">
             <div class="col-lg-12">
-                <?php $project = new stdClass; $project->funding = new stdClass; $project->funding->goal = new stdClass; $campaign = new stdClass; ?>
                 @include('components/bounty-announcement')
             </div>
         </div>
@@ -29,7 +33,7 @@
         <div class="row">
                 <div class="col-lg-8" style="padding-right: 20px;">
                     <div class="realtime-feed-wrapper">
-                        <?php for($i = 0; $i< 10; $i++) : ?>
+                        <?php for($i = 0; $i< 5; $i++) : ?>
                         @include('components/post-card')
                         <?php endfor; ?>
                     </div>
@@ -45,13 +49,4 @@
             </div>
         </div>
     </section>
-
-    {{--
-        Show annoying warning modal (only on this page) about the current development disarray only in production -- and
-        only for the time being until we get to the point where we have something worthwhile to show.
-    --}}
-    @if (!app()->environment('local')))
-        @include('partials/modals/warning-modal')
-    @endif;
-
 @endsection

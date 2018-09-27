@@ -1,9 +1,15 @@
+
+html,
 body {
     height: 100%;
     width: 100%;
     min-width: 320px;
     display: block;
-    padding: 0 0 80px 0;
+    margin-bottom: 120px;
+
+    @media(max-width: 768px) {
+        margin-bottom: 240px;
+    }
 }
 
 .checkbox-label {

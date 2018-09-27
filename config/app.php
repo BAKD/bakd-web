@@ -146,13 +146,13 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        
+
         /*
         * Package Service Providers...
         */
         Barryvdh\Debugbar\ServiceProvider::class,
-        
-        
+
+
         /*
         * Application Service Providers...
         */
@@ -162,7 +162,7 @@ return [
         BAKD\Providers\EventServiceProvider::class,
         BAKD\Providers\RouteServiceProvider::class,
         BAKD\Providers\NovaServiceProvider::class,
-        
+
     ],
 
     /*
@@ -217,6 +217,11 @@ return [
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Uuid' => Webpatser\Uuid\Uuid::class,
+
+        /*
+         * BAKD Facades...
+         */
+         'FrontendHelper' => BAKD\Helpers\FrontendHelper::class,
 
     ],
 
