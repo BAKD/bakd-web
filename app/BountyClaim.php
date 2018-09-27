@@ -55,4 +55,14 @@ class BountyClaim extends Model
         return $this->belongsTo('BAKD\Bounty');
     }
 
+    // Make a bounty "claim"
+    public function claim($payload)
+    {
+        $this->bounty_id = $payload['id'];
+        $this->user_id = $payload['user_id'];
+        $this->comments = $payload['comments'];
+        $this->attachments = $payload['files'];
+        return $this->save();
+    }
+
 }

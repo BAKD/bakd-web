@@ -4,6 +4,7 @@ namespace BAKD;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Bounty extends Model
 {
@@ -60,28 +61,34 @@ class Bounty extends Model
         return $this->hasMany('BAKD\BountyClaim');
     }
 
-    // TODO: Finish me.
     public function wasClaimed()
     {
-        return false;
+        return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();
     }
 
-    // TODO: Finish me.
     public function isOver()
     {
-        return false;
+        // dd($this->end_date);
+        // No end date, this bounty will run indefinitely.
+        if (is_null($this->end_date)) return false;
+        return (bool) $this->end_date->lt(Carbon::now());
     }
 
-    // TODO: Finish me.
     public function isPaused()
     {
-        return false;
+        return $this->status === 'PAUSED' ? true : false;
     }
 
-    // TODO: Finish me.
     public function isStarted()
     {
-        return false;
+        // No start date. Start immediately.
+        if (is_null($this->start_date)) return true;
+        return (bool) $this->start_date->gt(Carbon::now());
+    }
+
+    public function isRunning()
+    {
+        return (bool) $this->isStarted() && !$this->isPaused() && !$this->isOver();
     }
 
 }

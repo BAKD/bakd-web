@@ -56,7 +56,15 @@
                                 </td>
                                 <td class="text-center">
                                     <span class="bounty-date" title="{{ !is_null($bounty->end_date) ? $bounty->end_date->format('m/d/Y g:i A') : 'Never' }}">
-                                        {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
+                                        @if ($bounty->isOver())
+                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
+                                        @elseif ($bounty->isRunning())
+                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
+                                        @elseif ($bounty->isPaused())
+                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
+                                        @else
+                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
+                                        @endif
                                     </span>
                                 </td>
                                 <td class="text-center">
