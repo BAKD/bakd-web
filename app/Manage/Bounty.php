@@ -4,6 +4,7 @@ namespace BAKD\Manage;
 
 use Laravel\Nova\Fields\ID as Id;
 use Laravel\Nova\Fields\Text as Text;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Uuid as Uuid;
 use Laravel\Nova\Fields\Markdown as Markdown;
 use Laravel\Nova\Fields\Image as Image;
@@ -50,17 +51,13 @@ class Bounty extends Resource
     public function fields(Request $request)
     {
         $typeOptions = [];
-
-        // TODO: Move to Bounty Type model
-        $typeOptions = collect(\BAKD\BountyType::all())->map(function ($row) use ($typeOptions) {
-            return $typeOptions[$row->id] = $row->name;
-        })->toArray();
+        $typeOptions = \BAKD\BountyType::all()->pluck('name', 'id');
 
         return [
             ID::make('ID', 'id')->sortable()->onlyOnDetail(),
             Avatar::make('Logo', 'image')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
-            Select::make('Bounty Type', 'type_id')->options($typeOptions)->displayUsingLabels()->rules('required'),
+            Select::make('BountyType', 'type_id')->options($typeOptions)->displayUsingLabels(),
             Trix::make('Description', 'description')->withFiles('/uploads/bounty')->rules('required'),
             Number::make('Reward Amount', 'reward')->min(0)->max(1000000)->step(10)->rules('required'),
             Number::make('Max Reward Amount', 'reward_total')->min(0)->step(100)->rules('required'),
