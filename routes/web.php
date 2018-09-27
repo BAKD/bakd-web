@@ -16,52 +16,59 @@ Auth::routes();
 // -----------------
 // FRONTEND ROUTES
 // -----------------
-Route::group([
-    'name' => 'frontend.',
-    'namespace' => 'Frontend',
-    'middleware' => [],
-], function () {
-    // Frontend routes for all public static pages.
-    Route::get('/',          'PageController@index')->name('home');
-    Route::get('about',      'PageController@about')->name('about');
-    Route::get('privacy',    'PageController@privacy')->name('privacy');
-    Route::get('terms',      'PageController@terms')->name('terms');
-    Route::get('contact-us', 'PageController@contact')->name('contact');
+Route::name('frontend.')->group(function () {
+    Route::namespace('Frontend')->group(function () {
+        Route::middleware([])->group(function () {  // TODO: Refine middleware selection
+            // Frontend routes for all public static pages.
+            Route::get('/',          'PageController@index')->name('home');
+            Route::get('about',      'PageController@about')->name('about');
+            Route::get('privacy',    'PageController@privacy')->name('privacy');
+            Route::get('terms',      'PageController@terms')->name('terms');
+            Route::get('contact-us', 'PageController@contact')->name('contact');
 
-    // Public/non authed landing pages for each main app resource
-    Route::get('bounties', 'PageController@bounties')->name('bounties');
-    Route::get('campaigns', 'PageController@campaigns')->name('campaigns');
-    Route::get('members', 'PageController@members')->name('members');
+            // Public/non authed landing pages for each main app resource
+            Route::get('bounties', 'PageController@bounties')->name('bounties');
+            Route::get('campaigns', 'PageController@campaigns')->name('campaigns');
+            Route::get('members', 'PageController@members')->name('members');
+        });
+    });
 });
 
 // -----------------
 // MEMBER ROUTES
 // -----------------
-Route::group([
-    'name' => 'member.',
-    'namespace' => 'Member',
-    'prefix' => 'member',
-    'middleware' => ['auth'],
-], function () {
-    Route::get('/', 'PageController@index')->name('home');
+Route::name('member.')->group(function () {
+    Route::namespace('Member')->group(function () {
+        Route::prefix('member')->group(function () {
+            Route::middleware(['auth'])->group(function () {  // TODO: Refine middleware selection
+                Route::get('/', 'PageController@index')->name('home');
 
+                // Bounties
+                Route::get('/bounty', 'BountyController@index')->name('bounty.home');
+                Route::get('/bounty/{id}', 'BountyController@show')->name('bounty.show');
 
+                // Claims for All Bounties Related to Auth'd User
+                Route::get('/claims', 'BountyClaimController@all')->name('claims.all');
 
-
-    Route::get('/bounty', 'BountyController@index')->name('bounty.home');
-    Route::get('/bounty/{id}', 'BountyController@show')->name('bounty.show');
-    Route::get('/bounty/{id}/claim', 'BountyClaimController@create')->name('bounty.claim');
-    Route::post('/bounty/{id}/claim', 'BountyClaimController@claimForm')->name('bounty.claim.post');
+                // Claims For Specific Bounties
+                Route::get('/bounty/{id}/claims', 'BountyClaimController@index')->name('bounty.claims');
+                Route::get('/bounty/{id}/claim', 'BountyClaimController@create')->name('bounty.claim');
+                Route::post('/bounty/{id}/claim', 'BountyClaimController@store')->name('bounty.claim.store');
+                Route::get('/bounty/claim/{id}', 'BountyClaimController@show')->name('bounty.claim.show');
+            });
+        });
+    });
 });
 
 // -----------------
 // MANAGE ROUTES
 // -----------------
-Route::group([
-    'name' => 'manage.',
-    'namespace' => 'Manage',
-    'prefix' => 'manage',
-    'middleware' => ['auth', 'auth.admin'],
-], function () {
-    Route::get('/', 'PageController@index')->name('home');
+Route::name('manage.')->group(function () {
+    Route::namespace('Manage')->group(function () {
+        Route::prefix('manage')->group(function () {
+            Route::middleware(['auth', 'auth.admin'])->group(function () {  // TODO: Refine middleware selection
+                Route::get('/', 'PageController@index')->name('home');
+            });
+        });
+    });
 });

@@ -19,13 +19,24 @@ class BountyClaimController extends MemberController
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function all()
+    {
+        $view = [];
+        return view('member/bounty/claims/all', $view);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('member/bounty/claims/create');
     }
 
     /**
@@ -49,7 +60,7 @@ class BountyClaimController extends MemberController
     {
         $view = [];
         $view['claim'] = \BAKD\BountyClaim::find($id);
-        return view('member/bounty/claim/show', $view);
+        return view('member/bounty/claims/show', $view);
     }
 
     /**

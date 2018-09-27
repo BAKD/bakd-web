@@ -26,7 +26,7 @@
                                 <i class="fa fa-facebook"></i> <a href="#" title="Share Bounty">Share Bounty</a>
                             </li>
                             <li>
-                                <i class="fa fa-plus"></i> <a href="{{ route('member.bounty.claim', $bounty->id, Auth::user()->id) }}" title="Claim Bounty">Claim Bounty</a>
+                                <i class="fa fa-plus"></i> <a href="{{ route('member.bounty.claim', $bounty->id) }}" title="Claim Bounty">Claim Bounty</a>
                             </li>
                             <li style="padding: 0; margin: -10px 0 0 0;"><hr></li>
                             <li class="disabled">
@@ -80,9 +80,9 @@
                 </div>
                 <div class="job-status-bar text-right" style="border-top: 1px solid #eee;">
                     <div class="claim-bounty-button text-right">
-                        <button type="button" class="btn btn-primary btn-large">
+                        <a href="{{ route('member.bounty.claim', $bounty->id) }}" type="button" class="btn btn-primary btn-large">
                             <i class="fa fa-star"></i> CLAIM BOUNTY
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
