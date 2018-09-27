@@ -65,16 +65,20 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+        </div>
+    </div>
+    <div class="row justify-content-center" style="margin-top: 40px;">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
-                    <div class="card-body">
-
-                        <p>
-                            Don't have an account? We're allowing registrations for the pre-alpha, but expect to experience significant roadbloacks, as this is early stage, active development!
-                        </p>
-
+                <div class="card-body text-center">
+                    <p>
+                        Don't have an account? We're allowing registrations for the pre-alpha, but expect to experience significant roadbloacks, as this is early stage, active development!
+                    </p>
+                    <br />
+                    <div class="btn-group">
+                        <a href="{{ route('register') }}" role="button" class="btn btn-primary btn-md">Register</a>
                     </div>
                 </div>
             </div>
