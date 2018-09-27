@@ -37448,6 +37448,10 @@ body {
   transition: all 0.25s ease;
 }
 
+em {
+  font-weight: 700 !important;
+}
+
 .form-group.row {
   margin-bottom: 1rem;
 }
