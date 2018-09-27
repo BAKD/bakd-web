@@ -37391,6 +37391,14 @@ body {
   }
 }
 
+.clickable {
+  cursor: pointer !important;
+}
+
+.clickable-row td {
+  cursor: pointer !important;
+}
+
 .checkbox-label span {
   float: left;
   display: inline;
