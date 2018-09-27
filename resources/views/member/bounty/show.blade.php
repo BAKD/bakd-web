@@ -61,7 +61,7 @@
                                     {{ e($bounty->name) }}
                                 </h2>
                                 <div>
-                                    {{ nl2br(strip_tags($bounty->description)) }}
+                                    {!! nl2br($bounty->description) !!}
                                 </div>
                             </div>
                             <br /><br />

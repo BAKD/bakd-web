@@ -69,6 +69,10 @@ body {
     transition: all $transition-speed ease;
 }
 
+em {
+    font-weight: 700 !important;
+}
+
 .form-group.row {
     margin-bottom: 1rem;
 }
