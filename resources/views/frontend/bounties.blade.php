@@ -37,7 +37,7 @@
                     </thead>
                     <tbody>
                         @forelse ($bounties as $bounty)
-                            <tr onClick="javascript: window.location='{{ route('member.bounty.show', $bounty->id) }}'">
+                            <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $bounty->id) }}'">
                                 <td>
                                     <img src="{{ asset('/storage/' . $bounty->image) }}" />
                                 </td>
