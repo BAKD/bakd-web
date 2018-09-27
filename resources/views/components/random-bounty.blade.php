@@ -32,7 +32,7 @@
             </thead>
             <tbody>
                 @if ($random_bounty)
-                    <tr onClick="javascript: window.location='{{ route('member.bounty.claim', $random_bounty->id) }}'" class="clickable-row">
+                    <tr onClick="javascript: window.location='{{ route('member.bounty.show', $random_bounty->id) }}'" class="clickable-row">
                         <td>
                             @if (!is_null($random_bounty->image))
                                 <img src="{{ asset('/storage/' . $random_bounty->image) }}" />
