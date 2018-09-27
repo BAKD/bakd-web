@@ -1,23 +1,24 @@
+
 <section class="forum-sec">
     <div class="container">
         <div class="forum-links">
             <ul>
-                <li class="active">
+                <li class="{{ Route::is('frontend.home') ? 'active' : '' }}">
                     <a href="{{ route('frontend.home') }}">
                         <i class="fa fa-home"></i> Home
                     </a>
                 </li>
-                <li>
+                <li class="{{ Request::is('campaigns') || Request::is('campaigns/*') ? 'active' : '' }}">
                     <a href="{{ route('frontend.campaigns') }}">
                         <i class="fa fa-building-o"></i> Campaigns
                     </a>
                 </li>
-                <li>
+                <li class="{{ Request::is('members') || Request::is('members/*') ? 'active' : '' }}">
                     <a href="{{ route('frontend.members') }}">
                         <i class="fa fa-users"></i> Members
                     </a>
                 </li>
-                <li>
+                <li class="{{ Request::is('bounties') || Request::is('bounties/*') ? 'active' : '' }}">
                     <a href="{{ route('frontend.bounties') }}">
                         <i class="fa fa-btc"></i> Bounties <span class="badge badge-danger">NEW</span>
                     </a>
