@@ -55,8 +55,8 @@
                                     <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="bounty-date" title="{{ $bounty->end_date->format('m/d/Y g:i A') }}">
-                                        {{ $bounty->end_date->diffForHumans() }}
+                                    <span class="bounty-date" title="{{ !is_null($bounty->end_date) ? $bounty->end_date->format('m/d/Y g:i A') : 'Never' }}">
+                                        {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
                                     </span>
                                 </td>
                                 <td class="text-center">
