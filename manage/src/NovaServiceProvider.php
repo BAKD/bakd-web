@@ -119,6 +119,8 @@ class NovaServiceProvider extends ServiceProvider
         Nova::tools([
             new Dashboard,
             new ResourceManager,
+            new \Spatie\BackupTool\BackupTool(),
+            new \Vyuldashev\NovaPermission\NovaPermissionTool(),
         ]);
     }
 

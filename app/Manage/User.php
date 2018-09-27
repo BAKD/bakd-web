@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\MorphToMany;
+use \Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+use \Spatie\Permission\Traits\HasRoles;
+use \Spatie\Permission\Traits\HasPermissions;
 
 class User extends Resource
 {
+    use HasRoles;
     /**
      * The model the resource corresponds to.
      *
@@ -60,6 +65,10 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            // TODO: Review me. Recently Added Vyuldashev\NovaPermissionTool references
+            MorphToMany::make('Roles', 'roles', \Vyuldashev\NovaPermission\Role::class),
+            MorphToMany::make('Permissions', 'permissions', \Vyuldashev\NovaPermission\Permission::class),
         ];
     }
 
@@ -104,6 +113,8 @@ class User extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new DownloadExcel,
+        ];
     }
 }
