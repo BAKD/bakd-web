@@ -13,7 +13,6 @@
                     <thead class="bold-header">
                         <tr>
                             <th class="text-center" style="width: 70px;">
-                                {{--  Logo  --}}
                                 Bounty
                             </th>
                             <th class="text-left" style="min-width: 150px; max-width: 200px;">
@@ -39,7 +38,7 @@
                         @forelse ($bounties as $bounty)
                             <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $bounty->id) }}'">
                                 <td>
-                                    <img src="{{ asset('/storage/' . $bounty->image) }}" />
+                                    <img src="{{ $bounty->getImage() }}" />
                                 </td>
                                 <td>
                                     <span title="{{ strip_tags($bounty->name) }}">

@@ -34,11 +34,7 @@
                 @if ($random_bounty)
                     <tr onClick="javascript: window.location='{{ route('member.bounty.show', $random_bounty->id) }}'" class="clickable-row">
                         <td>
-                            @if (!is_null($random_bounty->image))
-                                <img src="{{ asset('/storage/' . $random_bounty->image) }}" />
-                            @else
-                                <img src="{{ asset(FrontendHelper::bountyImagePlaceholder()) }}" />
-                            @endif
+                            <img src="{{ $random_bounty->getImage() }}" />
                         </td>
                         <td>
                             <span title="{{ strip_tags($random_bounty->name) }}">

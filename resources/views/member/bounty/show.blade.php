@@ -53,7 +53,7 @@
                 <div class="post_topbar">
                     <div class="usy-dst row">
                         <div class="col-lg-3">
-                            <img src="{{ asset('/storage/' . $bounty->image) }}" class="bounty-main-image" />
+                            <img src="{{ $bounty->getImage() }}" class="bounty-main-image" />
                         </div>
                         <div class="col-lg-9">
                             <div class="bounty-details">
