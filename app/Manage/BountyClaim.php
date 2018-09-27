@@ -6,9 +6,9 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number as Number;
-use Laravel\Nova\Fields\Text as Text;
-use Laravel\Nova\Fields\Select as Select;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Select;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -47,8 +47,8 @@ class BountyClaim extends Resource
     {
         return [
             ID::make('ID', 'id')->sortable(),
-            BelongsTo::make('User'),
-            BelongsTo::make('Bounty'),
+            HasOne::make('User'),
+            HasOne::make('Bounty'),
         ];
     }
 

@@ -2,18 +2,18 @@
 
 namespace BAKD\Manage;
 
-use Laravel\Nova\Fields\ID as Id;
-use Laravel\Nova\Fields\Text as Text;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\Uuid as Uuid;
-use Laravel\Nova\Fields\Markdown as Markdown;
-use Laravel\Nova\Fields\Image as Image;
-use Laravel\Nova\Fields\Number as Number;
-use Laravel\Nova\Fields\Avatar as Avatar;
-use Laravel\Nova\Fields\DateTime as DateTime;
-use Laravel\Nova\Fields\Select as Select;
-use Laravel\Nova\Fields\Status as Status;
-use Laravel\Nova\Fields\Trix as Trix;
+use Laravel\Nova\Fields\Uuid;
+use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Status;
+use Laravel\Nova\Fields\Trix;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 

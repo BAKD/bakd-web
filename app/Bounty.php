@@ -61,6 +61,11 @@ class Bounty extends Model
         return $this->hasMany('BAKD\BountyClaim');
     }
 
+    public function rewardType()
+    {
+        return $this->hasOne('BAKD\BountyRewardType');
+    }
+
     public function wasClaimed()
     {
         return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();

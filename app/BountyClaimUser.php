@@ -5,17 +5,16 @@ namespace BAKD;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class BountyClaim extends Model
+class BountyClaimUser extends Model
 {
-    use Traits\Uuids,
-        SoftDeletes;
+    use Traits\Uuid;
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'bounty_claim';
+    protected $table = 'bounty_claim_user';
 
     /**
      * The attributes that are mass assignable.
@@ -43,20 +42,15 @@ class BountyClaim extends Model
      *
      * @var array
      */
-    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-
-    public function user()
-    {
-        return $this->hasOne('BAKD\User');
-    }
+    protected $dates = ['created_at', 'updated_at'];
 
     public function bounty()
     {
-        return $this->hasOne('BAKD\Bounty');
+        return $this->belongsTo('BAKD\Bounty');
     }
 
-    public function attachments()
+    public function user()
     {
-        return $this->hasMany('BAKD\BountyClaimAttachments');
+        return $this->belongsTo('BAKD\User');
     }
 }
