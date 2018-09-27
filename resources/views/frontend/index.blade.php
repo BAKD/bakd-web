@@ -14,7 +14,7 @@
     <div class="forum-questions-sec">
         <div class="row">
             <div class="col-lg-12">
-                @include('components/bounty-announcement')
+                @include('components/random-bounty')
             </div>
         </div>
         <div class="row">

@@ -1,6 +1,6 @@
 <div class="widget widget-user">
     <h3 class="title-wd"><i class="fa fa-star"></i>
-        Bounties
+        Random Bounty
     </h3>
         {{--  <li>{{ var_dump($bounty) }}</li>  --}}
 
@@ -31,31 +31,35 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($bounties as $bounty)
+                @if ($random_bounty)
                     <tr>
                         <td>
-                            <img src="{{ asset('/storage/' . $bounty->image) }}" />
+                            @if (!is_null($random_bounty->image))
+                                <img src="{{ asset('/storage/' . $random_bounty->image) }}" />
+                            @else
+                                <img src="{{ asset(FrontendHelper::bountyImagePlaceholder()) }}" />
+                            @endif
                         </td>
                         <td>
-                            <span title="{{ strip_tags($bounty->name) }}">
-                                {{ str_limit(strip_tags($bounty->name), 50, '...') }}
+                            <span title="{{ strip_tags($random_bounty->name) }}">
+                                {{ str_limit(strip_tags($random_bounty->name), 50, '...') }}
                             </span>
                         </td>
                         {{--  <td>
-                            <span title="{{ strip_tags($bounty->description) }}">
-                                {{ str_limit(strip_tags($bounty->description), 90, '...') }}
+                            <span title="{{ strip_tags($random_bounty->description) }}">
+                                {{ str_limit(strip_tags($random_bounty->description), 90, '...') }}
                             </span>
                         </td>  --}}
                         <td class="text-center">
-                            <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>
+                            <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD Coins">{{ number_format($random_bounty->reward) }}</span>
                         </td>
                         <td class="text-center">
-                            <span class="bounty-date" title="{{ $bounty->end_date->format('m/d/Y g:i A') }}">
-                                {{ $bounty->end_date->diffForHumans() }}
+                            <span class="random_bounty-date" title="{{ $random_bounty->end_date->format('m/d/Y g:i A') }}">
+                                {{ $random_bounty->end_date->diffForHumans() }}
                             </span>
                         </td>
                         <td class="text-center">
-                        @if ($bounty->wasClaimed())
+                        @if ($random_bounty->wasClaimed())
                             <span class="badge badge-success">CLAIMED</span>
                         @else
                             <span class="badge badge-danger">UNCLAIMED</span>
@@ -64,19 +68,19 @@
                         <td class="text-center">
                             <ul class="action-links-list">
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.show', $bounty->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.show', $random_bounty->id) }}">
                                         <i class="la la-eye"></i> View
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.claim', $bounty->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.claim', $random_bounty->id) }}">
                                         <i class="la la-plus"></i> Claim
                                     </a>
                                 </li>
                             </ul>
                         </td>
                     </tr>
-                @empty
+                @else
                     <tr>
                         <td colspan="7" valign="center" class="text-center">
                             <i class="fa fa-exclamation-triangle fa-red"></i>
@@ -85,7 +89,7 @@
                             </span>
                         </td>
                     </tr>
-                @endforelse
+                @endif
             </tbody>
         </table>
 </div>

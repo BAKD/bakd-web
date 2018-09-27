@@ -25,9 +25,7 @@ class PageController extends FrontendController
     public function index()
     {
         $view = [];
-
-        $view['bounties'] = \BAKD\Bounty::all();
-
+        $view['random_bounty'] = \BAKD\Bounty::inRandomOrder()->limit(1)->first();
         return view('frontend/index', $view);
     }
 
@@ -83,7 +81,9 @@ class PageController extends FrontendController
      */
     public function bounties()
     {
-        return view('frontend/bounties');
+        $view = [];
+        $view['bounties'] = \BAKD\Bounty::all();
+        return view('frontend/bounties', $view);
     }
 
 
