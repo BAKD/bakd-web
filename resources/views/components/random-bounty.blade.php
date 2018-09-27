@@ -55,7 +55,7 @@
                         </td>
                         <td class="text-center">
                             <span class="random_bounty-date" title="{{ !is_null($random_bounty->end_date) ? $random_bounty->end_date->format('m/d/Y g:i A') : 'Never' }}">
-                                    {{ !is_null($random_bounty->end_date) ? $random_bounty->end_date->format('m/d/Y g:i A') : 'Never' }}
+                                {{ !is_null($random_bounty->end_date) ? $random_bounty->end_date->diffForHumans() : 'Never' }}
                             </span>
                         </td>
                         <td class="text-center">

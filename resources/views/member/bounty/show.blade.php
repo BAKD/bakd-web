@@ -101,7 +101,7 @@
 
                             @if ($bounty->reward)
                                 <tr>
-                                    <td class="text-right">
+                                    <td widthstyle="width: auto; max-width: 280px;" class="text-right">
                                         <strong>REWARD</strong>
                                     </td>
                                     <td class="text-center">
