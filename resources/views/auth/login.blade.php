@@ -79,7 +79,7 @@
                     <br />
                     <div class="btn-group">
                         <a href="{{ route('register') }}" role="button" class="btn btn-primary btn-md">Register</a>
-\                    </div>
+                    </div>
                 </div>
             </div>
         </div>
