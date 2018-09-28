@@ -127,7 +127,7 @@
                             @endif
 
 
-                            @if ($bounty->bountyRewardType()->first()->name)
+                            @if (isset($bounty->bountyRewardType()->first()->name))
                                 <tr>
                                     <td class="text-right">
                                         <strong>REWARD TYPE</strong>

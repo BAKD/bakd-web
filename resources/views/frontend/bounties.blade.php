@@ -49,7 +49,7 @@
                                     <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>
                                 </td>
                                 <td class="text-center">
-                                    {!! e($bounty->bountyRewardType()->first()['name'])  ?: '&mdash;' !!}
+                                    {!! $bounty->getDisplayRewardType() !!}
                                 </td>
                                 <td class="text-center">
                                     {!! $bounty->getDisplayEndDate() !!}

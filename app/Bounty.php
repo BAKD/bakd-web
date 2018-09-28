@@ -84,6 +84,16 @@ class Bounty extends Model
         }
     }
 
+    public function getDisplayRewardType()
+    {
+        $query = $this->bountyRewardType()->get(['name']);
+        if ($query->isEmpty() || !isset($query->name)) {
+            return '&mdash;';
+        }
+
+        return $query->name;
+    }
+
     public function getImage()
     {
         return $this->image ? asset('storage/' . $this->image) : asset('images/icon.png');
