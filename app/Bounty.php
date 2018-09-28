@@ -76,10 +76,10 @@ class Bounty extends Model
     {
         if ($this->isOver()) {
             return '<span class="badge badge-success">COMPLETED</span>';
-        } else if ($this->isRunning()) {
-            return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
         } else if ($this->isPaused()) {
             return '<span class="badge badge-warning">PAUSED</span>';
+        // } else if ($this->isRunning()) {
+        //     return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
         } else {
             return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
         }

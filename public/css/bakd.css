@@ -37479,6 +37479,10 @@ em {
   color: #e3342f;
 }
 
+.table {
+  margin-bottom: unset;
+}
+
 .bounty-announcements-table.table-responsive {
   display: inline-table;
 }
