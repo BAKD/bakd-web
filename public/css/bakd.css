@@ -37391,6 +37391,10 @@ body {
   }
 }
 
+strong {
+  font-weight: 700 !important;
+}
+
 .clickable {
   cursor: pointer !important;
 }
