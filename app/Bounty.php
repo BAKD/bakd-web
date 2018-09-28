@@ -63,7 +63,7 @@ class Bounty extends Model
 
     public function bountyRewardType()
     {
-        return $this->belongsTo('BAKD\BountyRewardType');
+        return $this->hasOne('BAKD\BountyRewardType', 'id', 'bounty_reward_type_id');
     }
 
     public function wasClaimed()
@@ -84,14 +84,12 @@ class Bounty extends Model
         }
     }
 
-    public function getDisplayRewardType()
+    public function getDisplayRewardType($showDashOnFail = true, $default = false)
     {
-        $query = $this->bountyRewardType()->get(['name']);
-        if ($query->isEmpty() || !isset($query->name)) {
-            return '&mdash;';
+        if ($rewardTypesCollection = $this->bountyRewardType()->first()) {
+            return $rewardTypesCollection->name;
         }
-
-        return $query->name;
+        return $showDashOnFail ? '&mdash;' : '';;
     }
 
     public function getImage()

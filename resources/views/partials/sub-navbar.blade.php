@@ -1,5 +1,5 @@
 
-<section class="forum-sec">
+<section class="sub-nav-menu forum-sec">
     <div class="container">
         <div class="forum-links">
             <ul>

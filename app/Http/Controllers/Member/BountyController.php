@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 class BountyController extends MemberController
 {
     /**
-     * Display a listing of the resource.
+     * Display the member's bounty dashboard
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return view('member/bounty/index');
     }
 
     /**

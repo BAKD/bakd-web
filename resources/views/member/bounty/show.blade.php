@@ -15,7 +15,7 @@
 
                         <li title="{{ number_format($bounty->reward) }} BAKD Coins">
                             <div class="bakd-coins">
-                                REWARD: {{ number_format($bounty->reward) }}
+                                REWARD TYPE: {!! strtoupper($bounty->getDisplayRewardType(false)) !!}
                             </div>
                         </li>
                     </ul>
@@ -102,7 +102,7 @@
 
                             @if ($bounty->reward)
                                 <tr>
-                                    <td widthstyle="width: auto; max-width: 280px;" class="text-right">
+                                    <td width="20%" class="text-right">
                                         <strong>BOUNTY REWARD</strong>
                                     </td>
                                     <td class="text-center">
@@ -127,18 +127,16 @@
                             @endif
 
 
-                            @if (isset($bounty->bountyRewardType()->first()->name))
-                                <tr>
-                                    <td class="text-right">
-                                        <strong>REWARD TYPE</strong>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="bakd-coins">
-                                            {{ $bounty->bountyRewardType()->first()->name }}
-                                        </span>
-                                    </td>
-                                </tr>
-                            @endif
+                            <tr>
+                                <td class="text-right">
+                                    <strong>REWARD TYPE</strong>
+                                </td>
+                                <td class="text-center">
+                                    <span class="bakd-bounty-reward-{!! $bounty->getDisplayRewardType(false) !!}">
+                                        {!! $bounty->getDisplayRewardType() !!}
+                                    </span>
+                                </td>
+                            </tr>
 
 
                             @if ($bounty->type()->first()->name)

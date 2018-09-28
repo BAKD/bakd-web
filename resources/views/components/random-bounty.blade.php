@@ -47,7 +47,7 @@
                             </span>
                         </td>  --}}
                         <td class="text-center">
-                            <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD Coins">{{ number_format($random_bounty->reward) }}</span>
+                            <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD {!! $random_bounty->getDisplayRewardType(false) !!}">{{ number_format($random_bounty->reward) }} {!! $random_bounty->getDisplayRewardType(false) !!}</span>
                         </td>
                         <td class="text-center">
                             <span class="random_bounty-date" title="{{ !is_null($random_bounty->end_date) ? $random_bounty->end_date->format('m/d/Y g:i A') : 'Never' }}">
