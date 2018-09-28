@@ -3333,20 +3333,20 @@
         },
         {
             "name": "vyuldashev/nova-permission",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vyuldashev/nova-permission.git",
-                "reference": "36c64790fdac05cd4b1ff49fd51faad3983a6daa"
+                "reference": "1b153160c6f647fa05b343762f8608b0d56d21c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vyuldashev/nova-permission/zipball/36c64790fdac05cd4b1ff49fd51faad3983a6daa",
-                "reference": "36c64790fdac05cd4b1ff49fd51faad3983a6daa",
+                "url": "https://api.github.com/repos/vyuldashev/nova-permission/zipball/1b153160c6f647fa05b343762f8608b0d56d21c2",
+                "reference": "1b153160c6f647fa05b343762f8608b0d56d21c2",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.",
+                "php": "^7.1",
                 "spatie/laravel-permission": "^2.16"
             },
             "type": "library",
@@ -3372,7 +3372,7 @@
                 "nova",
                 "spatie-permission"
             ],
-            "time": "2018-08-31T20:47:53+00:00"
+            "time": "2018-09-27T13:16:16+00:00"
         },
         {
             "name": "webpatser/laravel-uuid",
