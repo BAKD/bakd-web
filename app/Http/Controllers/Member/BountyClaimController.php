@@ -34,9 +34,14 @@ class BountyClaimController extends MemberController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('member/bounty/claims/create');
+        $view = [];
+        // Get the bounty ID param from the request
+        $bountyId = $request->id;
+        // Show a 404 if we can't find the bounty from the provided bounty ID
+        $view['bounty'] = \BAKD\Bounty::find($bountyId);
+        return view('member/bounty/claims/create', $view);
     }
 
     /**

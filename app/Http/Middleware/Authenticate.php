@@ -14,7 +14,14 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        \Session::flash('flash_error', 'You must be logged in to view this page!');
+        // TODO: Setup helpers with default error/success/warning/info flash message setups
+        // until we have the real-time js notifications going.
+        $request->session()->flash('status', [
+            'type' => 'error',
+            'icon' => '<i class="alert-icon fa fa-times-circle"></i>',
+            'class' => 'alert-danger',
+            'message' => 'Unable to view page without logging in!',
+        ]);
         return route('login');
     }
 }

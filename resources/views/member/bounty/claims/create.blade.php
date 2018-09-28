@@ -1,23 +1,24 @@
 @extends('layouts.member')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Create Claim</div>
+<section class="main-content">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <div class="container">
 
-                    Bounty Claim
-                </div>
+            <div class="widget widget-user">
+                <h3 class="title-wd"><i class="fa fa-star"></i>
+                    Claim Bounty {{ $bounty->id }}
+                </h3>
+
+                <label>
+                    Required Claim Information:
+                </label>
+
+                <textarea placeholder="Enter the bounty claim information for this bounty.">
+
+                </textarea>
+
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection

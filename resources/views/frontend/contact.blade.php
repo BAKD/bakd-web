@@ -1,26 +1,27 @@
 @extends('layouts.frontend')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Contact Us</div>
+<section class="main-content">
 
-                <div class="card-body text-center">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <div class="container">
 
-                    <div class="under-construction">
-                        <i class="fa fa-exclamation-triangle fa-red fa-2x"></i>
-                        <h2 style="position: relative; top: -2px;">Currently In Development</h2>
-                    </div>
-                </div>
+            <div class="widget widget-user">
+                <h3 class="title-wd"><i class="fa fa-envelope-o"></i>
+                    Contact Us
+                </h3>
+                <table class="unselectable bounty-announcements-table table-responsive table centered-td">
+                    <tbody>
+                        <tr>
+                            <td class="text-center" style="padding: 20px;">
+                                <i class="fa fa-red fa-2x fa-exclamation-triangle"></i>
+                                <div>
+                                    Currently In Development
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection
