@@ -90,6 +90,7 @@ class Bounty extends Model
         return $showDashOnFail ? '&mdash;' : '';;
     }
 
+    // Mainly meant for stake rewards, we'll remove the coin label for now.
     public function getDisplayRewardAmount($withLabel = false)
     {
         $returnString = '';
@@ -98,7 +99,6 @@ class Bounty extends Model
             if ($withLabel) return $returnString .= ' (POOL)'; // Return the "Total Pool" amount for display purposes
             return $returnString;
         }
-        if ($withLabel) return $returnString .= ' COINS';
         return number_format($this->reward);
     }
 
