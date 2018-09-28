@@ -47,7 +47,7 @@ class BountyController extends MemberController
     public function show($id)
     {
         $view = [];
-        $view['bounty'] = \BAKD\Bounty::find($id);
+        $view['bounty'] = \BAKD\Bounty::findOrFail($id);
         return view('member/bounty/show', $view);
     }
 

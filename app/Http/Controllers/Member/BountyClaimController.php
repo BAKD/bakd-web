@@ -64,7 +64,7 @@ class BountyClaimController extends MemberController
     public function show($id)
     {
         $view = [];
-        $view['claim'] = \BAKD\BountyClaim::find($id);
+        $view['claim'] = \BAKD\BountyClaim::findOrFail($id);
         return view('member/bounty/claims/show', $view);
     }
 

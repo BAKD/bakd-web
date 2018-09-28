@@ -53,7 +53,7 @@ Route::name('member.')->group(function () {
                 // Claims For Specific Bounties
                 Route::get('/bounty/{id}/claims', 'BountyClaimController@index')->name('bounty.claims');
                 Route::get('/bounty/{id}/claim', 'BountyClaimController@create')->name('bounty.claim');
-                Route::post('/bounty/{id}/claim', 'BountyClaimController@store')->name('bounty.claim.store');
+                Route::post('/bounty/{id}/claim', 'BountyClaimController@store')->name('bounty.claim.save');
                 Route::get('/bounty/claim/{id}', 'BountyClaimController@show')->name('bounty.claim.show');
             });
         });

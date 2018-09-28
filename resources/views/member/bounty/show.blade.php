@@ -146,7 +146,7 @@
                                     @if (!$bounty->isStarted())
                                         <span class="badge badge-primary">NOT STARTED</span>
                                     @else
-                                        {{ $bounty->start_date->format('m/d/Y g:i A') }} - {{ $bounty->start_date->diffForHumans() }}
+                                        {{ $bounty->start_date->diffForHumans() }} @ {{ $bounty->start_date->format('m/d/Y g:i A') }}
                                     @endif
                                 </td>
                             </tr>
@@ -158,7 +158,7 @@
                                     <strong>END DATE</strong>
                                 </td>
                                 <td style="width: 100%; min-width: 250px;" class="text-center">
-                                    {!! $bounty->getDisplayEndDate() !!}
+                                    {!! $bounty->getDisplayEndDate() !!} {{ isset($bounty->end_date) ? '@ ' . $bounty->end_date->format('m/d/Y g:i A') : '' }}
                                 </td>
                             </tr>
                         @endif

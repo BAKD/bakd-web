@@ -100,7 +100,6 @@ class Bounty extends Model
 
     public function isOver()
     {
-        // dd($this->end_date);
         // No end date, this bounty will run indefinitely.
         if (is_null($this->end_date)) return false;
         return (bool) $this->end_date->lt(Carbon::now());
@@ -115,7 +114,7 @@ class Bounty extends Model
     {
         // No start date. Start immediately.
         if (is_null($this->start_date)) return true;
-        return (bool) $this->start_date->gt(Carbon::now());
+        return (bool) $this->start_date->lt(Carbon::now());
     }
 
     public function isRunning()
