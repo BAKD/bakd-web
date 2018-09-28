@@ -64,7 +64,7 @@ class Bounty extends Resource
             Number::make('Total Reward Pool', 'reward_total')->min(0)->max(100000000)->step(1)->rules('required'),
             DateTime::make('Starts Date', 'start_date')->sortable(),
             DateTime::make('Ends Date', 'end_date')->sortable(),
-            Trix::make('Description', 'description')->withFiles('/uploads/bounty')->rules('required'),
+            Markdown::make('Description', 'description')->rules('required'),
             Text::make('Bounty UUID', 'uuid')->sortable()->onlyOnDetail(),
             HasOne::make('Bounty Type', 'type'),
         ];
