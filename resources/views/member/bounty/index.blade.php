@@ -1,71 +1,94 @@
 @extends('layouts.member')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="post-bar">
-                <div class="epi-sec" style="padding: 20px 20px 0 20px; border-bottom: 1px solid #eee;">
-                    <ul class="descp">
-                        <li>
-                            <i class="la la-star"></i> <strong>Bounty Dashboard</strong>
-                        </li>
-                    </ul>
-                    <ul class="bk-links" style="padding-bottom: 15px; padding-right: 32px;" class="pull-right">
-                        <li>
-                            Test 123
-                        </li>
-                    </ul>
-                    <div class="ed-opts pull-right" style="float: right; position: absolute; right: 20px; top: 15px;">
-                        <a href="#" title="View Options" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
-                        <ul class="ed-options" style="min-width: 160px;">
-                            <li>
-                                <i class="fa fa-facebook"></i> <a href="#" title="Share Bounty">Share Bounty</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-plus"></i> <a href="#" title="Claim Bounty">Claim Bounty</a>
-                            </li>
-                            <li style="padding: 0; margin: -10px 0 0 0;"><hr></li>
-                            <li class="disabled">
-                                <i class="fa fa-bookmark"></i> <a href="#" class="disabled" title="Coming Soon">Bookmark</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+<section class="main-content">
 
+        <div class="container">
 
-                <div class="post_topbar">
-                    <div class="usy-dst row">
-                        <div class="col-lg-3">
-                        </div>
-                        <div class="col-lg-9">
-
-
-
-
-                            <div class="bounty-details">
-                                <h2 class="title">
-                                    Description 123
-                                </h2>
-                                <div>
-                                    Test 123
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="job-status-bar text-right" style="border-top: 1px solid #eee;">
-                    <div class="claim-bounty-button text-right">
-                        <a href="#" type="button" class="btn btn-primary btn-large">
-                            <i class="fa fa-star"></i> CLAIM BOUNTY
-                        </a>
-                    </div>
-                </div>
-
+            <div class="widget widget-user">
+                <h3 class="title-wd"><i class="fa fa-star"></i>
+                    Bounty Dashboard
+                </h3>
+                <table class="unselectable bounty-announcements-table table-responsive table table-hover centered-td">
+                    <thead class="bold-header">
+                        <tr>
+                            <th class="text-center" style="width: 70px;">
+                                Bounty
+                            </th>
+                            <th class="text-left" style="min-width: 150px; max-width: 200px;">
+                            </th>
+                            <th class="text-center">
+                                Reward
+                            </th>
+                            <th class="text-center">
+                                Reward Type
+                            </th>
+                            <th class="text-center">
+                                Ends
+                            </th>
+                            <th class="text-center">
+                                Status
+                            </th>
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($bounties as $bounty)
+                            <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $bounty->id) }}'">
+                                <td>
+                                    <img src="{{ $bounty->getImage() }}" />
+                                </td>
+                                <td>
+                                    <span title="{{ strip_tags($bounty->name) }}">
+                                        {{ str_limit(strip_tags($bounty->name), 50, '...') }}
+                                    </span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>
+                                </td>
+                                <td class="text-center">
+                                    {!! $bounty->getDisplayRewardType() !!}
+                                </td>
+                                <td class="text-center">
+                                    {!! $bounty->getDisplayEndDate() !!}
+                                </td>
+                                <td class="text-center">
+                                @if ($bounty->wasClaimed())
+                                    <span class="badge badge-success">CLAIMED</span>
+                                @else
+                                    <span class="badge badge-danger">UNCLAIMED</span>
+                                @endif
+                                </td>
+                                <td class="text-center">
+                                    <ul class="action-links-list">
+                                        <li>
+                                            <a class="action-link" href="{{ route('member.bounty.show', $bounty->id) }}">
+                                                <i class="la la-eye"></i> View
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="action-link" href="{{ route('member.bounty.claim', $bounty->id) }}">
+                                                <i class="la la-plus"></i> Claim
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="7" valign="center" class="text-center">
+                                    <i class="fa fa-exclamation-triangle fa-red"></i>
+                                    <span class="message">
+                                        {{ __('You haven\'t claimed any bounties yet!') }}
+                                    </span>
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection
