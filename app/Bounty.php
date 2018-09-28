@@ -96,7 +96,7 @@ class Bounty extends Model
         $returnString = '';
         if ($this->isStakeRewardBounty()) {
             $returnString = number_format($this->reward_total);
-            if ($withLabel) return $returnString .= ' (POOL)'; // Return the "Total Pool" amount for display purposes
+            if ($withLabel) return $returnString .= ' (TOTAL)'; // Return the "Total Pool" amount for display purposes
             return $returnString;
         }
         return number_format($this->reward);

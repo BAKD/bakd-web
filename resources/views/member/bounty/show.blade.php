@@ -14,9 +14,9 @@
                     </div>
                     <div class="col-6 pull-right text-right">
                         <ul style="padding: 10px 35px 10px 0;">
-                            <li title="{{ $bounty->getDisplayRewardAmount(true) }} {!! strtoupper($bounty->getDisplayRewardType(false)) !!}">
+                            <li title="{!! $bounty->getDisplayRewardAmount(true) !!} BAKD Coins">
                                 <div class="bakd-coins">
-                                    {{ $bounty->getDisplayRewardAmount(true) }} {!! strtoupper($bounty->getDisplayRewardType()) !!}
+                                    {!! $bounty->getDisplayRewardAmount(true) !!}
                                 </div>
                             </li>
                         </ul>

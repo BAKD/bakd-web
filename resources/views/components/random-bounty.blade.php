@@ -41,7 +41,7 @@
                         <td class="text-center">
                             {{--  <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD {!! $random_bounty->getDisplayRewardType(false) !!}">{{ number_format($random_bounty->reward) }} {!! $random_bounty->getDisplayRewardType(false) !!}</span>  --}}
                             <span class="bakd-coins" title="BAKD Coins">
-                                {!! $random_bounty->getDisplayRewardAmount() !!}
+                                {!! $random_bounty->getDisplayRewardAmount(true) !!}
                             </span>
                         </td>
                         <td class="text-center">

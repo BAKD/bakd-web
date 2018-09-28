@@ -48,7 +48,7 @@
                                 <td class="text-center">
                                     {{--  <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>  --}}
                                     <span class="bakd-coins" title="BAKD Coins">
-                                        {!! $bounty->getDisplayRewardAmount() !!}
+                                        {!! $bounty->getDisplayRewardAmount(true) !!}
                                     </span>
                                 </td>
                                 <td class="text-center">
