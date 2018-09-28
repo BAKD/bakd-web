@@ -14,9 +14,9 @@
                     </div>
                     <div class="col-6 pull-right text-right">
                         <ul style="padding: 10px 35px 10px 0;">
-                            <li title="{{ $bounty->getDisplayRewardAmount() }} {!! strtoupper($bounty->getDisplayRewardType(false)) !!}">
+                            <li title="{{ $bounty->getDisplayRewardAmount(true) }} {!! strtoupper($bounty->getDisplayRewardType(false)) !!}">
                                 <div class="bakd-coins">
-                                    REWARD TYPE: {{ $bounty->getDisplayRewardAmount() }} {!! strtoupper($bounty->getDisplayRewardType()) !!}
+                                    REWARD TYPE: {{ $bounty->getDisplayRewardAmount(true) }} {!! strtoupper($bounty->getDisplayRewardType()) !!}
                                 </div>
                             </li>
                         </ul>
@@ -96,7 +96,7 @@
                                     <strong>BOUNTY REWARD</strong>
                                 </td>
                                 <td class="text-center">
-                                    <span class="bakd-coins">
+                                    <span class="bakd-coins" title="BAKD Coins">
                                         {{ number_format($bounty->reward) }}
                                     </span>
                                 </td>
@@ -105,7 +105,7 @@
 
                         @if ($bounty->reward_total)
                             <tr>
-                                <td class="text-right">
+                                <td width="20%" class="text-right">
                                     <strong>TOTAL REWARD POOL</strong>
                                 </td>
                                 <td class="text-center">
@@ -116,7 +116,7 @@
                             </tr>
                         @endif
                         <tr>
-                            <td class="text-right">
+                            <td width="20%" class="text-right">
                                 <strong>REWARD TYPE</strong>
                             </td>
                             <td class="text-center">
@@ -128,7 +128,7 @@
 
                         @if ($bounty->type()->first()->name)
                             <tr>
-                                <td class="text-right">
+                                <td width="20%" class="text-right">
                                     <strong>BOUNTY TYPE</strong>
                                 </td>
                                 <td class="text-center">
@@ -139,7 +139,7 @@
 
                         @if ($bounty->start_date)
                             <tr>
-                                <td class="text-right">
+                                <td width="20%" class="text-right">
                                     <strong>START DATE</strong>
                                 </td>
                                 <td class="text-center">
@@ -154,7 +154,7 @@
 
                         @if ($bounty->end_date)
                             <tr>
-                                <td style="min-width: 160px;" class="text-right">
+                                <td width="20%" style="min-width: 160px;" class="text-right">
                                     <strong>END DATE</strong>
                                 </td>
                                 <td style="width: 100%; min-width: 250px;" class="text-center">
