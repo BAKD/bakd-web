@@ -14,6 +14,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+        \Session::flash('flash_error', 'You must be logged in to view this page!');
         return route('login');
     }
 }

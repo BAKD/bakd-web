@@ -24,10 +24,10 @@
                                 Reward Type
                             </th>
                             <th class="text-center">
-                                Ends
+                                Claimed On
                             </th>
                             <th class="text-center">
-                                Status
+                                Claim Status
                             </th>
                             <th class="text-center">
                                 Action
@@ -78,12 +78,14 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7" valign="center" class="text-center">
-                                    <i class="fa fa-exclamation-triangle fa-red"></i>
-                                    <span class="message">
-                                        {{ __('You haven\'t claimed any bounties yet!') }}
-                                    </span>
-                                </td>
+                                <tr>
+                                    <td colspan="7" valign="center" class="text-center" style="padding: 20px;">
+                                        <i class="fa fa-red fa-2x fa-exclamation-triangle"></i>
+                                        <div class="message">
+                                            {{ __('You haven\'t claimed any bounties yet!') }}
+                                        </div>
+                                    </td>
+                                </tr>
                             </tr>
                         @endforelse
                     </tbody>
