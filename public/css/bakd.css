@@ -37483,6 +37483,12 @@ em {
   display: inline-table;
 }
 
+@media (max-width: 992px) {
+  .bounty-announcements-table.table-responsive {
+    display: block;
+  }
+}
+
 .unselectable {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -37709,7 +37715,7 @@ em {
 }
 
 main {
-  margin-bottom: 200px;
+  margin-bottom: 120px;
   min-height: 100vh;
 }
 
