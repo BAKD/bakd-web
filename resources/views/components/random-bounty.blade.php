@@ -2,22 +2,19 @@
     <h3 class="title-wd"><i class="fa fa-star"></i>
         Random Bounty
     </h3>
-        {{--  <li>{{ var_dump($bounty) }}</li>  --}}
-
         <table class="unselectable bounty-announcements-table table-responsive table table-hover centered-td">
             <thead class="bold-header">
                 <tr>
                     <th class="text-center" style="width: 70px;">
-                        {{--  Logo  --}}
                         Bounty
                     </th>
                     <th class="text-left" style="min-width: 150px; max-width: 200px;">
                     </th>
-                    {{--  <th class="text-left">
-                        Description
-                    </th>  --}}
                     <th class="text-center">
                         Reward
+                    </th>
+                    <th class="text-center">
+                        Reward Type
                     </th>
                     <th class="text-center">
                         Ends
@@ -41,17 +38,18 @@
                                 {{ str_limit(strip_tags($random_bounty->name), 50, '...') }}
                             </span>
                         </td>
-                        {{--  <td>
-                            <span title="{{ strip_tags($random_bounty->description) }}">
-                                {{ str_limit(strip_tags($random_bounty->description), 90, '...') }}
-                            </span>
-                        </td>  --}}
                         <td class="text-center">
-                            <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD {!! $random_bounty->getDisplayRewardType(false) !!}">{{ number_format($random_bounty->reward) }} {!! $random_bounty->getDisplayRewardType(false) !!}</span>
+                            {{--  <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD {!! $random_bounty->getDisplayRewardType(false) !!}">{{ number_format($random_bounty->reward) }} {!! $random_bounty->getDisplayRewardType(false) !!}</span>  --}}
+                            <span class="bakd-coins" title="BAKD Coins">
+                                {!! $random_bounty->getDisplayRewardAmount() !!}
+                            </span>
                         </td>
                         <td class="text-center">
-                            <span class="random_bounty-date" title="{{ !is_null($random_bounty->end_date) ? $random_bounty->end_date->format('m/d/Y g:i A') : 'Never' }}">
-                                {{ !is_null($random_bounty->end_date) ? $random_bounty->end_date->diffForHumans() : 'Never' }}
+                            {!! $random_bounty->getDisplayRewardType() !!}
+                        </td>
+                        <td class="text-center">
+                            <span class="random_bounty-date">
+                                {!! $random_bounty->getDisplayEndDate() !!}
                             </span>
                         </td>
                         <td class="text-center">

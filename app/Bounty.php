@@ -72,17 +72,14 @@ class Bounty extends Model
         return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();
     }
 
-    public function getDisplayEndDate()
+    public function isStakeRewardBounty()
     {
-        if ($this->isOver()) {
-            return '<span class="badge badge-success">COMPLETED</span>';
-        } else if ($this->isPaused()) {
-            return '<span class="badge badge-warning">PAUSED</span>';
-        // } else if ($this->isRunning()) {
-        //     return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
-        } else {
-            return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
+        if ($rewardTypesCollection = $this->bountyRewardType()->first()) {
+            if (in_array(strtolower($rewardTypesCollection->name), ['stake', 'stakes'])) {
+                return true;
+            }
         }
+        return false;
     }
 
     public function getDisplayRewardType($showDashOnFail = true, $default = false)
@@ -93,11 +90,37 @@ class Bounty extends Model
         return $showDashOnFail ? '&mdash;' : '';;
     }
 
+    public function getDisplayRewardAmount($withLabel = false)
+    {
+        $returnString = '';
+        if ($this->isStakeRewardBounty()) {
+            $returnString = number_format($this->reward_total);
+            if ($withLabel) return $returnString .= ' (POOL)'; // Return the "Total Pool" amount for display purposes
+            return $returnString;
+        }
+        if ($withLabel) return $returnString .= ' COINS';
+        return number_format($this->reward);
+    }
+
+    // Get the display version of a bounty date, with a label if it is paused or completed.
+    public function getDisplayEndDate()
+    {
+        if ($this->isOver()) {
+            return '<span class="badge badge-success">COMPLETED</span>';
+        } else if ($this->isPaused()) {
+            return '<span class="badge badge-warning">PAUSED</span>';
+        } else {
+            return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
+        }
+    }
+
+    // TODO: Setup config or env setting for placeholder image path instead of burying it in here
     public function getImage()
     {
         return $this->image ? asset('storage/' . $this->image) : asset('images/icon.png');
     }
 
+    // Check if a bounty is over
     public function isOver()
     {
         // No end date, this bounty will run indefinitely.
