@@ -61,7 +61,7 @@ class Bounty extends Resource
             Select::make('Bounty Type', 'type_id')->options($typeOptions)->displayUsingLabels()->rules('required'),
             Select::make('Reward Type', 'bounty_reward_type_id')->options($rewardOptions)->displayUsingLabels()->rules('required'),
             Number::make('Reward Amount', 'reward')->min(0)->step(1)->rules('required'),
-            Number::make('Total Reward Pool', 'reward_total')->min(0)->max(100000000)->step(1)->rules('required'),
+            Number::make('Total Reward Pool', 'reward_total')->min(0)->step(1)->rules('required'),
             DateTime::make('Starts Date', 'start_date')->sortable(),
             DateTime::make('Ends Date', 'end_date')->sortable(),
             Markdown::make('Description', 'description')->rules('required'),
