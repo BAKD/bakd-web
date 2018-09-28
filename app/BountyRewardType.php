@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BountyRewardType extends Model
 {
-    use SoftDeletes;
-
     /**
      * The table associated with the model.
      *

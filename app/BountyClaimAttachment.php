@@ -44,7 +44,7 @@ class BountyClaimAttachment extends Model
      */
     protected $dates = ['created_at', 'updated_at'];
 
-    public function bountyClaim()
+    public function claim()
     {
         return $this->belongsTo('BAKD\BountyClaim');
     }

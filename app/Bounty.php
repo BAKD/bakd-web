@@ -61,14 +61,27 @@ class Bounty extends Model
         return $this->hasMany('BAKD\BountyClaim');
     }
 
-    public function rewardType()
+    public function bountyRewardType()
     {
-        return $this->hasOne('BAKD\BountyRewardType');
+        return $this->belongsTo('BAKD\BountyRewardType');
     }
 
     public function wasClaimed()
     {
         return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();
+    }
+
+    public function getDisplayEndDate()
+    {
+        if ($this->isOver()) {
+            return '<span class="badge badge-success">COMPLETED</span>';
+        } else if ($this->isRunning()) {
+            return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
+        } else if ($this->isPaused()) {
+            return '<span class="badge badge-warning">PAUSED</span>';
+        } else {
+            return !is_null($this->end_date) ? $this->end_date->diffForHumans() : 'Never';
+        }
     }
 
     public function getImage()

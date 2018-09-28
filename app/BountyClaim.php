@@ -47,12 +47,12 @@ class BountyClaim extends Model
 
     public function user()
     {
-        return $this->hasOne('BAKD\User');
+        return $this->belongsTo('BAKD\User');
     }
 
     public function bounty()
     {
-        return $this->hasOne('BAKD\Bounty');
+        return $this->belongsTo('BAKD\Bounty');
     }
 
     public function attachments()

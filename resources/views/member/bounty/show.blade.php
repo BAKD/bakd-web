@@ -65,6 +65,7 @@
                                 </div>
                             </div>
                             <br /><br />
+                            {{--  TODO: Replace Me With Real Tags  --}}
                             <div class="detail-bar text-left">
                                 <ul class="skill-tags inline" style="margin: 0 0 -10px 0;">
                                     <li><a href="{{ route('frontend.home') }}" title="Bounty">Bounty</a></li>
@@ -102,7 +103,7 @@
                             @if ($bounty->reward)
                                 <tr>
                                     <td widthstyle="width: auto; max-width: 280px;" class="text-right">
-                                        <strong>REWARD</strong>
+                                        <strong>BOUNTY REWARD</strong>
                                     </td>
                                     <td class="text-center">
                                         <span class="bakd-coins">
@@ -115,7 +116,7 @@
                             @if ($bounty->reward_total)
                                 <tr>
                                     <td class="text-right">
-                                        <strong>TOTAL REWARDS</strong>
+                                        <strong>TOTAL REWARD POOL</strong>
                                     </td>
                                     <td class="text-center">
                                         <span class="bakd-coins">
@@ -124,6 +125,21 @@
                                     </td>
                                 </tr>
                             @endif
+
+
+                            @if ($bounty->bountyRewardType()->first()->name)
+                                <tr>
+                                    <td class="text-right">
+                                        <strong>REWARD TYPE</strong>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="bakd-coins">
+                                            {{ $bounty->bountyRewardType()->first()->name }}
+                                        </span>
+                                    </td>
+                                </tr>
+                            @endif
+
 
                             @if ($bounty->type()->first()->name)
                                 <tr>
@@ -157,11 +173,7 @@
                                         <strong>END DATE</strong>
                                     </td>
                                     <td style="width: 100%; min-width: 250px;" class="text-center">
-                                        @if ($bounty->isOver())
-                                            <span class="badge badge-danger">ENDED</span>
-                                        @else
-                                            {{ $bounty->end_date->format('m/d/Y g:i A') }} - {{ $bounty->end_date->diffForHumans() }}
-                                        @endif
+                                       {!! $bounty->getDisplayEndDate() !!}
                                     </td>
                                 </tr>
                             @endif

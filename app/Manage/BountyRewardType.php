@@ -4,35 +4,26 @@ namespace BAKD\Manage;
 
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\Uuid;
-use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Status;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
-use Laravel\Nova\Fields\HasOne;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Bounty extends Resource
+class BountyRewardType extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'BAKD\Bounty';
+    public static $model = 'BAKD\BountyRewardType';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'Bounties';
+    public static $title = 'Bounty Reward Type';
 
     /**
      * The columns that should be searched.
@@ -40,7 +31,7 @@ class Bounty extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'uuid', 'name'
+        'id', 'name', 'description'
     ];
 
     /**
@@ -51,22 +42,10 @@ class Bounty extends Resource
      */
     public function fields(Request $request)
     {
-        $typeOptions = \BAKD\BountyType::all()->pluck('name', 'id');
-        $rewardOptions = \BAKD\BountyRewardType::all()->pluck('name', 'id');
-
         return [
-            ID::make('ID', 'id')->sortable()->onlyOnDetail(),
-            Avatar::make('Logo', 'image')->sortable(),
+            ID::make('ID', 'id')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
-            Select::make('Bounty Type', 'type_id')->options($typeOptions)->displayUsingLabels()->rules('required'),
-            Select::make('Reward Type', 'bounty_reward_type_id')->options($rewardOptions)->displayUsingLabels()->rules('required'),
-            Number::make('Reward Amount', 'reward')->min(0)->step(1)->rules('required'),
-            Number::make('Total Reward Pool', 'reward_total')->min(0)->max(100000000)->step(1)->rules('required'),
-            DateTime::make('Starts Date', 'start_date')->sortable(),
-            DateTime::make('Ends Date', 'end_date')->sortable(),
-            Trix::make('Description', 'description')->withFiles('/uploads/bounty')->rules('required'),
-            Text::make('Bounty UUID', 'uuid')->sortable()->onlyOnDetail(),
-            HasOne::make('Bounty Type', 'type'),
+            Trix::make('Description', 'description'),
         ];
     }
 

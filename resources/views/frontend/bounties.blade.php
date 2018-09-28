@@ -17,11 +17,11 @@
                             </th>
                             <th class="text-left" style="min-width: 150px; max-width: 200px;">
                             </th>
-                            {{--  <th class="text-left">
-                                Description
-                            </th>  --}}
                             <th class="text-center">
                                 Reward
+                            </th>
+                            <th class="text-center">
+                                Reward Type
                             </th>
                             <th class="text-center">
                                 Ends
@@ -45,26 +45,14 @@
                                         {{ str_limit(strip_tags($bounty->name), 50, '...') }}
                                     </span>
                                 </td>
-                                {{--  <td>
-                                    <span title="{{ strip_tags($bounty->description) }}">
-                                        {{ str_limit(strip_tags($bounty->description), 90, '...') }}
-                                    </span>
-                                </td>  --}}
                                 <td class="text-center">
                                     <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="bounty-date" title="{{ !is_null($bounty->end_date) ? $bounty->end_date->format('m/d/Y g:i A') : 'Never' }}">
-                                        @if ($bounty->isOver())
-                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
-                                        @elseif ($bounty->isRunning())
-                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
-                                        @elseif ($bounty->isPaused())
-                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
-                                        @else
-                                            {{ !is_null($bounty->end_date) ? $bounty->end_date->diffForHumans() : 'Never' }}
-                                        @endif
-                                    </span>
+                                    {!! e($bounty->bountyRewardType()->first()['name'])  ?: '&mdash;' !!}
+                                </td>
+                                <td class="text-center">
+                                    {!! $bounty->getDisplayEndDate() !!}
                                 </td>
                                 <td class="text-center">
                                 @if ($bounty->wasClaimed())

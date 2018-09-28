@@ -34,7 +34,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register the application's Nova resources
-     * 
+     *
      * @void
      */
     protected function resources()
@@ -72,7 +72,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            // new Help,
         ];
     }
 
