@@ -23,6 +23,43 @@ body {
     }
 }
 
+.inline-list {
+
+    ul {
+        padding: 0;
+        margin: 0;
+        display: block;
+
+        li {
+            width: auto;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+    }
+
+    .bounty-tags {
+        padding: 10px 0;
+
+        li {
+            padding: 5px;
+            &:first-child {
+                padding-left: 0px;
+            }
+            &:last-child {
+                padding-right: 0px;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                transition: all .25s ease;
+                opacity: .85;
+            }
+        }
+    }
+}
+
 .checkbox-label {
     span {
         float: left;

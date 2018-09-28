@@ -37399,6 +37399,43 @@ body {
   cursor: pointer !important;
 }
 
+.inline-list ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.inline-list ul li {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.inline-list .bounty-tags {
+  padding: 10px 0;
+}
+
+.inline-list .bounty-tags li {
+  padding: 5px;
+}
+
+.inline-list .bounty-tags li:first-child {
+  padding-left: 0px;
+}
+
+.inline-list .bounty-tags li:last-child {
+  padding-right: 0px;
+}
+
+.inline-list .bounty-tags li:hover,
+.inline-list .bounty-tags li:active,
+.inline-list .bounty-tags li:focus {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  opacity: .85;
+}
+
 .checkbox-label span {
   float: left;
   display: inline;
