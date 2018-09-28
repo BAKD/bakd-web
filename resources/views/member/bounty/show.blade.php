@@ -16,7 +16,11 @@
                         <ul style="padding: 10px 35px 10px 0;">
                             <li title="{!! $bounty->getDisplayRewardAmount(true) !!} BAKD Coins">
                                 <div class="bakd-coins">
-                                    {!! $bounty->getDisplayRewardAmount(true) !!}
+                                    @if ($bounty->isStakeRewardBounty())
+                                        {!! $bounty->getDisplayRewardAmount(true) !!} COINS
+                                    @else
+                                        {!! $bounty->getDisplayRewardAmount(true) !!} {!! strtoupper($bounty->getDisplayRewardType()) !!}
+                                    @endif
                                 </div>
                             </li>
                         </ul>
@@ -39,12 +43,12 @@
                         </div>
                     </div>
                 </div>
-                <table class="unselectable bounty-announcements-table table-responsive table centered-td">
+                <table class="bounty-announcements-table table-responsive table centered-td">
                     <tbody>
                         <tr>
                             <td class="text-left" style="padding: 20px;">
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 unselectable">
                                         <img src="{{ $bounty->getImage() }}" class="bounty-main-image" style="height: unset; width: unset;" />
                                     </div>
                                     <div class="col-lg-9">
@@ -56,8 +60,8 @@
                                                 {!! nl2br($bounty->description) !!}
                                             </div>
                                             {{--  TODO: Replace Me With Real Tag System  --}}
-                                            <div class="inline-list text-left">
-                                                <ul class="skill-tags bounty-tags" style="margin: 0 0 -10px 0;">
+                                            <div class="inline-list text-left unselectable">
+                                                <ul class="skill-tags bounty-tags" style="margin: 20px 0 -10px 0;">
                                                     <li><a href="{{ route('frontend.home') }}" title="Bounty">Bounty</a></li>
                                                     <li><a href="{{ route('frontend.home') }}" title="{{ $bounty->type()->first()->name }}">{{ $bounty->type()->first()->name }}</a></li>
                                                     <li><a href="{{ route('frontend.home') }}" title="BAKD">BAKD</a></li>
