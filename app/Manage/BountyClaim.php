@@ -52,7 +52,7 @@ class BountyClaim extends Resource
             Select::make('Status', 'confirmed')->options([
                 '0' => 'Pending',
                 '1' => 'Approved',
-                '-1' => 'Rejected'
+                '2' => 'Rejected'
             ])->displayUsingLabels()->sortable(),
             HasOne::make('User'),
             HasOne::make('Bounty'),
