@@ -27,7 +27,7 @@
             </p>
             <br />
             <p>
-                We've decided to try something new, and offer our supporters the ability to watch the project come together <em>AS</em> we build it. Because of this, there is a high potential that you will run into issues from time to time until we get to where we need to be. We are working dilligently to get <strong>BAKD</strong> where it needs to be. Until then, we appreciate your support, and hope you'll continue to follow along as we progress!
+                We've decided to try something new, and offer our supporters the ability to watch the project come together <em>AS</em> we build it. Because of this, there is a high potential that you will run into issues from time to time. We are working dilligently to get <strong>BAKD</strong> where it needs to be. Until then, we appreciate your continued support, and hope you'll continue to follow along as we progress!
             </p>
             <br />
             <p class="text-center">
