@@ -51,7 +51,7 @@ class BountyType extends Resource
             Text::make('Name', 'name')->sortable()->rules('required'),
             Text::make('Description', 'description')->hideFromIndex()->sortable()->rules('required'),
             Text::make('Type UUID', 'uuid')->sortable()->exceptOnForms(),
-            BelongsTo::make('Bounty')->sortable(),
+            HasMany::make('Bounty')->sortable(),
         ];
     }
 
