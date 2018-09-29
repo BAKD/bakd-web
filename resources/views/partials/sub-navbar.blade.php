@@ -20,7 +20,7 @@
                 </li>
                 <li class="{{ Request::is('bounties') || Request::is('bounties/*') ? 'active' : '' }}">
                     <a href="{{ route('frontend.bounties') }}">
-                        <i class="fa fa-btc"></i> Bounties <span class="badge badge-danger">NEW</span>
+                        <i class="fa fa-trophy"></i> Bounties <span class="badge badge-danger">NEW</span>
                     </a>
                 </li>
             </ul>

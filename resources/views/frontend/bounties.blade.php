@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="widget widget-user">
-            <h3 class="title-wd"><i class="fa fa-star"></i>
+            <h3 class="title-wd"><i class="fa fa-trophy"></i>
                 All Bounties
             </h3>
             <table class="unselectable bounty-announcements-table table-responsive table table-hover centered-td">
@@ -70,7 +70,7 @@
                                     </li>
                                     <li>
                                         <a class="action-link" href="{{ route('member.bounty.claim', $bounty->id) }}">
-                                            <i class="la la-plus"></i> Claim
+                                            <i class="la la-plus-circle"></i> Claim
                                         </a>
                                     </li>
                                 </ul>

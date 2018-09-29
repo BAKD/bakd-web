@@ -149,6 +149,13 @@ em {
 
     @media(max-width: 992px) {
         display: block;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+
+        tbody {
+            width: 100%;
+        }
     }
 }
 

@@ -8,7 +8,7 @@
             <div class="widget widget-user">
                 <div class="row">
                     <div class="col-6">
-                        <h3 class="title-wd" style="border-bottom: none;"><i class="fa fa-star"></i>
+                        <h3 class="title-wd" style="border-bottom: none;"><i class="fa fa-trophy"></i>
                             <strong>{{ $bounty->type()->first()->name }} Bounty</strong>
                         </h3>
                     </div>
@@ -27,13 +27,13 @@
                         <div class="ed-opts pull-right" style="float: right; position: absolute; right: 30px; top: 22px;">
                             <a href="#" title="View Options" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
                             <ul class="text-left ed-options" style="min-width: 160px; margin: 5px 0 0 0; padding: 5px;">
-                                <li style="padding: 11px; margin: 0;">
+                                <li style="width: 100%; padding: 11px; margin: 0;">
                                     <i class="fa fa-facebook"></i> <a href="#" title="Share Bounty">Share Bounty</a>
                                 </li>
-                                <li style="padding: 11px; margin: 0;">
-                                    <i class="fa fa-plus"></i> <a href="{{ route('member.bounty.claim', $bounty->id) }}" title="Claim Bounty">Claim Bounty</a>
+                                <li style="width: 100%; padding: 11px; margin: 0;">
+                                    <i class="fa fa-plus-circle"></i> <a href="{{ route('member.bounty.claim', $bounty->id) }}" title="Claim Bounty">Claim Bounty</a>
                                 </li>
-                                <li style="padding: 0px; margin: -5px 0;">
+                                <li style="width: 100%; padding: 0px; margin: -5px 0;">
                                     <hr>
                                 </li>
                                 <li style="padding: 11px; margin: 0;" class="disabled">
@@ -80,8 +80,8 @@
                 </table>
                 <div class="job-status-bar text-right" style="border-top: 1px solid #eee;">
                     <div class="claim-bounty-button text-right">
-                        <a href="{{ route('member.bounty.claim', $bounty->id) }}" class="btn btn-primary btn-lg">
-                            <i class="fa fa-star"></i> CLAIM BOUNTY
+                        <a href="{{ route('member.bounty.claim', $bounty->id) }}" class="btn btn-primary btn-md">
+                            <i class="fa fa-plus-circle"></i> CLAIM BOUNTY
                         </a>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                         @if ($bounty->type()->first()->name)
                             <tr>
                                 <td width="20%" class="text-right">
-                                    <strong>BOUNTY TYPE</strong>
+                                    <strong>CATEGORY</strong>
                                 </td>
                                 <td class="text-center">
                                     {{ $bounty->type()->first()->name }}
@@ -169,10 +169,8 @@
                     </tbody>
                 </table>
             </div>
-
             {{-- REWARD TYPES --}}
             @include('member.bounty._reward-types')
-
             {{-- BOUNTY CLAIM INSTRUCTIONS -- TODO: MAKE DYNAMICALLY EDITABLE VIA ADMIN PANEL --}}
             @include('member.bounty._claim-instructions')
         </div>

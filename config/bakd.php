@@ -37,7 +37,7 @@ return [
         'alt' => 'BAKD ICO Management & Networking Platform',
 
         // Regular black/orange logo
-        'regular' => '/images/branding/logo.png',
+        'regular' => '/images/branding/logo-short-2.png',
 
         // All white logo
         'white' => '/images/branding/logo-white.png',
