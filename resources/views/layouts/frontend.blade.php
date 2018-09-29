@@ -7,6 +7,10 @@
         @include('partials/sub-navbar')
         <main class="wrapper py-4">
             <div class="container">
+                {{--  Development days notice  --}}
+                @if (!app()->environment('local'))
+                    @include('partials/alerts/development-alert')
+                @endif
                 @include('partials/notifications/flash-message')
             </div>
             @yield('content')

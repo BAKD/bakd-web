@@ -4,13 +4,6 @@
 <section class="main-content">
 
 <div class="container">
-    {{--  Development days notice  --}}
-    @if (!app()->environment('local'))
-        @include('partials/alerts/development-alert')
-    @endif
-    <div class="featured-campaign-wrapper">
-        {{--  @include('components/featured-campaign')  --}}
-    </div>
     <div class="forum-questions-sec">
         <div class="row">
             <div class="col-lg-12">

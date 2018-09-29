@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="ask-question" data-toggle="tooltip" data-title="Contact Us" href="{{ route('frontend.contact') }}">
+                    <a data-toggle="tooltip" data-title="Contact Us" href="{{ route('frontend.contact') }}">
                         <i class="fa fa-envelope"></i> {{ __('Contact') }}
                     </a>
                 </li>
