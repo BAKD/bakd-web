@@ -4,36 +4,29 @@ namespace BAKD\Manage;
 
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\Uuid;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Status;
-use Laravel\Nova\Fields\Trix;
-use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasOne;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Bounty extends Resource
+class BountyClaimAttachment extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'BAKD\Bounty';
+    public static $model = 'BAKD\BountyClaimAttachment';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'path';
 
     /**
      * The columns that should be searched.
@@ -41,7 +34,7 @@ class Bounty extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'uuid', 'name', 'description'
+        'id', 'path', 'url'
     ];
 
     /**
@@ -53,18 +46,12 @@ class Bounty extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make('ID', 'id')->sortable()->onlyOnDetail(),
-            Text::make('Name', 'name')->sortable()->rules('required'),
-            DateTime::make('Start Date', 'start_date')->sortable(),
-            DateTime::make('End Date', 'end_date')->sortable(),
-            BelongsTo::make('Bounty Type', 'type'),
-            BelongsTo::make('Bounty Reward Type', 'bountyRewardType'),
-            Number::make('Reward Amount', 'reward')->min(0)->step(1)->rules('required'),
-            Number::make('Total Reward Pool', 'reward_total')->min(0)->step(1)->rules('required'),
-            Markdown::make('Description', 'description')->rules('required'),
-            Text::make('Bounty UUID', 'uuid')->sortable()->onlyOnDetail(),
-            Avatar::make('Logo', 'image')->sortable(),
-            HasMany::make('Bounty Claims', 'claims'),
+            ID::make('ID', 'id')->sortable(),
+            Avatar::make('Attachment', 'path')->disk('public')->sortable(),
+            Text::make('Slug', 'url')->rules('required')->sortable(), // TODO: Get rid of me
+            // Text::make('Type')->sortable(), // TODO: Turn into list of acceptable upload extension types maybe?
+            Textarea::make('Description'), // TODO: Potentionally useless...
+            BelongsTo::make('BountyClaim', 'claim')->exceptOnForms(), // TODO: Setup the hasmanythrough relationships for bounty and user here
         ];
     }
 
@@ -112,6 +99,7 @@ class Bounty extends Resource
         return [];
     }
 
+    
     /**
      * Get the displayble label of the resource.
      *
@@ -119,7 +107,7 @@ class Bounty extends Resource
      */
     public static function label()
     {
-        return 'Bounties';
+        return 'Bounty Claim Attachments';
     }
 
     /**
@@ -129,7 +117,7 @@ class Bounty extends Resource
      */
     public static function singularLabel()
     {
-        return 'Bounty';
+        return 'Bounty Claim Attachment';
     }
 
     /**
@@ -139,6 +127,6 @@ class Bounty extends Resource
      */
     public function subtitle()
     {
-        return 'BAKD Bounty Programs';
+        return 'BAKD Bounty Claim Attachments';
     }
 }

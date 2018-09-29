@@ -48,12 +48,12 @@ class Bounty extends Model
 
     public function type()
     {
-        return $this->hasOne('BAKD\BountyType', 'id', 'type_id');
+        return $this->belongsTo('BAKD\BountyType');
     }
 
     public function users()
     {
-        return $this->hasMany('BAKD\Users', 'id', 'user_id');
+        return $this->hasMany('BAKD\Users');
     }
 
     public function claims()

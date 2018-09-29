@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BountyClaimAttachment extends Model
 {
-    use SoftDeletes;
-
     /**
      * The table associated with the model.
      *
@@ -46,6 +44,16 @@ class BountyClaimAttachment extends Model
 
     public function claim()
     {
-        return $this->belongsTo('BAKD\BountyClaim');
+        return $this->belongsTo('BAKD\BountyClaim', 'bounty_claim_id');
+    }
+    
+    public function bounty()
+    {
+        return $this->hasOne('BAKD\Bounty');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('BAKD\User');
     }
 }

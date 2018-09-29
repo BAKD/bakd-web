@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\MorphToMany;
+use Laravel\Nova\Fields\HasMany;
 use \Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
 use \Spatie\Permission\Traits\HasRoles;
 use \Spatie\Permission\Traits\HasPermissions;
@@ -65,6 +66,9 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', 'string', 'min:6')
                 ->updateRules('nullable', 'string', 'min:6'),
+
+            HasMany::make('BountyClaims'),
+            // , 'claims', \BAKD\BountyClaim::class),
 
             // TODO: Review me. Recently Added Vyuldashev\NovaPermissionTool references
             MorphToMany::make('Roles', 'roles', \Vyuldashev\NovaPermission\Role::class),

@@ -4,7 +4,7 @@ namespace BAKD\Manage;
 
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasOne;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\HasMany;;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -27,7 +27,7 @@ class BountyClaim extends Resource
      *
      * @var string
      */
-    public static $title = 'Bounty Claim';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -35,7 +35,7 @@ class BountyClaim extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'confirmed', 'description', 'uuid'
     ];
 
     /**
@@ -48,14 +48,16 @@ class BountyClaim extends Resource
     {
         return [
             ID::make('ID', 'id')->sortable(),
+            BelongsTo::make('User', 'user')->exceptOnForms()->sortable(),
             Markdown::make('Claim Description', 'description')->sortable(),
+            BelongsTo::make('Bounty')->exceptOnForms()->sortable(),
             Select::make('Status', 'confirmed')->options([
                 '0' => 'Pending',
                 '1' => 'Approved',
                 '2' => 'Rejected'
             ])->displayUsingLabels()->sortable(),
-            HasOne::make('User'),
-            HasOne::make('Bounty'),
+            Text::make('Claim UUID', 'uuid')->sortable()->onlyOnDetail(),
+            HasMany::make('BountyClaimAttachment', 'attachments')->sortable(),
         ];
     }
 
@@ -124,13 +126,13 @@ class BountyClaim extends Resource
     }
 
     /**
-     * Get the value that should be displayed to represent the resource.
+     * Get the displayble singular label of the resource.
      *
      * @return string
      */
     public function title()
     {
-        return 'Bounty Claim';
+        return $this->user->name . ' | ' . $this->bounty->name . ' (Bounty ID #' . $this->id . ')';
     }
 
     /**

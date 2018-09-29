@@ -6,6 +6,9 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\HasMany;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -23,7 +26,7 @@ class BountyType extends Resource
      *
      * @var string
      */
-    public static $title = 'Bounty Type';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -31,7 +34,7 @@ class BountyType extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'description'
+        'id', 'name', 'description', 'uuid'
     ];
 
     /**
@@ -45,8 +48,9 @@ class BountyType extends Resource
         return [
             ID::make('ID', 'id')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
-            Markdown::make('Description', 'description')->rules('required'),
+            Text::make('Description', 'description')->sortable()->rules('required'),
             Text::make('Type UUID', 'uuid')->sortable()->exceptOnForms(),
+            HasMany::make('Bounties')->sortable()->onlyOnDetail(),
         ];
     }
 
@@ -110,16 +114,6 @@ class BountyType extends Resource
      * @return string
      */
     public static function singularLabel()
-    {
-        return 'Bounty Category';
-    }
-
-    /**
-     * Get the value that should be displayed to represent the resource.
-     *
-     * @return string
-     */
-    public function title()
     {
         return 'Bounty Category';
     }

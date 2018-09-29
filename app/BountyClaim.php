@@ -57,6 +57,11 @@ class BountyClaim extends Model
 
     public function attachments()
     {
-        return $this->hasMany('BAKD\BountyClaimAttachments');
+        return $this->hasMany('BAKD\BountyClaimAttachment');
+    }
+
+    public function confirmedBy()
+    {
+        return $this->hasOne('BAKD\User', 'confirmed_by_id');
     }
 }
