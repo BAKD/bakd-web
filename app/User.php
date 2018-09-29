@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('BAKD\BountyClaim');
     }
+
+    public function bounties()
+    {
+        return $this->belongsTo('BAKD\Bounty');
+    }
 }

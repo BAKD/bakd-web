@@ -49,8 +49,7 @@ class BountyRewardType extends Resource
             ID::make('ID', 'id')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
             Text::make('Description', 'description')->sortable()->rules('required'),
-            HasMany::make('Bounties', 'bounties')->onlyOnDetail(),
-            BelongsTo::make('Bounty', 'bounty')->onlyOnForms(),
+            BelongsTo::make('Bounty')->sortable(),
         ];
     }
 

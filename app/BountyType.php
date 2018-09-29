@@ -45,13 +45,8 @@ class BountyType extends Model
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    public function bounties()
-    {
-        return $this->hasMany('BAKD\Bounty', 'type_id');
-    }
-
     public function bounty()
     {
-        return $this->hasOne('BAKD\Bounty', 'type_id');
+        return $this->hasMany('BAKD\Bounty', 'type_id');
     }
 }
