@@ -49,7 +49,8 @@ class BountyRewardType extends Resource
             ID::make('ID', 'id')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
             Text::make('Description', 'description')->sortable()->rules('required'),
-            HasMany::make('Bounty', 'bounties')->onlyOnDetail(),
+            HasMany::make('Bounties', 'bounties')->onlyOnDetail(),
+            BelongsTo::make('Bounty', 'bounty')->onlyOnForms(),
         ];
     }
 
@@ -97,7 +98,7 @@ class BountyRewardType extends Resource
         return [];
     }
 
-    
+
     /**
      * Get the displayble label of the resource.
      *

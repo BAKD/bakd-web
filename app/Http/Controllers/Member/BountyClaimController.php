@@ -7,29 +7,6 @@ use Illuminate\Http\Request;
 class BountyClaimController extends MemberController
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $view = [];
-        $view['claims'] = \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->get();
-        return view('member/bounty/claims/index', $view);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function all()
-    {
-        $view = [];
-        return view('member/bounty/claims/all', $view);
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -63,11 +40,7 @@ class BountyClaimController extends MemberController
         // TODO: Do we want to allow multiple claims though? We may want to for stakes bounties...
         // Especially when we upgrade the variable reward system...
         // if (!\BAKD\BountyClaim::where('user_id', $user->id)->where('bounty_id', $bounty->id)->where('confirmed', '1')->get()->isEmpty()) {
-        //     session()->flash('status', [
-        //         'type' => 'error',
-        //         'class' => 'alert-danger',
-        //         'message' => 'You already have a claim waiting to be processed!',
-        //     ]);
+        //     MemberHelper::error('You already have a claim waiting to be processed!');
         //     return redirect()->route('member.bounty.home');
         // }
 
@@ -81,17 +54,9 @@ class BountyClaimController extends MemberController
         $bountyClaim->confirmed = 0; // Confirmed by an admin?
 
         if ($bountyClaim->save()) {
-            session()->flash('status', [
-                'type' => 'success',
-                'class' => 'alert-success',
-                'message' => 'Successfully submitted a claim for this bounty!',
-            ]);
+            MemberHelper::success('Successfully submitted a claim for this bounty!');
         } else {
-            session()->flash('status', [
-                'type' => 'error',
-                'class' => 'alert-danger',
-                'message' => 'Unable to submit a claim for this bounty!',
-            ]);
+            MemberHelper::error('Unable to submit a claim for this bounty!');
         }
 
         return redirect()->route('member.bounty.home');
@@ -118,7 +83,9 @@ class BountyClaimController extends MemberController
      */
     public function edit($id)
     {
-        //
+        $view = [];
+        $view['claim'] = \BAKD\BountyClaim::findOrFail($id);
+        return view('member/bounty/claims/create', $view);
     }
 
     /**

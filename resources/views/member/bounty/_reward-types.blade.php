@@ -17,9 +17,9 @@
                             </p>
                         </li>
                         <li>
-                            <div><i class="fa fa-chevron-right"></i> <strong>Stakes (e.g. Article Bounty)</strong></div> 
+                            <div><i class="fa fa-chevron-right"></i> <strong>Stakes (e.g. Article Bounty)</strong></div>
                             <p style="padding-top: 5px;">
-                                If you participate in these kind of bounties you will receive what are called "stakes" upon completing a bounty. These stakes represent a dynamic share in the prize pool of coins for a particular bounty. While the end reward will be paid in BAKD Coins, it ultimately depend on the following factors:
+                                If you participate in these kind of bounties you will receive what are called "stakes" upon completing a bounty. These stakes represent a dynamic share in the prize pool of coins for a particular bounty. While the end reward will be paid in BAKD Coins, it ultimately depends on the following factors:
                                 <ol style="font-size: 14px;">
                                     <li>
                                         1.) The total number of stakes you accumulate for a particular bounty.

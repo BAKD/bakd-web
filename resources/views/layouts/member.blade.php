@@ -8,7 +8,7 @@
         <main class="wrapper py-4">
             <div class="container">
                 {{--  Development days notice  --}}
-                @if (!app()->environment('local') && !session()->has('status'))
+                @if (!session()->has('status'))
                     @include('partials/alerts/development-alert')
                 @endif
                 @include('partials/notifications/flash-message')

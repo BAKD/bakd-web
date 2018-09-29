@@ -68,12 +68,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.claim.edit', $claim->bounty->id) }}">
                                         <i class="la la-pencil"></i> Edit Claim
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.claim', $claim->bounty->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.claim.cancel', $claim->bounty->id) }}">
                                         <i class="la la-trash"></i> Cancel Claim
                                     </a>
                                 </li>

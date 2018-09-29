@@ -68,7 +68,6 @@ class User extends Resource
                 ->updateRules('nullable', 'string', 'min:6'),
 
             HasMany::make('BountyClaims'),
-            // , 'claims', \BAKD\BountyClaim::class),
 
             // TODO: Review me. Recently Added Vyuldashev\NovaPermissionTool references
             MorphToMany::make('Roles', 'roles', \Vyuldashev\NovaPermission\Role::class),

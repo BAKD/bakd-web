@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\HasOne;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -51,6 +52,7 @@ class BountyType extends Resource
             Text::make('Description', 'description')->hideFromIndex()->sortable()->rules('required'),
             Text::make('Type UUID', 'uuid')->sortable()->exceptOnForms(),
             HasMany::make('Bounties')->sortable()->onlyOnDetail(),
+            HasOne::make('Bounty')->sortable()->onlyOnForms(),
         ];
     }
 

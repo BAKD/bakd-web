@@ -15,6 +15,7 @@ use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\HasOne;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\BelongsTo;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -53,13 +54,15 @@ class Bounty extends Resource
     public function fields(Request $request)
     {
         return [
-            Avatar::make('Logo', 'image')->sortable(),
             ID::make('ID', 'id')->sortable()->onlyOnDetail(),
+            Avatar::make('Logo', 'image')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
             DateTime::make('Start Date', 'start_date')->hideFromIndex()->sortable(),
             DateTime::make('End Date', 'end_date')->hideFromIndex()->sortable(),
             BelongsTo::make('Bounty Type', 'type'),
             BelongsTo::make('Bounty Reward Type', 'bountyRewardType'),
+            // HasOne::make('Bounty Reward Type', 'bountyRewardType'),
+            // HasOne::make('Bounty Type', 'type'),
             Number::make('Reward Amount', 'reward')->min(0)->step(1)->rules('required'),
             Number::make('Total Reward Pool', 'reward_total')->min(0)->step(1)->rules('required'),
             Markdown::make('Description', 'description')->rules('required'),

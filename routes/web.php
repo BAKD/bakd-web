@@ -55,6 +55,9 @@ Route::name('member.')->group(function () {
                 Route::get('/bounty/{id}/claim', 'BountyClaimController@create')->name('bounty.claim');
                 Route::post('/bounty/{id}/claim', 'BountyClaimController@store')->name('bounty.claim.save');
                 Route::get('/bounty/claim/{id}', 'BountyClaimController@show')->name('bounty.claim.show');
+                Route::get('/bounty/claim/{id}/edit', 'BountyClaimController@show')->name('bounty.claim.edit');
+                Route::post('/bounty/claim/{id}/edit', 'BountyClaimController@show')->name('bounty.claim.edit.save');
+                Route::post('/bounty/claim/{id}/cancel', 'BountyClaimController@show')->name('bounty.claim.cancel');
             });
         });
     });

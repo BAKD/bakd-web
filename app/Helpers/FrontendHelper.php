@@ -1,10 +1,9 @@
 <?php
 
 namespace BAKD\Helpers;
-
 use \Carbon\Carbon;
 
-class FrontendHelper extends BaseHelper
+class FrontendHelper extends Helper
 {
     public static function getTimeSince($milestone = 'announcement', $period = 'days')
     {
@@ -25,4 +24,5 @@ class FrontendHelper extends BaseHelper
     {
         return 'https://bakd.io/images/icon.png';
     }
+
 }

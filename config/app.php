@@ -222,7 +222,9 @@ return [
         /*
          * BAKD Facades...
          */
-         'FrontendHelper' => BAKD\Helpers\FrontendHelper::class,
+        'FrontendHelper' => BAKD\Helpers\FrontendHelper::class,
+        'MemberHelper' => BAKD\Helpers\MemberHelper::class,
+        'AdminHelper' => BAKD\Helpers\AdminHelper::class,
 
     ],
 
