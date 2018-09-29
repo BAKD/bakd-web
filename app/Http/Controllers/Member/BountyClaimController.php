@@ -62,14 +62,14 @@ class BountyClaimController extends MemberController
         // Check if user already has an approved claim
         // TODO: Do we want to allow multiple claims though? We may want to for stakes bounties...
         // Especially when we upgrade the variable reward system... 
-        if (\BAKD\BountyClaim::where('user_id', $user->id)->where('bounty_id', $bounty->id)->where('confirmed', '1')->get()->isEmpty()) {
-            session()->flash('status', [
-                'type' => 'error',
-                'class' => 'alert-danger',
-                'message' => 'You already have a claim waiting to be processed!',
-            ]);
-            return redirect()->route('member.bounty.home');
-        }
+        // if (!\BAKD\BountyClaim::where('user_id', $user->id)->where('bounty_id', $bounty->id)->where('confirmed', '1')->get()->isEmpty()) {
+        //     session()->flash('status', [
+        //         'type' => 'error',
+        //         'class' => 'alert-danger',
+        //         'message' => 'You already have a claim waiting to be processed!',
+        //     ]);
+        //     return redirect()->route('member.bounty.home');
+        // }
 
         // TODO: File attachments
 
