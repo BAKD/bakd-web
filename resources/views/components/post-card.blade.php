@@ -3,19 +3,18 @@
         <img src="//via.placeholder.com/120x120" alt="User Profile" style="width: 100px; height: auto; max-width: 120px;">
     </div>
     <div class="usr_quest" style="width: 80%;">
-        <h3>This is a random network message from the real time sentiment wall.</h3>
+        <h3>This is a random fake network message from the real-time sentiment wall.</h3>
         <p style="padding-bottom: 20px; margin-top: 0px;">
-        This is a random fake user message for <a href="#">@profcrypto</a> he's my hero!  This is a random fake user message for <a href="#">@profcrypto</a> he's my hero!             This is a random fake user message for <a href="#">@profcrypto</a> he's my hero!             This is a random fake user message for <a href="#">@profcrypto</a> he's my hero!             This is a random fake user message for <a href="#">@profcrypto</a> he's my hero!
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <a href="#">#incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">@Duis</a> aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
         <ul class="react-links">
             <li><a href="#" title=""><i class="fa fa-heart"></i> Vote 150</a></li>
             <li><a href="#" title=""><i class="fa fa-comment"></i> Comments  15</a></li>
             <li><a href="#" title=""><i class="fa fa-eye"></i> Views  50</a></li>
         </ul>
-        <ul class="quest-tags">
+        <ul class="quest-tags" style="font-size: 13px;">
             <li><a href="#" title="">#crypto</a></li>
             <li><a href="#" title="">#blockchain</a></li>
-            <li><a href="#" title="">#BAKD</a></li>
             <li><a href="#" title="">#startup</a></li>
         </ul>
     </div>

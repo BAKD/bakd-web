@@ -7,8 +7,8 @@
                     <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
-                    <h3>Jessica William</h3>
-                    <p>Graphic Designer </p>
+                    <h3>Satoshi Nakamoto</h3>
+                    <p>Mentor &bull; <a href="#">Bitcoin</a></p>
                 </div><!--usr-mg-info end-->
             </div>
             <span><img src="images/price1.png" alt="">1185</span>
@@ -19,8 +19,8 @@
                     <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
-                    <h3>John Doe</h3>
-                    <p>PHP Developer</p>
+                    <h3>Satoshi Nakamoto</h3>
+                    <p>Mentor &bull; <a href="#">Bitcoin</a></p>
                 </div>
             </div>
             <span><img src="images/price2.png" alt="">1165</span>
@@ -31,8 +31,8 @@
                     <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
-                    <h3>Poonam</h3>
-                    <p>Wordpress Developer </p>
+                    <h3>Satoshi Nakamoto</h3>
+                    <p>Mentor &bull; <a href="#">Bitcoin</a></p>
                 </div>
             </div>
             <span><img src="images/price3.png" alt="">1120</span>
@@ -43,8 +43,8 @@
                     <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
-                    <h3>Bill Gates</h3>
-                    <p>C & C++ Developer </p>
+                    <h3>Satoshi Nakamoto</h3>
+                    <p>Mentor &bull; <a href="#">Bitcoin</a></p>
                 </div>
             </div>
             <span><img src="images/price4.png" alt="">1009</span>
