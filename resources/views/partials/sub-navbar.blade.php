@@ -1,6 +1,11 @@
 
 <section class="sub-nav-menu forum-sec">
     <div class="container">
+        <div class="mobile-logo">
+            <a class="navbar-brand" href="{{ route('frontend.home') }}">
+                <img class="bakd-logo" src="{{ config('bakd.logo.regular') }}" />
+            </a>
+        </div>
         <div class="forum-links">
             <ul>
                 <li class="{{ Route::is('frontend.home') ? 'active' : '' }}">

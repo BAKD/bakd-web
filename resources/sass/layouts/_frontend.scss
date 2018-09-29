@@ -144,6 +144,21 @@ em {
     margin-bottom: unset;
 }
 
+@media (max-width: 768px) {
+    .forum-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+        border-top: 3px solid $primary !important;
+        background-color: #333 !important;
+        height: 100%;
+        padding: 0 20px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+    
 .bounty-announcements-table.table-responsive {
     display: inline-table;
 
@@ -341,6 +356,11 @@ main {
         overflow: hidden;
         position: absolute;
         z-index: 11;
+    }
+
+    @media(max-width: 768px) {
+        margin-bottom: 200px;
+        margin-top: 75px;
     }
 }
 

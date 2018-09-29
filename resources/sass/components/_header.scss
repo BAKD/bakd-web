@@ -1,10 +1,14 @@
 header {
     background-color: $secondary;
-    border-top: 2px solid $primary;
+    border-top: 3px solid $primary;
     border-bottom: 1px solid darken($secondary, 10%);
     // position: fixed;
     z-index: 10;
     // height: 120px;
+
+    @media(max-width: 768px) {
+        display: none;
+    }
 
     .bakd-logo {
         max-width: 215px;
@@ -200,4 +204,29 @@ header .navbar-nav .nav-item .member-name {
     width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.mobile-logo {
+    display: none;
+    float: left;
+    max-width: 150px;
+    width: 100%;
+    padding: 5px;
+}
+
+@media(max-width: 768px) {
+    .mobile-logo {
+        display: block;
+    }
+
+    .sub-nav-menu.forum-sec {
+        position: fixed;
+    }
+
+    .forum-links-btn {
+        float: right !important;
+        width: unset;
+        text-align: center;
+        padding: 20px 0;
+    }
 }

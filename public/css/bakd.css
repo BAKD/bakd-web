@@ -37524,6 +37524,21 @@ em {
   margin-bottom: unset;
 }
 
+@media (max-width: 768px) {
+  .forum-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    border-top: 3px solid #F59118 !important;
+    background-color: #333 !important;
+    height: 100%;
+    padding: 0 20px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .bounty-announcements-table.table-responsive {
   display: inline-table;
 }
@@ -37777,6 +37792,13 @@ main.wrapper.overlay:after {
   z-index: 11;
 }
 
+@media (max-width: 768px) {
+  main {
+    margin-bottom: 200px;
+    margin-top: 75px;
+  }
+}
+
 .form-group label {
   padding-right: 15px;
 }
@@ -37799,9 +37821,15 @@ main.wrapper.overlay:after {
 
 header {
   background-color: #f5f5f5;
-  border-top: 2px solid #F59118;
+  border-top: 3px solid #F59118;
   border-bottom: 1px solid #dcdbdb;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: none;
+  }
 }
 
 header .bakd-logo {
@@ -37989,6 +38017,31 @@ header .navbar-nav .nav-item .member-name {
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.mobile-logo {
+  display: none;
+  float: left;
+  max-width: 150px;
+  width: 100%;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .mobile-logo {
+    display: block;
+  }
+
+  .sub-nav-menu.forum-sec {
+    position: fixed;
+  }
+
+  .forum-links-btn {
+    float: right !important;
+    width: unset;
+    text-align: center;
+    padding: 20px 0;
+  }
 }
 
 footer {
