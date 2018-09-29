@@ -6,7 +6,7 @@
         <h3 class="title-wd"><i class="fa fa-btc"></i>
             Claim Bounty #{{ $bounty->id }} ({{ $bounty->name }})
         </h3>
-        <table class="unselectable bounty-announcements-table table-responsive table centered-td">
+        <table class="bounty-announcements-table table-responsive table centered-td">
             <tbody>
                 <tr>
                     <td class="text-center" style="padding: 20px;">
