@@ -21,9 +21,7 @@
                             <div class="row">
                                 <div class="col-lg-12 no-pdd">
                                     <div class="sn-field input-group">
-                                        <textarea rows="15" placeholder="Enter all information noted in the Bounty Description in order to receive credit for this claim!" id="description" type="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" required>
-                                            {{ old('description') }}
-                                        </textarea>
+                                        <textarea rows="15" placeholder="Enter all information noted in the Bounty Description in order to receive credit for this claim!" id="description" type="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" required>{{ old('description') }}</textarea>
                                     </div>
                                     @if ($errors->has('description'))
                                         <div class="invalid-feedback" role="alert">
