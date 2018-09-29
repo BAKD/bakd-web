@@ -67,7 +67,7 @@ class Bounty extends Resource
             Markdown::make('Description', 'description')->rules('required'),
             Text::make('Bounty UUID', 'uuid')->sortable()->onlyOnDetail(),
             HasOne::make('Bounty Type', 'type'),
-            HasOne::make('Bounty Reward Type', 'rewardType'),
+            HasOne::make('Bounty Reward Type', 'bountyRewardType'),
         ];
     }
 
