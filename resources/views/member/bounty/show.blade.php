@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-6">
                         <h3 class="title-wd" style="border-bottom: none;"><i class="fa fa-trophy"></i>
-                            <strong>{{ $bounty->type()->first()->name }} Bounty</strong>
+                            <strong>{{ $bounty->type->name }} Bounty</strong>
                         </h3>
                     </div>
                     <div class="col-6 pull-right text-right">
@@ -63,7 +63,7 @@
                                             <div class="inline-list text-left unselectable">
                                                 <ul class="skill-tags bounty-tags" style="margin: 20px 0 -10px 0;">
                                                     <li><a href="{{ route('frontend.home') }}" title="Bounty">Bounty</a></li>
-                                                    <li><a href="{{ route('frontend.home') }}" title="{{ $bounty->type()->first()->name }}">{{ $bounty->type()->first()->name }}</a></li>
+                                                    <li><a href="{{ route('frontend.home') }}" title="{{ $bounty->type->name }}">{{ $bounty->type->name }}</a></li>
                                                     <li><a href="{{ route('frontend.home') }}" title="BAKD">BAKD</a></li>
                                                     <li><a href="{{ route('frontend.home') }}" title="Startup">Startup</a></li>
                                                     <li><a href="{{ route('frontend.home') }}" title="Crypto">Crypto</a></li>
@@ -130,13 +130,13 @@
                             </td>
                         </tr>
 
-                        @if ($bounty->type()->first()->name)
+                        @if ($bounty->type->name)
                             <tr>
                                 <td width="20%" class="text-right">
                                     <strong>CATEGORY</strong>
                                 </td>
                                 <td class="text-center">
-                                    {{ $bounty->type()->first()->name }}
+                                    {{ $bounty->type->name }}
                                 </td>
                             </tr>
                         @endif

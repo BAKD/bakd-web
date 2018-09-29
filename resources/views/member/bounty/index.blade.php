@@ -33,20 +33,20 @@
             </thead>
             <tbody>
                 @forelse ($claims as $claim)
-                    <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $claim->bounty()->first()->id) }}'">
+                    <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $claim->bounty->id) }}'">
                         <td>
-                            <img src="{{ $claim->bounty()->first()->getImage() }}" />
+                            <img src="{{ $claim->bounty->getImage() }}" />
                         </td>
                         <td>
-                            <span title="{{ strip_tags($claim->bounty()->first()->name) }}">
-                                {{ str_limit(strip_tags($claim->bounty()->first()->name), 50, '...') }}
+                            <span title="{{ strip_tags($claim->bounty->name) }}">
+                                {{ str_limit(strip_tags($claim->bounty->name), 50, '...') }}
                             </span>
                         </td>
                         <td class="text-center">
-                            <span class="bakd-coins" title="{{ number_format($claim->bounty()->first()->reward) }} BAKD Coins">{{ number_format($claim->bounty()->first()->reward) }}</span>
+                            <span class="bakd-coins" title="{{ number_format($claim->bounty->reward) }} BAKD Coins">{{ number_format($claim->bounty->reward) }}</span>
                         </td>
                         <td class="text-center">
-                            {!! $claim->bounty()->first()->getDisplayRewardType() !!}
+                            {!! $claim->bounty->getDisplayRewardType() !!}
                         </td>
                         <td class="text-center">
                             {{ $claim->created_at->diffForHumans() }}
@@ -63,17 +63,17 @@
                         <td class="text-center">
                             <ul class="action-links-list">
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty()->first()->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty->id) }}">
                                         <i class="la la-eye"></i> View Bounty
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty()->first()->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty->id) }}">
                                         <i class="la la-pencil"></i> Edit Claim
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.claim', $claim->bounty()->first()->id) }}">
+                                    <a class="action-link" href="{{ route('member.bounty.claim', $claim->bounty->id) }}">
                                         <i class="la la-trash"></i> Cancel Claim
                                     </a>
                                 </li>

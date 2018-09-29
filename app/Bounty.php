@@ -66,15 +66,22 @@ class Bounty extends Model
         return $this->hasOne('BAKD\BountyRewardType', 'id', 'bounty_reward_type_id');
     }
 
+    // Alias
+    public function rewardTypes()
+    {
+        return $this->bountyRewardType();
+    }
+
     public function wasClaimed()
     {
+        // Only check for claims on logged in users
         if (\Auth::guest()) return false;
         return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();
     }
 
     public function isStakeRewardBounty()
     {
-        if ($rewardTypesCollection = $this->bountyRewardType()->first()) {
+        if ($rewardTypesCollection = $this->bountyRewardType) {
             if (in_array(strtolower($rewardTypesCollection->name), ['stake', 'stakes'])) {
                 return true;
             }
@@ -84,7 +91,7 @@ class Bounty extends Model
 
     public function getDisplayRewardType($showDashOnFail = true, $default = false)
     {
-        if ($rewardTypesCollection = $this->bountyRewardType()->first()) {
+        if ($rewardTypesCollection = $this->bountyRewardType) {
             return $rewardTypesCollection->name;
         }
         return $showDashOnFail ? '&mdash;' : '';;

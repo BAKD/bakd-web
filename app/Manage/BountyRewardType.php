@@ -5,7 +5,7 @@ namespace BAKD\Manage;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Fields\Trix;
+use Laravel\Nova\Fields\Markdown;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -45,7 +45,7 @@ class BountyRewardType extends Resource
         return [
             ID::make('ID', 'id')->sortable(),
             Text::make('Name', 'name')->sortable()->rules('required'),
-            Trix::make('Description', 'description'),
+            Markdown::make('Description', 'description')->rules('required'),
         ];
     }
 
