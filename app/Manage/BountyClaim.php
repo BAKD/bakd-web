@@ -102,4 +102,44 @@ class BountyClaim extends Resource
     {
         return [];
     }
+
+    /**
+     * Get the displayble label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return 'Bounty Claims';
+    }
+
+    /**
+     * Get the displayble singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return 'Bounty Claim';
+    }
+
+    /**
+     * Get the value that should be displayed to represent the resource.
+     *
+     * @return string
+     */
+    public function title()
+    {
+        return 'Bounty Claim';
+    }
+
+    /**
+     * Get the search result subtitle for the resource.
+     *
+     * @return string
+     */
+    public function subtitle()
+    {
+        return 'BAKD Bounty Claim Submissions';
+    }
 }

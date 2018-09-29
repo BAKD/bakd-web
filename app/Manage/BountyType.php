@@ -93,4 +93,44 @@ class BountyType extends Resource
     {
         return [];
     }
+
+    /**
+     * Get the displayble label of the resource.
+     *
+     * @return string
+     */
+    public static function label()
+    {
+        return 'Bounty Categories';
+    }
+
+    /**
+     * Get the displayble singular label of the resource.
+     *
+     * @return string
+     */
+    public static function singularLabel()
+    {
+        return 'Bounty Category';
+    }
+
+    /**
+     * Get the value that should be displayed to represent the resource.
+     *
+     * @return string
+     */
+    public function title()
+    {
+        return 'Bounty Category';
+    }
+
+    /**
+     * Get the search result subtitle for the resource.
+     *
+     * @return string
+     */
+    public function subtitle()
+    {
+        return 'BAKD Bounty Categories';
+    }
 }
