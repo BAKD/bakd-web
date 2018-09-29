@@ -24,7 +24,7 @@
                                     @endif
                                 </div>
                                 <div class="col-lg-12 no-pdd text-center">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button disabled title="Claim Submissions are not yet ready!" type="submit" class="btn btn-primary">
                                         {{ __('Submit Claim') }}
                                     </button>
                                 </div>
