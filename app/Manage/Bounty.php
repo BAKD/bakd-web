@@ -53,17 +53,17 @@ class Bounty extends Resource
     public function fields(Request $request)
     {
         return [
+            Avatar::make('Logo', 'image')->sortable(),
             ID::make('ID', 'id')->sortable()->onlyOnDetail(),
             Text::make('Name', 'name')->sortable()->rules('required'),
-            DateTime::make('Start Date', 'start_date')->sortable(),
-            DateTime::make('End Date', 'end_date')->sortable(),
+            DateTime::make('Start Date', 'start_date')->hideFromIndex()->sortable(),
+            DateTime::make('End Date', 'end_date')->hideFromIndex()->sortable(),
             BelongsTo::make('Bounty Type', 'type'),
             BelongsTo::make('Bounty Reward Type', 'bountyRewardType'),
             Number::make('Reward Amount', 'reward')->min(0)->step(1)->rules('required'),
             Number::make('Total Reward Pool', 'reward_total')->min(0)->step(1)->rules('required'),
             Markdown::make('Description', 'description')->rules('required'),
             Text::make('Bounty UUID', 'uuid')->sortable()->onlyOnDetail(),
-            Avatar::make('Logo', 'image')->sortable(),
             HasMany::make('Bounty Claims', 'claims'),
         ];
     }
