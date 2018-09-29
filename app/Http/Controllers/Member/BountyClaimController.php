@@ -14,7 +14,7 @@ class BountyClaimController extends MemberController
     public function index()
     {
         $view = [];
-        $view['claims'] = \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->get();
+        $view['claims'] = \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('member/bounty/claims/index', $view);
     }
 
@@ -61,7 +61,7 @@ class BountyClaimController extends MemberController
 
         // Check if user already has an approved claim
         // TODO: Do we want to allow multiple claims though? We may want to for stakes bounties...
-        // Especially when we upgrade the variable reward system... 
+        // Especially when we upgrade the variable reward system...
         // if (!\BAKD\BountyClaim::where('user_id', $user->id)->where('bounty_id', $bounty->id)->where('confirmed', '1')->get()->isEmpty()) {
         //     session()->flash('status', [
         //         'type' => 'error',
@@ -77,7 +77,7 @@ class BountyClaimController extends MemberController
         $bountyClaim->user_id = \Auth::user()->id;
         $bountyClaim->bounty_id = $bountyId;
         $bountyClaim->description = $claimDescription;
-        $bountyClaim->confirmed_by_id = \Auth::user()->id; 
+        $bountyClaim->confirmed_by_id = \Auth::user()->id;
         $bountyClaim->confirmed = 0; // Confirmed by an admin?
 
         if ($bountyClaim->save()) {

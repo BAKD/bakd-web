@@ -13,7 +13,7 @@ class BountyController extends MemberController
      */
     public function index()
     {
-        $view['claims'] = \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->get();
+        $view['claims'] = \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('member/bounty/index', $view);
     }
 
