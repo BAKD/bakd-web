@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Select;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -47,6 +48,12 @@ class BountyClaim extends Resource
     {
         return [
             ID::make('ID', 'id')->sortable(),
+            Markdown::make('Claim Description', 'description')->sortable(),
+            Select::make('Status', 'confirmed')->options([
+                '0' => 'Pending',
+                '1' => 'Approved',
+                '-1' => 'Rejected'
+            ])->displayUsingLabels()->sortable(),
             HasOne::make('User'),
             HasOne::make('Bounty'),
         ];

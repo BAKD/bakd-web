@@ -21,7 +21,7 @@
                         Reward Type
                     </th>
                     <th class="text-center">
-                        Claimed On
+                        Claimed
                     </th>
                     <th class="text-center">
                         Claim Status
@@ -32,42 +32,49 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($bounties as $bounty)
-                    <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $bounty->id) }}'">
+                @forelse ($claims as $claim)
+                    <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $claim->bounty()->first()->id) }}'">
                         <td>
-                            <img src="{{ $bounty->getImage() }}" />
+                            <img src="{{ $claim->bounty()->first()->getImage() }}" />
                         </td>
                         <td>
-                            <span title="{{ strip_tags($bounty->name) }}">
-                                {{ str_limit(strip_tags($bounty->name), 50, '...') }}
+                            <span title="{{ strip_tags($claim->bounty()->first()->name) }}">
+                                {{ str_limit(strip_tags($claim->bounty()->first()->name), 50, '...') }}
                             </span>
                         </td>
                         <td class="text-center">
-                            <span class="bakd-coins" title="{{ number_format($bounty->reward) }} BAKD Coins">{{ number_format($bounty->reward) }}</span>
+                            <span class="bakd-coins" title="{{ number_format($claim->bounty()->first()->reward) }} BAKD Coins">{{ number_format($claim->bounty()->first()->reward) }}</span>
                         </td>
                         <td class="text-center">
-                            {!! $bounty->getDisplayRewardType() !!}
+                            {!! $claim->bounty()->first()->getDisplayRewardType() !!}
                         </td>
                         <td class="text-center">
-                            {!! $bounty->getDisplayEndDate() !!}
+                            {{ $claim->created_at->diffForHumans() }}
                         </td>
                         <td class="text-center">
-                        @if ($bounty->wasClaimed())
-                            <span class="badge badge-success">CLAIMED</span>
-                        @else
-                            <span class="badge badge-danger">UNCLAIMED</span>
-                        @endif
+                            @if ($claim->confirmed && $claim->confirmed === 1)
+                                <span class="badge badge-success">APPROVED</span>
+                            @elseif ($claim->confirmed && $claim->confirmed === 2)
+                                <span class="badge badge-danger">REJECTED</span>
+                            @else
+                                <span class="badge badge-warning">PENDING</span>
+                            @endif
                         </td>
                         <td class="text-center">
                             <ul class="action-links-list">
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.show', $bounty->id) }}">
-                                        <i class="la la-eye"></i> View
+                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty()->first()->id) }}">
+                                        <i class="la la-eye"></i> View Bounty
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="action-link" href="{{ route('member.bounty.claim', $bounty->id) }}">
-                                        <i class="la la-plus"></i> Claim
+                                    <a class="action-link" href="{{ route('member.bounty.show', $claim->bounty()->first()->id) }}">
+                                        <i class="la la-pencil"></i> Edit Claim
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="action-link" href="{{ route('member.bounty.claim', $claim->bounty()->first()->id) }}">
+                                        <i class="la la-trash"></i> Cancel Claim
                                     </a>
                                 </li>
                             </ul>
