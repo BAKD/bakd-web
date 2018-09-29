@@ -4,7 +4,7 @@
         <li>
             <div class="usr-msg-details">
                 <div class="usr-ms-img">
-                    <img src="http://via.placeholder.com/50x50" alt="">
+                    <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
                     <h3>Jessica William</h3>
@@ -16,7 +16,7 @@
         <li>
             <div class="usr-msg-details">
                 <div class="usr-ms-img">
-                    <img src="http://via.placeholder.com/50x50" alt="">
+                    <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
                     <h3>John Doe</h3>
@@ -28,7 +28,7 @@
         <li>
             <div class="usr-msg-details">
                 <div class="usr-ms-img">
-                    <img src="http://via.placeholder.com/50x50" alt="">
+                    <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
                     <h3>Poonam</h3>
@@ -40,7 +40,7 @@
         <li>
             <div class="usr-msg-details">
                 <div class="usr-ms-img">
-                    <img src="http://via.placeholder.com/50x50" alt="">
+                    <img src="//via.placeholder.com/50x50" alt="">
                 </div>
                 <div class="usr-mg-info">
                     <h3>Bill Gates</h3>

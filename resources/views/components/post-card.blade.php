@@ -1,6 +1,6 @@
 <div class="usr-question" style="margin-bottom: 20px; background: #ffffff;">
     <div class="usr_img" style="width: 120px; border-radius: none;">
-        <img src="http://via.placeholder.com/120x120" alt="User Profile" style="width: 100px; height: auto; max-width: 120px;">
+        <img src="//via.placeholder.com/120x120" alt="User Profile" style="width: 100px; height: auto; max-width: 120px;">
     </div>
     <div class="usr_quest" style="width: 80%;">
         <h3>This is a random network message from the real time sentiment wall.</h3>

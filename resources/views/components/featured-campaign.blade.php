@@ -4,6 +4,6 @@
     </h1>
 
     <div class="widget widget-adver">
-        <img src="http://via.placeholder.com/900x210" alt="">
+        <img src="//via.placeholder.com/900x210" alt="">
     </div>
 </div>

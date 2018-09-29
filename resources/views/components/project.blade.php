@@ -1,7 +1,7 @@
 <div class="post-bar">
     <div class="post_topbar">
         <div class="usy-dst">
-            <img src="http://via.placeholder.com/120x120" alt="">
+            <img src="//via.placeholder.com/120x120" alt="">
             <div class="usy-name">
                 <h3>
                     {{ $project->name }}

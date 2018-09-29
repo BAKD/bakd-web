@@ -24,7 +24,7 @@
     <div class="post_topbar">
         <div class="usy-dst row">
             <div class="col-lg-3">
-                <img src="http://via.placeholder.com/250x250" alt="{{ $project->name }}">
+                <img src="//via.placeholder.com/250x250" alt="{{ $project->name }}">
             </div>
             <div class="col-lg-9">
                 <div class="project-details">
