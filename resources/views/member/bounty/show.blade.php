@@ -96,7 +96,7 @@
                                                 . You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
                                             @endif
                                         </div>
-                                    @elseif ($userClaim>isApproved())
+                                    @elseif ($userClaim->isApproved())
                                         <span class="badge badge-success">Claim Approved</span>
                                     @endif
                                 @elseif (!$bounty->isStarted())
