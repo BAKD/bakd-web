@@ -100,7 +100,7 @@
                                         <span class="badge badge-success">Claim Approved</span>
                                     @endif
                                 @elseif (!$bounty->isStarted())
-                                    <span class="badge badge-warning">Not Started</span>
+                                    <span class="badge badge-primary">Not Started</span>
                                 @elseif ($bounty->isPaused())
                                     <span class="badge badge-warning">Bounty Paused</span>
                                 @elseif ($bounty->isOver())
