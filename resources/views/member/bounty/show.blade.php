@@ -80,7 +80,7 @@
                 </table>
                 <div class="job-status-bar text-right" style="border-top: 1px solid #eee;">
                     <div class="row">
-                        <div class="col-lg-9 text-left">
+                        <div class="col-lg-9 col-xs-12 text-left">
                             <div class="claim-info-wrapper" style="font-size: 16px; font-weight: 700; align-items: center; display: inline-flex; height: 100%;">
                                 @if ($bounty->isRunning())
                                     @if ($bounty->wasClaimed())
@@ -89,24 +89,26 @@
                                             $userClaim = $bounty->claims->where('user_id', \Auth::user()->id)->first();
                                         ?>
                                         <div class="text-center">
-                                            <i class="fa fa-clock-o"></i> Your last claim for this bounty was submitted {{ $userClaim->created_at->diffForHumans() }}. It is currently <strong>{{ $userClaim->confirmed === 1 ? 'Approved' : $userClaim->confirmed === 2 ? 'Rejected' : 'Pending' }}</strong>.
-                                            @if ($userClaim === 1) // approved
+                                            <i class="fa fa-clock-o"></i> Your last claim {{ $userClaim->created_at->diffForHumans() }} is <strong>{{ $userClaim->confirmed === 1 ? 'Approved' : $userClaim->confirmed === 2 ? 'Rejected' : 'Pending' }}</strong>.
+                                            @if ($userClaim === 1)
                                                 Congrats!
-                                            @elseif ($userClaim->confirmed === 2) // rejected
-                                                You can either <a href="#">Fix It</a>, or <a href="#">Cancel It</a>.
+                                            @elseif ($userClaim->confirmed === 2)
+                                                You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->bounty->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->bounty->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
                                             @endif
                                         </div>
                                     @elseif ($bounty->wasApproved())
-                                        Claim Approved
+                                        <span class="badge badge-success">Claim Approved</span>
                                     @endif
+                                @elseif (!$bounty->isStarted())
+                                    <span class="badge badge-warning">Not Started</span>
                                 @elseif ($bounty->isPaused())
-                                    Bounty Paused
+                                    <span class="badge badge-warning">Bounty Paused</span>
                                 @elseif ($bounty->isOver())
-                                    Bounty Finished
+                                    <span class="badge badge-danger">Bounty Finished</span>
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-3 text-right">
+                        <div class="col-lg-3 col-xs-12 text-right">
                             <div class="claim-bounty-button text-right">
                                 @if ($bounty->isClaimable())
                                     <a href="{{ route('member.bounty.claim', $bounty->id) }}" class="btn btn-primary btn-md">
