@@ -92,7 +92,7 @@
                                         @if ($userClaim->isApproved())
                                             Congrats!
                                         @elseif ($userClaim->isRejected())
-                                            You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
+                                            You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Delete Your Claim">Delete It</a>.
                                         @endif
                                     </div>
                                 @elseif (!$bounty->isStarted())

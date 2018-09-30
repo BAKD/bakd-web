@@ -77,7 +77,7 @@
                                         <a class="action-link" href="#" data-toggle="modal" data-target="#deleteModal" 
                                             data-resource-title="Bounty Claim"
                                             data-resource-delete-link="{{ route('member.bounty.claim.cancel', $claim->id) }}">
-                                            <i class="la la-trash"></i> Cancel Claim
+                                            <i class="la la-trash"></i> Delete Claim
                                         </a>
                                     </li>
                                 @endif
