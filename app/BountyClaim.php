@@ -67,16 +67,19 @@ class BountyClaim extends Model
 
     public function isApproved()
     {
-        return (bool) $this->confirmed === 1 ? true : false;
+        if ($this->confirmed === 1) return true;
+        return false;
     }
 
     public function isRejected()
     {
-        return (bool) $this->confirmed === 2 ? true : false;
+        if ($this->confirmed === 2) return true;
+        return false;
     }
 
     public function isPending()
     {
-        return (bool) $this->confirmed === 0 ? true : false;
+        if ($this->confirmed === 0) return true;
+        return false;
     }
 }

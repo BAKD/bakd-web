@@ -52,9 +52,9 @@
                             {{ $claim->created_at->diffForHumans() }}
                         </td>
                         <td class="text-center">
-                            @if ($claim->confirmed && $claim->isApproved())
+                            @if ($claim->isApproved())
                                 <span class="badge badge-success">APPROVED</span>
-                            @elseif ($claim->confirmed && $claim->isRejected())
+                            @elseif ($claim->isRejected())
                                 <span class="badge badge-danger">REJECTED</span>
                             @else
                                 <span class="badge badge-warning">PENDING</span>
