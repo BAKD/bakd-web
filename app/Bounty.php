@@ -89,6 +89,7 @@ class Bounty extends Model
         return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();
     }
 
+    // TODO: Move & Refactor. Should be in BountyClaim.
     public function wasApproved()
     {
         if (\Auth::guest()) return false;

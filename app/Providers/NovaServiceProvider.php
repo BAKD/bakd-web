@@ -55,11 +55,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             return in_array($user->email, [
                 'tom@bakd.io',
                 'matt@bakd.io',
-                'franklin@bakd.io',
-                'suyoga@bakd.io',
-                'timo@bakd.io',
-                'support@bakd.io',
-                'developers@bakd.io'
+                'timo@bakd.io'
             ]);
         });
     }

@@ -85,7 +85,8 @@ class BountyClaimController extends MemberController
     {
         $view = [];
         $view['claim'] = \BAKD\BountyClaim::findOrFail($id);
-        return view('member/bounty/claims/create', $view);
+        $view['bounty'] = $view['claim']->bounty;
+        return view('member/bounty/claims/edit', $view);
     }
 
     /**
@@ -97,7 +98,49 @@ class BountyClaimController extends MemberController
      */
     public function update(Request $request, $id)
     {
-        //
+        $rejectUpdated = false;
+        $claimId = $request->id;
+        $claimDescription = $request->input('description');
+
+        // TODO: Validation
+        $bountyClaim = \BAKD\BountyClaim::findOrFail($claimId);
+        $user = \Auth::user();
+
+        // Check if user trying to edit claim, is the original creator of said claim
+        if ($user->id !== $bountyClaim->user_id) {
+            \MemberHelper::error('You cannot edit a claim that does not belong to you.');
+            return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
+        }
+
+        // Check if this claim was already approved.
+        // TODO: Do we need/want this check here?
+        if ($bountyClaim->bounty->wasApproved()) {
+            \MemberHelper::error('Your bounty claim was already approved.');
+            return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
+        }
+
+        // Set the new model values
+        $bountyClaim->description = $claimDescription;
+        $bountyClaim->confirmed_by_id = $user->id;
+        // If updating a claim that was originally rejected, change it back to 0 to denote
+        // a "Pending" status.
+        if ($bountyClaim->confirmed === 2) {
+            $rejectUpdated = true;
+            $bountyClaim->confirmed = 0;
+        }
+
+        // Try to save/update the claim
+        if ($bountyClaim->update()) {
+            if ($rejectUpdated) {
+                \MemberHelper::success('Your bounty claim was successfully updated and changed from Rejected to Pending status.');
+            } else {
+                \MemberHelper::success('Your bounty claim was successfully updated and is currently Pending.');
+            }
+        } else {
+            \MemberHelper::error('There was an error saving your updated bounty to the database. Please try again or contact an administrator.');
+        }
+
+        return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
     }
 
     /**

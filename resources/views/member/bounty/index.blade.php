@@ -67,16 +67,20 @@
                                         <i class="la la-eye"></i> View Bounty
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="action-link" href="{{ route('member.bounty.claim.edit', $claim->bounty->id) }}">
-                                        <i class="la la-pencil"></i> Edit Claim
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="action-link" href="{{ route('member.bounty.claim.cancel', $claim->bounty->id) }}">
-                                        <i class="la la-trash"></i> Cancel Claim
-                                    </a>
-                                </li>
+                                @if (!$claim->bounty->isOver())
+                                    @if (!$claim->bounty->wasApproved())
+                                        <li>
+                                            <a class="action-link" href="{{ route('member.bounty.claim.edit', $claim->id) }}">
+                                                <i class="la la-pencil"></i> Edit Claim
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="action-link" href="{{ route('member.bounty.claim.cancel', $claim->id) }}">
+                                                <i class="la la-trash"></i> Cancel Claim
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endif
                             </ul>
                         </td>
                     </tr>
