@@ -37789,7 +37789,7 @@ em {
 }
 
 main {
-  margin-bottom: 120px;
+  margin-bottom: 90px;
   min-height: 100vh;
 }
 
@@ -37801,7 +37801,7 @@ main.wrapper.overlay:after {
 
 @media (max-width: 768px) {
   main {
-    margin-bottom: 200px;
+    margin-bottom: 60px;
     margin-top: 75px;
   }
 }
@@ -38039,6 +38039,11 @@ header .navbar-nav .nav-item .member-name {
     display: block;
   }
 
+  .sub-nav-menu {
+    -webkit-box-shadow: 0px 1px 25px -5px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 1px 25px -5px rgba(0, 0, 0, 0.25);
+  }
+
   .sub-nav-menu.forum-sec {
     position: fixed;
   }
@@ -38048,6 +38053,14 @@ header .navbar-nav .nav-item .member-name {
     width: unset;
     text-align: center;
     padding: 20px 0;
+  }
+
+  .forum-links-btn:hover,
+  .forum-links-btn:active,
+  .forum-links-btn:focus {
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    opacity: 0.9;
   }
 }
 
@@ -38061,5 +38074,35 @@ footer .bakd-logo {
   max-width: 125px;
   width: 100%;
   height: auto;
+}
+
+@media (max-height: 600px) {
+  footer {
+    position: relative !important;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .bakd-logo {
+    display: none;
+  }
+
+  footer .footy-sec.mn a {
+    font-size: 13px;
+  }
+
+  footer .footy-sec.mn p {
+    padding-bottom: 5px;
+    padding-top: 0px;
+    font-size: 12px;
+  }
+
+  footer .footy-sec.mn p img {
+    max-width: 17px;
+  }
+
+  footer ul {
+    padding: 10px 0 0 0 !important;
+  }
 }
 

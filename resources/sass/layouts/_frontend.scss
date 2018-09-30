@@ -356,7 +356,7 @@ em {
 }
 
 main {
-    margin-bottom: 120px;
+    margin-bottom: 90px;
     min-height: 100vh;
 
     &.wrapper.overlay:after {
@@ -366,7 +366,7 @@ main {
     }
 
     @media(max-width: 768px) {
-        margin-bottom: 200px;
+        margin-bottom: 60px;
         margin-top: 75px;
     }
 }

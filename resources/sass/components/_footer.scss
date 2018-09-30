@@ -7,5 +7,37 @@ footer {
         max-width: 125px;
         width: 100%;
         height: auto;
+
+    }
+
+    @media(max-height: 600px) {
+        position: relative !important;
+    }
+
+    @media(max-width: 768px) {
+        .bakd-logo {
+            display: none;
+        }
+
+        .footy-sec.mn {
+            a {
+                font-size: 13px;
+            }
+
+            p {
+                padding-bottom: 5px;
+                padding-top: 0px;
+                font-size: 12px;
+
+                img {
+                    max-width: 17px;
+                }
+            }
+        }
+
+        ul {
+            padding: 10px 0 0 0 !important;
+        }
+
     }
 }
