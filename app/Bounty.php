@@ -84,7 +84,7 @@ class Bounty extends Model
         if (\Auth::guest()) return false;
         return (bool) !BountyClaim::where('bounty_id', $this->id)
             ->where('user_id', \Auth::user()->id)
-            ->where('confrimed', 1)
+            ->where('confirmed', 1)
             ->get()
             ->isEmpty();
     }

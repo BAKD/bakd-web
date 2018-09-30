@@ -19,58 +19,64 @@
                 <th class="text-center">
                     Ends
                 </th>
+                @if (!Auth::guest())
                 <th class="text-center">
                     Status
                 </th>
+                @endif
                 <th class="text-center">
                     Action
                 </th>
             </tr>
         </thead>
         <tbody>
-            @if ($random_bounty)
-                <tr onClick="javascript: window.location='{{ route('member.bounty.show', $random_bounty->id) }}'" class="clickable-row">
+            @if (isset($randomBounty))
+                <tr onClick="javascript: window.location='{{ route('member.bounty.show', $randomBounty->id) }}'" class="clickable-row">
                     <td>
-                        <img src="{{ $random_bounty->getImage() }}" />
+                        <img src="{{ $randomBounty->getImage() }}" />
                     </td>
                     <td>
-                        <span title="{{ strip_tags($random_bounty->name) }}">
-                            {{ str_limit(strip_tags($random_bounty->name), 50, '...') }}
+                        <span title="{{ strip_tags($randomBounty->name) }}">
+                            {{ str_limit(strip_tags($randomBounty->name), 50, '...') }}
                         </span>
                     </td>
                     <td class="text-center">
-                        {{--  <span class="bakd-coins" title="{{ number_format($random_bounty->reward) }} BAKD {!! $random_bounty->getDisplayRewardType(false) !!}">{{ number_format($random_bounty->reward) }} {!! $random_bounty->getDisplayRewardType(false) !!}</span>  --}}
+                        {{--  <span class="bakd-coins" title="{{ number_format($randomBounty->reward) }} BAKD {!! $randomBounty->getDisplayRewardType(false) !!}">{{ number_format($randomBounty->reward) }} {!! $randomBounty->getDisplayRewardType(false) !!}</span>  --}}
                         <span class="bakd-coins" title="BAKD Coins">
-                            {!! $random_bounty->getDisplayRewardAmount(true) !!}
+                            {!! $randomBounty->getDisplayRewardAmount(true) !!}
                         </span>
                     </td>
                     <td class="text-center">
-                        {!! $random_bounty->getDisplayRewardType() !!}
+                        {!! $randomBounty->getDisplayRewardType() !!}
                     </td>
                     <td class="text-center">
-                        <span class="random_bounty-date">
-                            {!! $random_bounty->getDisplayEndDate() !!}
+                        <span class="randomBounty-date">
+                            {!! $randomBounty->getDisplayEndDate() !!}
                         </span>
                     </td>
-                    <td class="text-center">
-                    @if ($random_bounty->wasClaimed())
-                        <span class="badge badge-success">CLAIMED</span>
-                    @else
-                        <span class="badge badge-danger">UNCLAIMED</span>
+                    @if (!Auth::guest())
+                        <td class="text-center">
+                            @if ($randomBounty->wasClaimed())
+                                <span class="badge badge-success">CLAIMED</span>
+                            @else
+                                <span class="badge badge-danger">UNCLAIMED</span>
+                            @endif
+                        </td>
                     @endif
-                    </td>
                     <td class="text-center">
                         <ul class="action-links-list">
                             <li>
-                                <a class="action-link" href="{{ route('member.bounty.show', $random_bounty->id) }}">
+                                <a class="action-link" href="{{ route('member.bounty.show', $randomBounty->id) }}">
                                     <i class="la la-eye"></i> View
                                 </a>
                             </li>
-                            <li>
-                                <a class="action-link" href="{{ route('member.bounty.claim', $random_bounty->id) }}">
-                                    <i class="la la-plus-circle"></i> Claim
-                                </a>
-                            </li>
+                            @if (!Auth::guest() && !$randomBounty->wasClaimed())
+                                <li>
+                                    <a class="action-link" href="{{ route('member.bounty.claim', $randomBounty->id) }}">
+                                        <i class="la la-plus-circle"></i> Claim
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </td>
                 </tr>

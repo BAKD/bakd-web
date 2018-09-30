@@ -25,7 +25,7 @@ class PageController extends FrontendController
     public function index()
     {
         $view = [];
-        $view['random_bounty'] = \BAKD\Bounty::inRandomOrder()->limit(1)->first();
+        $view['randomBounty'] = \BAKD\Bounty::inRandomOrder()->limit(1)->first();
         return view('frontend/index', $view);
     }
 
