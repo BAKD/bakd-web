@@ -82,23 +82,19 @@
                     <div class="row">
                         <div class="col-lg-9 col-xs-12 text-left">
                             <div class="claim-info-wrapper" style="font-size: 16px; font-weight: 500; align-items: center; display: inline-flex; height: 100%;">
-                                @if ($bounty->isRunning())
-                                    @if ($bounty->wasClaimed())
-                                        <?php
-                                            // TODO: Setup has-through when we rework current bounty db model
-                                            $userClaim = $bounty->claims->where('user_id', \Auth::user()->id)->first();
-                                        ?>
-                                        <div class="text-center">
-                                            <i class="fa fa-clock-o"></i> Your last claim from {{ $userClaim->updated_at->diffForHumans() }} is <strong>{{ $userClaim->isApproved() ? 'Approved' : $userClaim->isRejected() ? 'Rejected' : 'Pending' }}</strong>
-                                            @if ($userClaim->isApproved())
-                                                . Congrats!
-                                            @elseif ($userClaim->isRejected())
-                                                . You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
-                                            @endif
-                                        </div>
-                                    @elseif ($userClaim->isApproved())
-                                        <span class="badge badge-success">Claim Approved</span>
-                                    @endif
+                                @if ($bounty->isRunning() && $bounty->wasClaimed())
+                                    <?php
+                                        // TODO: Setup has-through when we rework current bounty db model
+                                        $userClaim = $bounty->claims->where('user_id', \Auth::user()->id)->first();
+                                    ?>
+                                    <div class="text-center">
+                                        <i class="fa fa-clock-o"></i> Your last claim from {{ $userClaim->updated_at->diffForHumans() }} is <strong>{{ $userClaim->isApproved() ? 'Approved' : $userClaim->isRejected() ? 'Rejected' : 'Pending' }}</strong>
+                                        @if ($userClaim->isApproved())
+                                            . Congrats!
+                                        @elseif ($userClaim->isRejected())
+                                            . You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
+                                        @endif
+                                    </div>
                                 @elseif (!$bounty->isStarted())
                                     <span class="badge badge-primary">Not Started</span>
                                 @elseif ($bounty->isPaused())
