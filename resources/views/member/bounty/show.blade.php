@@ -37,7 +37,7 @@
                                     <hr>
                                 </li>
                                 <li style="padding: 11px; margin: 0;" class="disabled">
-                                    <i class="fa fa-bookmark"></i> <a href="#" class="disabled" title="Coming Soon">Bookmark</a>
+                                    <i class="fa fa-bookmark"></i> <a href="#" title="Bookmark Bounty">Bookmark</a>
                                 </li>
                             </ul>
                         </div>

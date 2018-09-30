@@ -3,9 +3,40 @@
 @section('content')
 <div class="container">
     <div class="widget widget-user">
-        <h3 class="title-wd"><i class="fa fa-btc"></i>
-            Claim Bounty #{{ $bounty->id }} ({{ $bounty->name }})
-        </h3>
+        <div class="row">
+            <div class="col-6 pull-left text-left">
+                <h3 class="title-wd" style="border-bottom: none;"><i class="fa fa-btc"></i>
+                    Claim Bounty #{{ $bounty->id }} ({{ $bounty->name }})
+                </h3>
+            </div>
+            <div class="col-6 pull-right text-right">
+                <ul style="padding: 10px 35px 10px 0;">
+                    <li title="{!! $bounty->getDisplayRewardAmount(true) !!} BAKD Coins">
+                        <div class="bakd-coins">
+                            @if ($bounty->isStakeRewardBounty())
+                            {!! $bounty->getDisplayRewardAmount(true) !!} COINS
+                            @else
+                            {!! $bounty->getDisplayRewardAmount(true) !!} {!! strtoupper($bounty->getDisplayRewardType()) !!}
+                            @endif
+                        </div>
+                    </li>
+                </ul>
+                <div class="ed-opts pull-right" style="float: right; position: absolute; right: 30px; top: 22px;">
+                    <a href="#" title="View Options" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                    <ul class="text-left ed-options" style="min-width: 160px; margin: 5px 0 0 0; padding: 5px;">
+                        <li style="width: 100%; padding: 11px; margin: 0;">
+                            <i class="fa fa-facebook"></i> <a href="#" title="Share Bounty">Share Bounty</a>
+                        </li>
+                        <li style="width: 100%; padding: 0px; margin: -5px 0;">
+                            <hr>
+                        </li>
+                        <li style="padding: 11px; margin: 0;" class="disabled">
+                            <i class="fa fa-bookmark"></i> <a href="#" title="Bookmark Bounty">Bookmark</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <table class="bounty-announcements-table table-responsive table centered-td">
             <tbody>
                 <tr>

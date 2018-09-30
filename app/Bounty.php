@@ -79,6 +79,16 @@ class Bounty extends Model
         return (bool) !BountyClaim::where('bounty_id', $this->id)->where('user_id', \Auth::user()->id)->get()->isEmpty();
     }
 
+    public function wasApproved()
+    {
+        if (\Auth::guest()) return false;
+        return (bool) !BountyClaim::where('bounty_id', $this->id)
+            ->where('user_id', \Auth::user()->id)
+            ->where('confrimed', 1)
+            ->get()
+            ->isEmpty();
+    }
+
     public function isStakeRewardBounty()
     {
         if ($rewardTypesCollection = $this->bountyRewardType) {
