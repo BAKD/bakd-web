@@ -79,25 +79,46 @@
                     </tbody>
                 </table>
                 <div class="job-status-bar text-right" style="border-top: 1px solid #eee;">
-                    <div class="claim-bounty-button text-right">
-                        @if ($bounty->wasClaimed())
-                            <?php
-                                // TODO: Setup has-through when we rework current bounty db model
-                                $userClaim = $bounty->claims->where('user_id', \Auth::user()->id)->first();
-                            ?>
-                            <div class="text-center">
-                                <i class="fa fa-clock-o"></i> Your last claim for this bounty was submitted {{ $userClaim->created_at->diffForHumans() }}. It is currently <strong>{{ $userClaim->confirmed === 1 ? 'Approved' : $userClaim->confirmed === 2 ? 'Rejected' : 'Pending' }}</strong>.
-                                @if ($userClaim === 1)
-                                    Congrats!
-                                @elseif ($userClaim->confirmed === 2)
-                                    You can either <a href="#">Fix It</a>, or <a href="#">Cancel It</a>.
+                    <div class="row">
+                        <div class="col-lg-9 text-left">
+                            <div class="claim-info-wrapper" style="font-size: 16px; font-weight: 700; align-items: center; display: inline-flex; height: 100%;">
+                                @if ($bounty->isRunning())
+                                    @if ($bounty->wasClaimed())
+                                        <?php
+                                            // TODO: Setup has-through when we rework current bounty db model
+                                            $userClaim = $bounty->claims->where('user_id', \Auth::user()->id)->first();
+                                        ?>
+                                        <div class="text-center">
+                                            <i class="fa fa-clock-o"></i> Your last claim for this bounty was submitted {{ $userClaim->created_at->diffForHumans() }}. It is currently <strong>{{ $userClaim->confirmed === 1 ? 'Approved' : $userClaim->confirmed === 2 ? 'Rejected' : 'Pending' }}</strong>.
+                                            @if ($userClaim === 1) // approved
+                                                Congrats!
+                                            @elseif ($userClaim->confirmed === 2) // rejected
+                                                You can either <a href="#">Fix It</a>, or <a href="#">Cancel It</a>.
+                                            @endif
+                                        </div>
+                                    @elseif ($bounty->wasApproved())
+                                        Claim Approved
+                                    @endif
+                                @elseif ($bounty->isPaused())
+                                    Bounty Paused
+                                @elseif ($bounty->isOver())
+                                    Bounty Finished
                                 @endif
                             </div>
-                        @else
-                            <a href="{{ route('member.bounty.claim', $bounty->id) }}" class="btn btn-primary btn-md">
-                                <i class="fa fa-plus-circle"></i> CLAIM BOUNTY
-                            </a>
-                        @endif
+                        </div>
+                        <div class="col-lg-3 text-right">
+                            <div class="claim-bounty-button text-right">
+                                @if ($bounty->isClaimable())
+                                    <a href="{{ route('member.bounty.claim', $bounty->id) }}" class="btn btn-primary btn-md">
+                                        <i class="fa fa-plus-circle"></i> CLAIM BOUNTY
+                                    </a>
+                                @else
+                                    <a href="{{ route('member.bounty.claim', $bounty->id) }}" class="btn btn-primary btn-md disabled" data-toggle="tooltip" title="Unable to Claim" disabled>
+                                        <i class="fa fa-plus-circle"></i> CLAIM BOUNTY
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

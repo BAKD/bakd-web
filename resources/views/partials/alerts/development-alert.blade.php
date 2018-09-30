@@ -33,7 +33,7 @@
             <p class="text-center">
                 <strong>Learn More</strong>
                 <br />
-                <a data-toggle="tooltip" href="https://bakd.io" title="Visit Our Information Portal" style="padding: 0 5px;">BAKD.io</a> | 
+                <a data-toggle="tooltip" href="https://bakd.io" title="Visit Our Information Portal" style="padding: 0 5px;">BAKD.io</a> |
                 <a data-toggle="tooltip" href="https://bitcointalk.org/index.php?topic=4952711" title="BAKD Announcement Thread" target="_blank" style="padding: 0 5px;">BitcoinTalk.org</a> |
                 <a data-toggle="tooltip" href="https://discord.gg/rADpPXp" title="Chat live with the BAKD Team" target="_blank" style="padding: 0 5px;">Discord Chat</a> |
                 <a data-toggle="tooltip" href="https://twitter.com/BAKDme" title="Follow BAKD on Twitter" target="_blank" style="padding: 0 5px;">Twitter</a>

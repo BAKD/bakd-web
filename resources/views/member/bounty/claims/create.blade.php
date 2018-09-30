@@ -41,6 +41,7 @@
             <tbody>
                 <tr>
                     <td class="text-center" style="padding: 20px;">
+                        @include('member.bounty._info-alert')
                         <div class="text-left" style="border: 1px solid #aaa; background: #f5f5f5; padding: 30px; margin: 0 0 20px 0;">
                             <h2 class="bounty-claim-description-title">Bounty Description</h2>
                             <blockquote style="border-left: 2px solid #ddd; padding: 10px;">
@@ -64,9 +65,15 @@
                                     <a href="{{ route('member.bounty.show', $bounty->id) }}" class="btn btn-secondary btn-md">
                                         <i class="fa fa-times-circle"></i> {{ __('Cancel') }}
                                     </a>
-                                    <button type="submit" class="btn btn-primary btn-md">
-                                        <i class="fa fa-plus-circle"></i> {{ __('Submit Claim') }}
-                                    </button>
+                                    @if ($bounty->isClaimable())
+                                        <button type="submit" class="btn btn-primary btn-md">
+                                            <i class="fa fa-plus-circle"></i> {{ __('Submit Claim') }}
+                                        </button>
+                                    @else
+                                        <button type="submit" class="btn btn-primary btn-md disabled" data-toggle="tooltip" title="Claim Submissions Not Allowed at this Time" disabled>
+                                            <i class="fa fa-plus-circle"></i> {{ __('Submit Claim') }}
+                                        </button>
+                                    @endif
                                 </div>
                             </div>
                         </form>

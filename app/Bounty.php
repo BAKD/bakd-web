@@ -72,6 +72,16 @@ class Bounty extends Model
         return $this->bountyRewardType();
     }
 
+    public function isClaimable()
+    {
+        // TODO: Setup checks for the claim system. Need to work out multiple/single claim bounties
+        // For example, are we allowing multiple claims per user for all bounties regardless of payout
+        // type for now?
+
+        // Bounty is not over, paused, or not started yet.
+        return (bool) !$this->isOver() && !$this->isPaused() && $this->isRunning();
+    }
+
     public function wasClaimed()
     {
         // Only check for claims on logged in users
@@ -155,6 +165,12 @@ class Bounty extends Model
         // No start date. Start immediately.
         if (is_null($this->start_date)) return true;
         return (bool) $this->start_date->lt(Carbon::now());
+    }
+
+    // Alias
+    public function notStarted()
+    {
+        return !$this->isStarted();
     }
 
     public function isRunning()

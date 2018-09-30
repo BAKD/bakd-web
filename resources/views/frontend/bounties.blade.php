@@ -68,11 +68,13 @@
                                             <i class="la la-eye"></i> View
                                         </a>
                                     </li>
-                                    <li>
-                                        <a class="action-link" href="{{ route('member.bounty.claim', $bounty->id) }}">
-                                            <i class="la la-plus-circle"></i> Claim
-                                        </a>
-                                    </li>
+                                    @if ($bounty->isClaimable())
+                                        <li>
+                                            <a class="action-link" href="{{ route('member.bounty.claim', $bounty->id) }}">
+                                                <i class="la la-plus-circle"></i> Claim
+                                            </a>
+                                        </li>
+                                    @endif
                                 </ul>
                             </td>
                         </tr>

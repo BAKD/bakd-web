@@ -70,7 +70,7 @@
                                     <i class="la la-eye"></i> View
                                 </a>
                             </li>
-                            @if (!Auth::guest() && !$randomBounty->wasClaimed())
+                            @if (!Auth::guest() && $randomBounty->isClaimable())
                                 <li>
                                     <a class="action-link" href="{{ route('member.bounty.claim', $randomBounty->id) }}">
                                         <i class="la la-plus-circle"></i> Claim
