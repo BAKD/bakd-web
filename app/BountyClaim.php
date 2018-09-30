@@ -52,7 +52,7 @@ class BountyClaim extends Model
 
     public function bounty()
     {
-        return $this->belongsTo('BAKD\Bounty');
+        return $this->belongsTo('BAKD\Bounty')->withTrashed();
     }
 
     public function attachments()
