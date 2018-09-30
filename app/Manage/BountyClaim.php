@@ -48,9 +48,9 @@ class BountyClaim extends Resource
     {
         return [
             ID::make('ID', 'id')->sortable(),
-            BelongsTo::make('User', 'user')->exceptOnForms()->sortable(),
+            BelongsTo::make('User', 'user')->exceptOnForms(),
             Markdown::make('Claim Description', 'description')->sortable(),
-            BelongsTo::make('Bounty')->exceptOnForms()->sortable(),
+            BelongsTo::make('Bounty')->exceptOnForms(),
             Select::make('Status', 'confirmed')->options([
                 '0' => 'Pending',
                 '1' => 'Approved',
