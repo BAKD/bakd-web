@@ -37607,6 +37607,20 @@ em {
   display: inline-block;
 }
 
+table,
+td,
+tr,
+th,
+tbody,
+thead {
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.action-link {
+  font-size: 14px;
+}
+
 .bounty-announcements-table {
   width: 100%;
   min-width: 100%;

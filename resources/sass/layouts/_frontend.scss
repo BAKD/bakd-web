@@ -228,6 +228,14 @@ em {
     }
 }
 
+table, td, tr, th, tbody, thead {
+    transition: all .25s ease;
+}
+
+.action-link {
+    font-size: 14px;
+}
+
 // .no-results-message {
 //     line-height: 32px;
 
