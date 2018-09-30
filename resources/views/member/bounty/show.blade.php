@@ -48,30 +48,31 @@
                         <tr>
                             <td class="text-left" style="padding: 20px;">
                                 <div class="row">
-                                    <div class="col-lg-3 unselectable">
-                                        <img src="{{ $bounty->getImage() }}" class="bounty-main-image" style="height: unset; width: unset;" />
+                                    <div class="col-lg-3 text-center">
+                                        <img src="{{ $bounty->getImage() }}" class="bounty-main-image" style="height: auto; width: 100%; max-width: 300px;" />
+                                        {{--  Remove me as soon as we have our own share system in place  --}}
+                                        <div class="addthis_inline_share_toolbox"></div>
+                                        <script async type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bb15accd6e1b973"></script>
                                     </div>
-                                    <div class="col-lg-9">
-                                        <div class="bounty-details">
-                                            <h2 class="title">
-                                                {{ $bounty->name }}
-                                            </h2>
-                                            <div>
-                                                {!! nl2br($bounty->description) !!}
-                                            </div>
-                                            {{--  TODO: Replace Me With Real Tag System  --}}
-                                            <div class="inline-list text-left unselectable">
-                                                <ul class="skill-tags bounty-tags" style="margin: 20px 0 -10px 0;">
-                                                    <li><a href="{{ route('frontend.home') }}" title="Bounty">Bounty</a></li>
-                                                    <li><a href="{{ route('frontend.home') }}" title="{{ $bounty->type->name }}">{{ $bounty->type->name }}</a></li>
-                                                    <li><a href="{{ route('frontend.home') }}" title="BAKD">BAKD</a></li>
-                                                    <li><a href="{{ route('frontend.home') }}" title="Startup">Startup</a></li>
-                                                    <li><a href="{{ route('frontend.home') }}" title="Crypto">Crypto</a></li>
-                                                    <li><a href="{{ route('frontend.home') }}" title="Blockchain">Blockchain</a></li>
-                                                </ul>
-                                            </div>
-                                            {{--  END BOUNTY TAGS  --}}
+                                    <div class="col-lg-9 bounty-details">
+                                        <h2 class="title">
+                                            {{ $bounty->name }}
+                                        </h2>
+                                        <div>
+                                            {!! nl2br($bounty->description) !!}
                                         </div>
+                                        {{--  TODO: Replace Me With Real Tag System  --}}
+                                        <div class="inline-list text-left unselectable">
+                                            <ul class="skill-tags bounty-tags" style="margin: 20px 0 -10px 0;">
+                                                <li><a href="{{ route('frontend.home') }}" title="Bounty">Bounty</a></li>
+                                                <li><a href="{{ route('frontend.home') }}" title="{{ $bounty->type->name }}">{{ $bounty->type->name }}</a></li>
+                                                <li><a href="{{ route('frontend.home') }}" title="BAKD">BAKD</a></li>
+                                                <li><a href="{{ route('frontend.home') }}" title="Startup">Startup</a></li>
+                                                <li><a href="{{ route('frontend.home') }}" title="Crypto">Crypto</a></li>
+                                                <li><a href="{{ route('frontend.home') }}" title="Blockchain">Blockchain</a></li>
+                                            </ul>
+                                        </div>
+                                        {{--  END BOUNTY TAGS  --}}
                                     </div>
                                 </div>
                             </td>

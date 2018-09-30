@@ -37585,11 +37585,40 @@ em {
   margin: 0px 0px 10px 0px;
 }
 
+.at-share-btn-elements {
+  margin-top: 15px !important;
+}
+
 .bounty-main-image {
   max-height: 250px;
   max-width: 250px;
   width: 100%;
   height: auto;
+  border-radius: 3px;
+  float: unset !important;
+}
+
+@media (max-width: 992px) {
+  .bounty-main-image {
+    text-align: center;
+    margin: 0 auto 20px;
+  }
+}
+
+.bounty-details {
+  padding-left: 20px !important;
+}
+
+@media (max-width: 992px) {
+  .bounty-details {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .claim-bounty-button {
+    text-align: center !important;
+  }
 }
 
 .action-links-list {
