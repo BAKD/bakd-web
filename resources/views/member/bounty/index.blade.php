@@ -52,9 +52,9 @@
                             {{ $claim->created_at->diffForHumans() }}
                         </td>
                         <td class="text-center">
-                            @if ($claim->confirmed && $claim->confirmed === 1)
+                            @if ($claim->confirmed && $claim->isApproved())
                                 <span class="badge badge-success">APPROVED</span>
-                            @elseif ($claim->confirmed && $claim->confirmed === 2)
+                            @elseif ($claim->confirmed && $claim->isRejected())
                                 <span class="badge badge-danger">REJECTED</span>
                             @else
                                 <span class="badge badge-warning">PENDING</span>
@@ -67,7 +67,7 @@
                                         <i class="la la-eye"></i> View Bounty
                                     </a>
                                 </li>
-                                @if (!$claim->bounty->isOver() && !$claim->bounty->wasApproved())
+                                @if (!$claim->bounty->isOver() && !$claim->isApproved())
                                     <li>
                                         <a class="action-link" href="{{ route('member.bounty.claim.edit', $claim->id) }}">
                                             <i class="la la-pencil"></i> Edit Claim

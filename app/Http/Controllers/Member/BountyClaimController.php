@@ -14,9 +14,7 @@ class BountyClaimController extends MemberController
     public function create(Request $request)
     {
         $view = [];
-        // Get the bounty ID param from the request
         $bountyId = $request->id;
-        // Show a 404 if we can't find the bounty from the provided bounty ID
         $view['bounty'] = \BAKD\Bounty::find($bountyId);
         return view('member/bounty/claims/create', $view);
     }
@@ -47,11 +45,11 @@ class BountyClaimController extends MemberController
         // TODO: File attachments
 
         $bountyClaim = new \BAKD\BountyClaim;
-        $bountyClaim->user_id = \Auth::user()->id;
+        $bountyClaim->user_id = $user->id;
         $bountyClaim->bounty_id = $bountyId;
         $bountyClaim->description = $claimDescription;
-        $bountyClaim->confirmed_by_id = \Auth::user()->id;
-        $bountyClaim->confirmed = 0; // Confirmed by an admin?
+        $bountyClaim->confirmed_by_id = $user->id;
+        $bountyClaim->confirmed = 0; // Pending Status
 
         if ($bountyClaim->save()) {
             \MemberHelper::success('Successfully submitted a claim for this bounty!');
@@ -114,7 +112,7 @@ class BountyClaimController extends MemberController
 
         // Check if this claim was already approved.
         // TODO: Do we need/want this check here?
-        if ($bountyClaim->bounty->wasApproved()) {
+        if ($bountyClaim->isApproved()) {
             \MemberHelper::error('Your bounty claim was already approved.');
             return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
         }
@@ -124,7 +122,7 @@ class BountyClaimController extends MemberController
         $bountyClaim->confirmed_by_id = $user->id;
         // If updating a claim that was originally rejected, change it back to 0 to denote
         // a "Pending" status.
-        if ($bountyClaim->confirmed === 2) {
+        if ($bountyClaim->isRejected()) {
             $rejectUpdated = true;
             $bountyClaim->confirmed = 0;
         }
@@ -151,6 +149,7 @@ class BountyClaimController extends MemberController
      */
     public function destroy($id)
     {
-        //
+        // TODO: Finish me...
+        return $id;
     }
 }

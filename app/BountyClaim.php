@@ -65,8 +65,18 @@ class BountyClaim extends Model
         return $this->hasOne('BAKD\User', 'confirmed_by_id');
     }
 
-    public function wasApproved($userId)
+    public function isApproved()
     {
-        return (bool) $this->where('user_id', $userId)->confirmed === 1;
+        return (bool) $this->confirmed === 1;
+    }
+
+    public function isRejected()
+    {
+        return (bool) $this->confirmed === 2;
+    }
+
+    public function isPending()
+    {
+        return (bool) $this->confirmed === 0;
     }
 }
