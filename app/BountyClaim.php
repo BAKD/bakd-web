@@ -82,4 +82,12 @@ class BountyClaim extends Model
         if ($this->confirmed === 0) return true;
         return false;
     }
+
+    public function checkStatus()
+    {
+        if ($this->isApproved()) return 'Approved';
+        if ($this->isRejected()) return 'Rejected';
+        if ($this->isPending()) return 'Pending';
+        return 'Unknown';
+    }
 }

@@ -88,11 +88,11 @@
                                         $userClaim = $bounty->claims->where('user_id', \Auth::user()->id)->first();
                                     ?>
                                     <div class="text-center">
-                                        <i class="fa fa-clock-o"></i> Your last claim from {{ $userClaim->updated_at->diffForHumans() }} is <strong>{{ $userClaim->isApproved() ? 'Approved' : $userClaim->isRejected() ? 'Rejected' : 'Pending' }}</strong>
+                                        <i class="fa fa-clock-o"></i> Your last claim from {{ $userClaim->updated_at->diffForHumans() }} is <strong>{{ $userClaim->checkStatus() }}</strong>.
                                         @if ($userClaim->isApproved())
-                                            . Congrats!
+                                            Congrats!
                                         @elseif ($userClaim->isRejected())
-                                            . You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
+                                            You can either <a href="{{ route('member.bounty.claim.edit', $userClaim->id) }}" data-toggle="tooltip" title="View & Edit Your Claim">Fix It</a>, or <a href="{{ route('member.bounty.claim.cancel', $userClaim->id) }}" data-toggle="tooltip" title="Cancel Your Claim">Cancel It</a>.
                                         @endif
                                     </div>
                                 @elseif (!$bounty->isStarted())
