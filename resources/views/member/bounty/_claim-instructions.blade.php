@@ -11,7 +11,7 @@
                     </p>
                     <br />
                     <p>
-                        You can find more information about BAKD bounties on our dedicated thread at BitcoinTalk.org here: <a href="#">https://BitcoinTalk.org/showthread.php?123456.0</a>
+                        You can find more information about BAKD bounties on our dedicated thread at BitcoinTalk.org here: <a href="https://bitcointalk.org/index.php?topic=4952711" data-toggle="tooltip" title="BAKD BitcoinTalk.org Announcement Thread" target="_blank">https://bitcointalk.org/index.php?topic=4952711</a>
                     </p>
                 </td>
             </tr>

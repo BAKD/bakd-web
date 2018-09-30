@@ -37499,6 +37499,7 @@ em {
 
 .forum-links ul li {
   padding: 20px 8px 20px 3px;
+  height: 55px;
 }
 
 .forum-links ul li .active,

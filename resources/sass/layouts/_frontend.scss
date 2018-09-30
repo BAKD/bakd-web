@@ -120,6 +120,7 @@ em {
 
 .forum-links ul li {
     padding: 20px 8px 20px 3px;
+    height: 55px;
 
     .active,
     &:active,
@@ -158,7 +159,7 @@ em {
         visibility: hidden;
     }
 }
-    
+
 .bounty-announcements-table.table-responsive {
     display: inline-table;
 
@@ -345,7 +346,7 @@ em {
     font-size: 18px;
     font-weight: 700;
     margin: 0 auto 10px auto;
-    
+
 }
 
 .btn-primary {
