@@ -13905,10 +13905,6 @@ __webpack_require__(41);
 jQuery = $ = __webpack_require__(1);
 window.Vue = __webpack_require__(42);
 
-// TODO: Remove Me
-// Temporary welcome modal explaining the mess of a website
-$('#welcome-modal').modal('show');
-
 // Basic vue app instance, to be expanded upon in future versions
 // of the app.
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
@@ -13918,6 +13914,27 @@ $('#welcome-modal').modal('show');
 
 // Use bootstrap tooltips
 $('[data-toggle="tooltip"]').tooltip();
+
+$('#deleteModal').on('show.bs.modal', function (event) {
+    var $modal = $(this),
+        $element = $(event.relatedTarget);
+    resourceDeleteLink = $element.data('resource-delete-link'), resourceTitle = $element.data('resource-title') || 'resource';
+
+    $modal.find('.delete-resource-title').html(resourceTitle);
+    $modal.find('#delete-modal-confirm').attr('data-delete-link', resourceDeleteLink + '?resource=' + encodeURIComponent(resourceTitle));
+
+    if (typeof resourceDeleteLink === 'undefined') {
+        console.log('Can\'t delete resource without a delete link.');
+        return;
+    }
+
+    $('#delete-modal-confirm').click(function (event) {
+        var deleteUrl = $(this).data('delete-link');
+        if (typeof deleteUrl !== 'undefined') {
+            window.location.href = deleteUrl;
+        }
+    });
+});
 
 // --------------------------
 // TODO: REFACTOR ME ASAP

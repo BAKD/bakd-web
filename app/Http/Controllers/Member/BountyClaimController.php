@@ -147,9 +147,29 @@ class BountyClaimController extends MemberController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        // TODO: Finish me...
-        return $id;
+        $claim = \BAKD\BountyClaim::find($id);
+        $resourceTitle = $request->query('resource') ?: 'resource';
+
+        if ($claim->user_id !== \Auth::user()->id) {
+            \MemberHelper::error('Unable to delete items that do not belong to you. Please contact an administrator if the problem persists and believe it is an error.');
+            return redirect()->back();
+        }
+
+        // Check if it exists, may have already been deleted, never existed, malicious, etc.
+        if (!$claim) {
+            \MemberHelper::error('Unable to locate ' . ucwords($resourceTitle) . '.');
+            return redirect()->back();
+        }
+
+        // Try to delete the resource.
+        if ($claim->delete()) {
+            \MemberHelper::success('Successfully deleted this ' . ucwords($resourceTitle) . '.');
+            return redirect()->back();
+        } else {
+            \MemberHelper::error('The ' . ucwords($resourceTitle) . ' has already deleted or does not exist.');
+            return redirect()->back();
+        }
     }
 }

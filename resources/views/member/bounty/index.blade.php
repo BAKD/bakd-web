@@ -33,7 +33,7 @@
             </thead>
             <tbody>
                 @forelse ($claims as $claim)
-                    <tr class="clickable" onClick="javascript: window.location='{{ route('member.bounty.show', $claim->bounty->id) }}'">
+                    <tr>
                         <td>
                             <img src="{{ $claim->bounty->getImage() }}" />
                         </td>
@@ -74,7 +74,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="action-link" href="{{ route('member.bounty.claim.cancel', $claim->id) }}">
+                                        <a class="action-link" href="#" data-toggle="modal" data-target="#deleteModal" 
+                                            data-resource-title="Bounty Claim"
+                                            data-resource-delete-link="{{ route('member.bounty.claim.cancel', $claim->id) }}">
                                             <i class="la la-trash"></i> Cancel Claim
                                         </a>
                                     </li>
@@ -101,5 +103,7 @@
     @include('member.bounty._reward-types')
     {{-- BOUNTY CLAIM INSTRUCTIONS -- TODO: MAKE DYNAMICALLY EDITABLE VIA ADMIN PANEL --}}
     @include('member.bounty._claim-instructions')
+    
+    @include('partials/modals/_delete-modal')
 </div>
 @endsection
