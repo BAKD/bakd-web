@@ -37878,6 +37878,89 @@ main.wrapper.overlay:after {
   }
 }
 
+.about-us-page img {
+  float: unset;
+}
+
+.about-us-page .about-branding {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .about-us-page .about-branding {
+    padding-bottom: 20px;
+  }
+}
+
+.about-us-page .about-details {
+  padding-left: 10px;
+}
+
+@media (max-width: 992px) {
+  .about-us-page .about-details {
+    padding-left: unset;
+  }
+}
+
+.about-us-page .about-details p {
+  padding-bottom: 15px;
+}
+
+.about-us-page .branding-wrapper {
+  padding: 15px 20px;
+}
+
+@media (max-width: 992px) {
+  .about-us-page .branding-wrapper {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+.about-us-page .about-links {
+  margin-top: 15px;
+}
+
+.about-us-page .about-tagline {
+  font-style: italic;
+  padding: 10px 2px;
+}
+
+@media (max-width: 992px) {
+  .about-us-page .about-tagline {
+    padding: 10px 2px 20px;
+  }
+}
+
+.about-us-page .about-wrapper {
+  margin-top: 15px;
+  padding: 10px 5px;
+}
+
+@media (max-width: 992px) {
+  .about-us-page .about-wrapper {
+    margin-top: unset;
+  }
+}
+
+.about-us-page .about-wrapper h1 {
+  padding-top: 10p;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+  .about-us-page .about-wrapper h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
 header {
   background-color: #f5f5f5;
   border-top: 3px solid #F59118;
