@@ -7,12 +7,12 @@
             {{--  MAIN BOUNTY INFO  --}}
             <div class="widget widget-user">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-sm-12">
                         <h3 class="title-wd" style="border-bottom: none;"><i class="fa fa-trophy"></i>
                             <strong>{{ $bounty->type->name }} Bounty</strong>
                         </h3>
                     </div>
-                    <div class="col-6 pull-right text-right">
+                    <div class="col-lg-6 hidden-mobile pull-right text-right">
                         <ul style="padding: 10px 35px 10px 0;">
                             <li title="{!! $bounty->getDisplayRewardAmount(true) !!} BAKD Coins">
                                 <div class="bakd-coins">
@@ -81,7 +81,7 @@
                 </table>
                 <div class="job-status-bar text-right" style="border-top: 1px solid #eee;">
                     <div class="row">
-                        <div class="col-lg-9 col-xs-12 text-left">
+                        <div class="col-lg-9 col-xs-12 text-left bounty-detail-footer-info">
                             <div class="claim-info-wrapper" style="font-size: 16px; font-weight: 500; align-items: center; display: inline-flex; height: 100%;">
                                 @if ($bounty->isRunning() && $bounty->wasClaimed())
                                     <?php

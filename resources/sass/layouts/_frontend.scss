@@ -236,6 +236,12 @@ em {
     .claim-bounty-button {
         text-align: center !important;
     }
+    .bounty-detail-footer-info {
+        display: none;
+    }
+    .hidden-mobile {
+        display: none;
+    }
 }
 
 .action-links-list {
@@ -313,8 +319,9 @@ table, td, tr, th, tbody, thead {
 
 .bakd-coins {
     font-weight: 700;
-
+    
     &:after {
+        white-space: nowrap;
         background-image: url('../../images/branding/icon.png');
         background-size: 16px 16px;
         background-position: center center;

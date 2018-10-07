@@ -37619,6 +37619,14 @@ em {
   .claim-bounty-button {
     text-align: center !important;
   }
+
+  .bounty-detail-footer-info {
+    display: none;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
 }
 
 .action-links-list {
@@ -37696,6 +37704,7 @@ thead {
 }
 
 .bakd-coins:after {
+  white-space: nowrap;
   background-image: url(/images/icon.png?695245b49caf10e7025de1b1d1479be9);
   background-size: 16px 16px;
   background-position: center center;
