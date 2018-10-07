@@ -88,12 +88,14 @@ class PageController extends FrontendController
 
 
     /**
-     * Show the application's frontend members static page.
+     * Show the application's public members page.
      *
      * @return \Illuminate\Http\Response
      */
     public function members()
     {
+        $view = [];
+        $view['members'] = \BAKD\User::all();
         return view('frontend/members');
     }
 
@@ -105,6 +107,8 @@ class PageController extends FrontendController
      */
     public function campaigns()
     {
+        $view = [];
+        // $view['campaigns'] = \BAKD\Campaign::all();
         return view('frontend/campaigns');
     }
 }

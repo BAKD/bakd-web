@@ -7,15 +7,11 @@
                 </a>
             </div>
             <div class="forum-bar user-types-nav">
-                <ul>
-                    {{--  <li>
-                        <a href="#" title="Continue as Investor">Investors</a>
-                    </li>
+                <ul>  
                     <li>
-                        <a href="#" title="Continue as Project">Projects</a>
-                    </li>  --}}
-                    <li>
-                        <a href="{{ route('frontend.campaigns') }}" class="start-campaign-btn">{{  __('Start Campaign') }}</a>
+                        <a class="start-campaign-btn" href="{{ route('frontend.campaigns') }}" title="Start a Crowdfunding Campaign">
+                            <i class="fa fa-btc"></i> {{ __('Get Funding') }}
+                        </a>
                     </li>
                 </ul>
             </div>
