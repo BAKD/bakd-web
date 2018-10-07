@@ -1,0 +1,39 @@
+.privacy-policy-page {
+
+}
+
+.terms-and-condtions-page {
+
+}
+
+.privacy-policy-page,
+.terms-and-condtions-page {
+
+    p {
+        padding: 10px 5px;
+    }
+
+    h2:first-child {
+        margin-top: unset;
+    }
+
+    h2 {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    ul {
+        padding: 5px 5px 10px;
+        margin: 10px 0 10px 40px;
+        list-style-type: circle;
+
+        li {
+            margin: 0;
+            padding: 5px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+
+}

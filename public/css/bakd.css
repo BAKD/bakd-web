@@ -37961,6 +37961,38 @@ main.wrapper.overlay:after {
   }
 }
 
+.privacy-policy-page p,
+.terms-and-condtions-page p {
+  padding: 10px 5px;
+}
+
+.privacy-policy-page h2:first-child,
+.terms-and-condtions-page h2:first-child {
+  margin-top: unset;
+}
+
+.privacy-policy-page h2,
+.terms-and-condtions-page h2 {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.privacy-policy-page ul,
+.terms-and-condtions-page ul {
+  padding: 5px 5px 10px;
+  margin: 10px 0 10px 40px;
+  list-style-type: circle;
+}
+
+.privacy-policy-page ul li,
+.terms-and-condtions-page ul li {
+  margin: 0;
+  padding: 5px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
 header {
   background-color: #f5f5f5;
   border-top: 3px solid #F59118;
