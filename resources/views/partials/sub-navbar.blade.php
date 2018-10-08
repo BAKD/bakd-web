@@ -20,12 +20,12 @@
                 </li>
                 <li class="{{ Request::is('members') || Request::is('members/*') ? 'active' : '' }}">
                     <a href="{{ route('frontend.members') }}">
-                        <i class="fa fa-users"></i> Members
+                        <i class="fa fa-users"></i> Members <span class="badge badge-danger">NEW</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('bounties') || Request::is('bounties/*') ? 'active' : '' }}">
                     <a href="{{ route('frontend.bounties') }}">
-                        <i class="fa fa-trophy"></i> Bounties <span class="badge badge-danger">NEW</span>
+                        <i class="fa fa-trophy"></i> Bounties <span class="badge badge-success">LIVE</span>
                     </a>
                 </li>
             </ul>
