@@ -10,5 +10,5 @@
             ])
         @endforelse
     </div>
-{!! $members->render() !!}
+{{ $members->links() }}
 </div>
