@@ -59,7 +59,8 @@ class User extends Authenticatable
 
     public function getGravatar($size = '125')
     {
-        return "//www.gravatar.com/avatar/{$this->email}?s={$size}";
+        $email = md5(strtolower(trim($this->email)));
+        return "//www.gravatar.com/avatar/{$email}?s={$size}";
     }
 
     public function getFollowingCount()
