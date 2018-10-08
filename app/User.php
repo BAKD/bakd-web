@@ -56,4 +56,21 @@ class User extends Authenticatable
     {
         return $this->belongsTo('BAKD\Bounty');
     }
+
+    public function getGravatar($size = '125')
+    {
+        return "//www.gravatar.com/avatar/{$this->email}?s={$size}";
+    }
+
+    public function getFollowingCount()
+    {
+        return number_format(rand(200, 5000));
+    }
+
+    public function getFollowerCount()
+    {
+        return number_format(rand(100, 100000));
+    }
+
+    
 }

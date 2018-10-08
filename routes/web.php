@@ -30,6 +30,7 @@ Route::name('frontend.')->group(function () {
             Route::get('bounties', 'PageController@bounties')->name('bounties');
             Route::get('campaigns', 'PageController@campaigns')->name('campaigns');
             Route::get('members', 'PageController@members')->name('members');
+            Route::get('u/{id}', 'PageController@profile')->name('members.profile');
         });
     });
 });

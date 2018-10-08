@@ -92,11 +92,30 @@ class PageController extends FrontendController
      *
      * @return \Illuminate\Http\Response
      */
-    public function members()
+    public function members(Request $request)
     {
         $view = [];
-        $view['members'] = \BAKD\User::all();
-        return view('frontend/members');
+        
+        $view['members'] = \BAKD\User::paginate(12);
+        
+        if ($request->ajax()) {
+            return view('frontend/members-results', $view);
+        }
+  
+        return view('frontend/members', $view);
+    }
+
+
+    /**
+     * Show the application's public member profile page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function profile(Request $request, $id)
+    {
+        $view = [];
+        $view['member'] = \BAKD\User::findOrFail($id);
+        return view('frontend/profile/index', $view);
     }
 
 
@@ -109,6 +128,6 @@ class PageController extends FrontendController
     {
         $view = [];
         // $view['campaigns'] = \BAKD\Campaign::all();
-        return view('frontend/campaigns');
+        return view('frontend/campaigns', $view);
     }
 }

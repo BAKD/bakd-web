@@ -15,3 +15,4 @@ yarn-error.log
 .env.production
 .env.local
 .phpunit.result.cache
+/LOCAL

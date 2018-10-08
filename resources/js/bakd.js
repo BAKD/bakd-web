@@ -50,6 +50,46 @@ $('#deleteModal').on('show.bs.modal', function (event) {
 });
 
 
+// TODO: Refactor this cheap hack into vue components
+// $(window).on('hashchange', function() {
+//     if (window.location.hash) {
+//         var page = window.location.hash.replace('#', '');
+//         if (page == Number.NaN || page <= 0) {
+//             return false;
+//         } else {
+//             getPaginatedData(page);
+//         }
+//     }
+// });
+
+// $(document).ready(function (event) {
+//     $(document).on('click', '.pagination a', function (event) {
+//         event.preventDefault();
+//         var $this = $(this);
+//         // $('li').removeClass('active');
+//         // $this.parent('li').addClass('active');
+//         var pageNum = $this.attr('href').split('page=')[1];
+//         getPaginatedData(pageNum);
+//     });
+
+// });
+
+// function getPaginatedData(pageNum) {
+//     $.ajax({
+//         url: '?page=' + encodeURIComponent(pageNum),
+//         type: 'GET',
+//         datatype: 'html'
+//     }).done(function(response) {
+//         $("#ajax-pagination-container").fadeOut(200, function (event) {
+//             // console.log(response);
+//             $(this).empty().html(response).fadeIn(200);
+//         });
+//         location.hash = pageNum;
+//     }).fail(function(jqXHR, ajaxOptions, err) {
+//         // TODO: Implement js notifications
+//         console.log('Error making request. Please contact an administrator if the problem persists.');
+//     });
+// }
 
 
 
