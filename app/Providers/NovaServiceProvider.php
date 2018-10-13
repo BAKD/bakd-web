@@ -68,7 +68,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            // new Help,
+            new Help,
         ];
     }
 
@@ -79,7 +79,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new \Spatie\BackupTool\BackupTool(),
+            new \Vyuldashev\NovaPermission\NovaPermissionTool(),
+        ];
     }
 
     /**

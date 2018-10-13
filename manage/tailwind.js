@@ -162,6 +162,8 @@ module.exports = {
         full: '100%',
         screen: '100vw',
         error: '65rem',
+        action: '460px',
+        'action-fields': '767px',
     },
 
     height: {
@@ -198,7 +200,7 @@ module.exports = {
 
     minHeight: {
         '0': '0',
-        textarea: '8.375rem',
+        textarea: '4.875rem',
         full: '100%',
         screen: '100vh',
     },

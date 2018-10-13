@@ -12,6 +12,7 @@
                 v-if="smallCards.length > 0"
                 :cards="smallCards"
                 class="mb-3"
+                :resource="resource"
                 :resource-id="resourceId"
                 :resource-name="resourceName"
                 :only-on-detail="true"
@@ -21,6 +22,7 @@
                 v-if="largeCards.length > 0"
                 :cards="largeCards"
                 size="large"
+                :resource="resource"
                 :resource-id="resourceId"
                 :resource-name="resourceName"
                 :only-on-detail="true"
@@ -213,7 +215,15 @@ export default {
          * Handle the keydown event
          */
         handleKeydown(e) {
-            if (!e.ctrlKey && !e.altKey && !e.metaKey && !e.shiftKey && e.keyCode == 69) {
+            if (
+                !e.ctrlKey &&
+                !e.altKey &&
+                !e.metaKey &&
+                !e.shiftKey &&
+                e.keyCode == 69 &&
+                e.target.tagName != 'INPUT' &&
+                e.target.tagName != 'TEXTAREA'
+            ) {
                 this.$router.push({ name: 'edit', params: { id: this.resource.id } })
             }
         },
