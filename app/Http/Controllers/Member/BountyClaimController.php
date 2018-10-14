@@ -48,11 +48,12 @@ class BountyClaimController extends MemberController
         $bountyClaim->user_id = $user->id;
         $bountyClaim->bounty_id = $bountyId;
         $bountyClaim->description = $claimDescription;
+        $bountyClaim->reason = ''; // Reset just in case this is a re-submission
         $bountyClaim->confirmed_by_id = $user->id;
         $bountyClaim->confirmed = 0; // Pending Status
 
         if ($bountyClaim->save()) {
-            \MemberHelper::success('Successfully submitted a claim for this bounty!');
+            \MemberHelper::success('You successfully submitted a claim for this bounty!');
         } else {
             \MemberHelper::error('Unable to submit a claim for this bounty!');
         }
@@ -107,14 +108,14 @@ class BountyClaimController extends MemberController
         // Check if user trying to edit claim, is the original creator of said claim
         if ($user->id !== $bountyClaim->user_id) {
             \MemberHelper::error('You cannot edit a claim that does not belong to you.');
-            return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
+            return redirect()->route('member.bounty.show', $bountyClaim->bounty->id);
         }
 
         // Check if this claim was already approved.
         // TODO: Do we need/want this check here?
         if ($bountyClaim->isApproved()) {
             \MemberHelper::error('Your bounty claim was already approved.');
-            return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
+            return redirect()->route('member.bounty.show', $bountyClaim->bounty->id);
         }
 
         // Set the new model values
@@ -138,7 +139,7 @@ class BountyClaimController extends MemberController
             \MemberHelper::error('There was an error saving your updated bounty to the database. Please try again or contact an administrator.');
         }
 
-        return redirect()->route('member.bounty.show', $bountyClaim->bounty->id); 
+        return redirect()->route('member.bounty.show', $bountyClaim->bounty->id);
     }
 
     /**
@@ -149,7 +150,7 @@ class BountyClaimController extends MemberController
      */
     public function destroy(Request $request, $id)
     {
-        $claim = \BAKD\BountyClaim::find($id);
+        $claim = \BAKD\BountyClaim::findOrFail($id);
         $resourceTitle = $request->query('resource') ?: 'resource';
 
         if ($claim->user_id !== \Auth::user()->id) {

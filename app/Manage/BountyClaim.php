@@ -12,9 +12,13 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Select;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Actions\Actionable;
+use BAKD\Manage\Actions\UpdateBountyClaimStatus;
 
 class BountyClaim extends Resource
 {
+    use Actionable;
+
     /**
      * The model the resource corresponds to.
      *
@@ -28,6 +32,13 @@ class BountyClaim extends Resource
      * @var string
      */
     public static $title = 'id';
+
+    /**
+     * Eager loading
+     *
+     * @var string
+     */
+     public static $with = ['bounty', 'attachments'];
 
     /**
      * The columns that should be searched.
@@ -49,15 +60,16 @@ class BountyClaim extends Resource
         return [
             ID::make('ID', 'id')->sortable(),
             BelongsTo::make('User', 'user')->exceptOnForms(),
-            Markdown::make('Claim Description', 'description')->sortable(),
+            Markdown::make('Claim Description', 'description')->sortable()->rules('required', 'max:2000'),
             BelongsTo::make('Bounty')->exceptOnForms(),
             Select::make('Status', 'confirmed')->options([
                 '0' => 'Pending',
                 '1' => 'Approved',
                 '2' => 'Rejected'
-            ])->displayUsingLabels()->sortable(),
-            Text::make('Claim UUID', 'uuid')->sortable()->onlyOnDetail(),
-            HasMany::make('BountyClaimAttachment', 'attachments')->sortable(),
+            ])->displayUsingLabels()->exceptOnForms()->sortable(),
+            Text::make('Claim UUID', 'uuid')->onlyOnDetail(),
+            Text::make('Reason')->onlyOnDetail(),
+            HasMany::make('BountyClaimAttachment', 'attachments'),
         ];
     }
 
@@ -102,7 +114,9 @@ class BountyClaim extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new UpdateBountyClaimStatus,
+        ];
     }
 
     /**

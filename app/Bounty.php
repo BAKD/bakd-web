@@ -53,7 +53,7 @@ class Bounty extends Model
 
     public function users()
     {
-        return $this->hasMany('BAKD\Users');
+        return $this->hasMany('BAKD\User');
     }
 
     public function claims()
@@ -132,6 +132,7 @@ class Bounty extends Model
         return false;
     }
 
+    // TODO: Move me to view helper
     public function getDisplayRewardType($showDashOnFail = true, $default = false)
     {
         if ($rewardTypesCollection = $this->bountyRewardType) {
@@ -140,6 +141,7 @@ class Bounty extends Model
         return $showDashOnFail ? '&mdash;' : '';;
     }
 
+    // TODO: Move me to view helper
     // Mainly meant for stake rewards, we'll remove the coin label for now.
     public function getDisplayRewardAmount($withLabel = false)
     {
@@ -152,6 +154,7 @@ class Bounty extends Model
         return number_format($this->reward);
     }
 
+    // TODO: Move me to view helper
     // Get the display version of a bounty date, with a label if it is paused or completed.
     public function getDisplayEndDate()
     {
@@ -185,7 +188,7 @@ class Bounty extends Model
 
     public function isStarted()
     {
-        // No start date. Start immediately.
+        // No start date. Starts immediately.
         if (is_null($this->start_date)) return true;
         return (bool) $this->start_date->lt(Carbon::now());
     }

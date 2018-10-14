@@ -31,6 +31,13 @@ class User extends Resource
     public static $title = 'name';
 
     /**
+     * Eager loading
+     *
+     * @var string
+     */
+     public static $with = ['bountyClaims', 'bounties'];
+
+    /**
      * The columns that should be searched.
      *
      * @var array

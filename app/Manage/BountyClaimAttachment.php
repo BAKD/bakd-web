@@ -29,6 +29,13 @@ class BountyClaimAttachment extends Resource
     public static $title = 'path';
 
     /**
+     * Eager loading
+     *
+     * @var string
+     */
+     public static $with = ['claim'];
+
+    /**
      * The columns that should be searched.
      *
      * @var array

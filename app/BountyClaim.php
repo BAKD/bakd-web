@@ -83,11 +83,29 @@ class BountyClaim extends Model
         return false;
     }
 
+    // TODO: Implement status type resource
+    public function getStatusLabel($statusId)
+    {
+        if ($statusId == 0) return 'Pending';
+        elseif ($statusId == 1) return 'Approved';
+        elseif ($statusId == 2) return 'Rejected';
+        else return 'N/A';
+    }
+
     public function checkStatus()
     {
         if ($this->isApproved()) return 'Approved';
         if ($this->isRejected()) return 'Rejected';
         if ($this->isPending()) return 'Pending';
         return 'Unknown';
+    }
+
+    // Update a bounty claim status
+    public function updateStatus($fields, $confirmedBy)
+    {
+        $this->confirmed = $fields->confirmed;
+        $this->confirmed_by_id = $confirmedBy;
+        $this->reason = $fields->reason;
+        return $this->save();
     }
 }

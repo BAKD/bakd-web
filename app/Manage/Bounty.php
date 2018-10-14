@@ -37,6 +37,13 @@ class Bounty extends Resource
     public static $title = 'name';
 
     /**
+     * Eager loading
+     *
+     * @var string
+     */
+     public static $with = ['claims', 'bountyRewardType', 'type'];
+
+    /**
      * The columns that should be searched.
      *
      * @var array
