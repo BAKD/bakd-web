@@ -2,13 +2,15 @@
 
 namespace BAKD;
 
+use Laravel\Nova\Actions\Actionable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BountyClaim extends Model
 {
     use Traits\Uuids,
-        SoftDeletes;
+        SoftDeletes,
+        Actionable;
 
     /**
      * The table associated with the model.
@@ -106,6 +108,9 @@ class BountyClaim extends Model
         $this->confirmed = $fields->confirmed;
         $this->confirmed_by_id = $confirmedBy;
         $this->reason = $fields->reason;
+        if (isset($fields->stakes_received)) {
+            $this->stakes_received = $fields->stakes_received;
+        }
         return $this->save();
     }
 }

@@ -21,6 +21,13 @@
             (View/Edit Claim)
         </a>
     </p>
+    @if ($claim->bounty->isStakeRewardBounty() && $claim->isApproved() && !is_null($claim->stakes_received))
+        <p>
+            <strong>Stakes Received: </strong>
+            <br />
+            {{ number_format($claim->stakes_received) }}
+        </p>
+    @endif
     <p>
         <strong>Status Details: </strong>
         <br />

@@ -69,6 +69,7 @@ class BountyClaim extends Resource
             ])->displayUsingLabels()->exceptOnForms()->sortable(),
             Text::make('Claim UUID', 'uuid')->onlyOnDetail(),
             Text::make('Reason')->onlyOnDetail(),
+            Number::make('Stakes Awarded', 'stakes_received')->onlyOnDetail(),
             HasMany::make('BountyClaimAttachment', 'attachments'),
         ];
     }

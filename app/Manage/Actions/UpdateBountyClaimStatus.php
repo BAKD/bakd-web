@@ -12,6 +12,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use BAKD\Manage\BountyClaim;
 
@@ -69,6 +70,7 @@ class UpdateBountyClaimStatus extends Action
                 '2' => 'Rejected'
             ])->displayUsingLabels()->rules('required'),
             Textarea::make('Reason', 'reason')->rules('max:2000'),
+            Number::make('Stakes Awarded', 'stakes_received'),
         ];
     }
 }
