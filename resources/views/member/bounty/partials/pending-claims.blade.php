@@ -11,9 +11,6 @@
                     <th class="text-left" style="min-width: 150px; max-width: 200px;">
                     </th>
                     <th class="text-center">
-                        Reward
-                    </th>
-                    <th class="text-center">
                         Reward Type
                     </th>
                     <th class="text-center">
@@ -37,17 +34,6 @@
                             <span title="{{ strip_tags($claim->bounty->name) }}">
                                 {{ str_limit(strip_tags($claim->bounty->name), 50, '...') }}
                             </span>
-                        </td>
-                        <td class="text-center">
-                            @if ($claim->isApproved())
-                                @if ($claim->bounty->isStakeRewardBounty())
-                                    <span class="bakd-coins" title="{{ number_format($claim->stakes_received) }} Stakes">{{ number_format($claim->stakes_received) }}</span>
-                                @else
-                                    <span class="bakd-coins" title="{{ number_format($claim->bounty->reward) }} BAKD Coins">{{ number_format($claim->bounty->reward) }}</span>
-                                @endif
-                            @else
-                                &dash;
-                            @endif
                         </td>
                         <td class="text-center">
                             {!! $claim->bounty->getDisplayRewardType() !!}
