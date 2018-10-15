@@ -1,23 +1,27 @@
 @extends('layouts.member')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<section class="main-content">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <div class="container">
 
+            <div class="widget widget-user">
+                <h3 class="title-wd"><i class="fa fa-building-o"></i>
                     Member Dashboard
-                </div>
+                </h3>
+                <table class="unselectable bounty-announcements-table table-responsive table centered-td">
+                    <tbody>
+                        <tr>
+                            <td class="text-center" style="padding: 20px;">
+                                <i class="fa fa-red fa-2x fa-exclamation-triangle"></i>
+                                <div>
+                                    Currently In Development
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection
