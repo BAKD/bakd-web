@@ -33,11 +33,11 @@
                                             <li><a href="#" title=""><i class="fa fa-youtube"></i>http//www.youtube.com/john...</a></li>
                                         </ul>
                                     </div><!--user_profile end-->
-    
-    
-    
-    
-    
+
+
+
+
+
                                     <div class="suggestions full-width">
                                         <div class="sd-title">
                                             <h3>
@@ -101,11 +101,7 @@
                                             </div>
                                         </div><!--suggestions-list end-->
                                     </div><!--suggestions end-->
-    
-    
-                                </div><!--main-left-sidebar end-->
-                            </div>
-                            
+
+
                             {{--  SIDEBAR LEFT END  --}}
-                            
-                            
+

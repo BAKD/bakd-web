@@ -65,9 +65,9 @@ class UpdateBountyClaimStatus extends Action
     {
         return [
             Select::make('Status', 'confirmed')->options([
-                '0' => 'Pending',
-                '1' => 'Approved',
-                '2' => 'Rejected'
+                0 => 'Pending',
+                1 => 'Approved',
+                2 => 'Rejected'
             ])->displayUsingLabels()->rules('required'),
             Textarea::make('Reason', 'reason')->rules('max:2000'),
             Number::make('Stakes Awarded', 'stakes_received'),

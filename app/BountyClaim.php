@@ -108,8 +108,10 @@ class BountyClaim extends Model
         $this->confirmed = $fields->confirmed;
         $this->confirmed_by_id = $confirmedBy;
         $this->reason = $fields->reason;
-        if (isset($fields->stakes_received)) {
+        if (isset($fields->stakes_received) && $fields->confirmed === '1' && $this->bounty->isStakeRewardBounty()) {
             $this->stakes_received = $fields->stakes_received;
+        } else {
+            $this->stakes_received = 0;
         }
         return $this->save();
     }

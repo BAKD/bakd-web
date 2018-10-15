@@ -95,13 +95,13 @@ class PageController extends FrontendController
     public function members(Request $request)
     {
         $view = [];
-        
-        $view['members'] = \BAKD\User::paginate(12);
-        
+
+        $view['members'] = \BAKD\User::orderBy('created_at', 'DESC')->paginate(12);
+
         if ($request->ajax()) {
             return view('frontend/members-results', $view);
         }
-  
+
         return view('frontend/members', $view);
     }
 

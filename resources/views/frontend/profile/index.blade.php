@@ -9,17 +9,12 @@
             <div class="container">
                 <div class="main-section-data">
                     <div class="row">
-                        <div class="col-lg-3">
-                            <div class="main-left-sidebar">
-                        
-                                @include('frontend.profile.sidebar')
-                        
-                        {{--  MIDDLE SECTION START  --}}
-                        
+                          {{--  MIDDLE SECTION START  --}}
+
                         <div class="col-lg-9 profile-main">
-                            
+
                             <div class="main-ws-sec">
-                                
+
                                 <div class="user-tab-sec">
                                     <h3>{{ $member->name }}</h3>
                                     <div class="star-descp">
@@ -59,11 +54,11 @@
                                 {{--  DISPLAY PROJECTS INVOLVED WITH  --}}
                                 <div class="product-feed-tab current" id="feed-dd">
                                     <div class="posts-section">
-                                        
+
                                         @include('frontend.profile.project')
                                         @include('frontend.profile.project')
                                         @include('frontend.profile.project')
-                                        
+
                                         @include('components.infinite-preloader')
                                     </div><!--posts-section end-->
                                 </div><!--product-feed-tab end-->
@@ -178,22 +173,20 @@
                                 </div><!--product-feed-tab end-->
                             </div><!--main-ws-sec end-->
                         </div>
-                        
-                        
-                        
-                        
-                        
-                        
+
+                        <div class="col-lg-3" style="padding-left: 20px;">
+                            <div class="main-left-sidebar">
+
+                                @include('frontend.profile.sidebar')
+
+                            </div><!--main-left-sidebar end-->
+                        </div>
+
                     </div>
                 </div><!-- main-section-data end-->
-            </div> 
+            </div>
         </div>
 
-
-
-
-
     {{--  </main>  --}}
-
 
 @endsection

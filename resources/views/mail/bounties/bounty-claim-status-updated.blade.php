@@ -28,11 +28,13 @@
             {{ number_format($claim->stakes_received) }}
         </p>
     @endif
-    <p>
-        <strong>Status Details: </strong>
-        <br />
-        {{ nl2br($claim->reason) }}
-    </p>
+    @if ($claim && !is_null($claim->reason))
+        <p>
+            <strong>Status Details: </strong>
+            <br />
+            {{ nl2br($claim->reason) }}
+        </p>
+    @endif
     @if ($claim && !is_null($claim->bounty->end_date))
         <p>
             <strong>Bounty Ends: </strong>

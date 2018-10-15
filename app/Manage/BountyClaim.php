@@ -63,9 +63,9 @@ class BountyClaim extends Resource
             Markdown::make('Claim Description', 'description')->sortable()->rules('required', 'max:2000'),
             BelongsTo::make('Bounty')->exceptOnForms(),
             Select::make('Status', 'confirmed')->options([
-                '0' => 'Pending',
-                '1' => 'Approved',
-                '2' => 'Rejected'
+                0 => 'Pending',
+                1 => 'Approved',
+                2 => 'Rejected'
             ])->displayUsingLabels()->exceptOnForms()->sortable(),
             Text::make('Claim UUID', 'uuid')->onlyOnDetail(),
             Text::make('Reason')->onlyOnDetail(),
