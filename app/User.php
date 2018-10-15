@@ -73,5 +73,39 @@ class User extends Authenticatable
         return number_format(rand(100, 100000));
     }
 
-    
+    public function totalCoinsEarned()
+    {
+        $coins = 0;
+        $query = \BAKD\BountyClaim::with('bounty')->where('user_id', $this->id)->where('confirmed', 1)->get();
+        if (!$query->isEmpty()) {
+            foreach ($query as $claim) {
+                if (!$claim->bounty->isStakeRewardBounty()) {
+                    $coins += $claim->bounty->reward;
+                }
+            }
+        }
+        return number_format($coins);
+    }
+
+    public function totalStakesEarned()
+    {
+        $stakes = 0;
+        $query = \BAKD\BountyClaim::with('bounty')->where('user_id', $this->id)->where('confirmed', 1)->get();
+        if (!$query->isEmpty()) {
+            foreach ($query as $claim) {
+                if ($claim->bounty->isStakeRewardBounty()) {
+                    $stakes += $claim->stakes_received;
+                }
+            }
+        }
+        return number_format($stakes);
+    }
+
+    public function totalClaimsApproved()
+    {
+        $claims = 0;
+        $claims = \BAKD\BountyClaim::with('bounty')->where('user_id', $this->id)->where('confirmed', 1)->count();
+        return number_format($claims);
+    }
+
 }

@@ -26,6 +26,6 @@ class MemberController extends \BAKD\Http\Controllers\Controller
      */
     public function index()
     {
-        return view('member/index');
+        return view('member.dashboard.index');
     }
 }

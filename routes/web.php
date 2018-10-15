@@ -59,6 +59,9 @@ Route::name('member.')->group(function () {
                 Route::get('/bounty/claim/{id}/edit', 'BountyClaimController@edit')->name('bounty.claim.edit');
                 Route::post('/bounty/claim/{id}/edit', 'BountyClaimController@update')->name('bounty.claim.edit.save');
                 Route::get('/bounty/claim/{id}/cancel', 'BountyClaimController@destroy')->name('bounty.claim.cancel');
+
+                // Regular Member Dashboard - Visible to all members
+                Route::get('/dashboard', 'MemberController@index')->name('dashboard.home');
             });
         });
     });

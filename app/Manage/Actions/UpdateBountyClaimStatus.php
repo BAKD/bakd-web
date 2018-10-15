@@ -70,6 +70,7 @@ class UpdateBountyClaimStatus extends Action
                 2 => 'Rejected'
             ])->displayUsingLabels()->rules('required'),
             Textarea::make('Reason', 'reason')->rules('max:2000'),
+            // TODO: Make me dynamic depending on bounty type
             Number::make('Stakes Awarded', 'stakes_received'),
         ];
     }

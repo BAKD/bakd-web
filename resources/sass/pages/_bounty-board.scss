@@ -1,0 +1,19 @@
+.bounty-cards-wrapper {
+    h1 {
+        font-size: 38px;
+        font-weight: 700;
+        padding: 20px 10px 10px 10px;
+    }
+
+    .bounty-card {
+        padding-right: 10px;
+
+        @media(max-width: 992px) {
+            padding: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
