@@ -21,7 +21,7 @@
             (View/Edit Claim)
         </a>
     </p>
-    @if ($claim->bounty->isStakeRewardBounty() && $claim->isApproved() && !is_null($claim->stakes_received))
+    @if ($claim->bounty->isStakeRewardBounty() && $claim->stakes_received !== 0)
         <p>
             <strong>Stakes Received: </strong>
             <br />
