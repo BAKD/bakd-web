@@ -111,8 +111,7 @@ class BountyClaimController extends MemberController
             return redirect()->route('member.bounty.show', $bountyClaim->bounty->id);
         }
 
-        // Check if this claim was already approved.
-        // TODO: Do we need/want this check here?
+        // Check if this claim was already approved. We don't want to allow people to edit already approved claims.
         if ($bountyClaim->isApproved()) {
             \MemberHelper::error('Your bounty claim was already approved.');
             return redirect()->route('member.bounty.show', $bountyClaim->bounty->id);

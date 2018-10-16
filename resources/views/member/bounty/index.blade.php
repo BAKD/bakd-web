@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-    @include('member.bounty.partials.bounty-stats')
+    {{-- TODO: Organize these partials more better-er, should go in the claim folder --}}
+    @include('member.bounty.partials.claim-stats')
     @include('member.bounty.partials.approved-claims')
     @include('member.bounty.partials.pending-claims')
     @include('member.bounty.partials.rejected-claims')

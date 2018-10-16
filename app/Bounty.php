@@ -204,5 +204,38 @@ class Bounty extends Model
         return (bool) $this->isStarted() && !$this->isPaused() && !$this->isOver();
     }
 
+    // Get the pending reward for a user who is participating in a stake bounty.
+    // Calculate reward by using following formula:
+    // (userStakes / totalStakes) * totalCoinPool
+    public function pendingStakeReward($userId)
+    {
+        if ($this->totalUserStakes($userId) === 0) return 0;
+        return floor(($this->totalUserStakes($userId) / $this->totalStakesDistributed()) * $this->getRewardPool());
+    }
+
+    // Get the users current stake %
+    public function pendingStakeRewardPercentage($userId)
+    {
+        if ($this->totalUserStakes($userId) === 0) return 0;
+        return floor($this->totalUserStakes($userId) / $this->totalStakesDistributed() * 100);
+    }
+
+    // Get the total stakes awarded to a single user of a specific bounty
+    public function totalUserStakes($userId)
+    {
+        return BountyClaim::where('bounty_id', $this->id)->where('user_id', $userId)->sum('stakes_received');
+    }
+
+    // Get the total number of stakes distributed for an entire single bounty
+    public function totalStakesDistributed()
+    {
+        return BountyClaim::where('bounty_id', $this->id)->sum('stakes_received');
+    }
+
+    // Get the total reward pool for a bounty
+    public function getRewardPool()
+    {
+        return $this->reward_total;
+    }
 }
 

@@ -63,16 +63,19 @@ class User extends Authenticatable
         return "//www.gravatar.com/avatar/{$email}?s={$size}";
     }
 
+    // TODO: Finish me.
     public function getFollowingCount()
     {
         return number_format(rand(200, 5000));
     }
 
+    // TODO: Finish me.
     public function getFollowerCount()
     {
         return number_format(rand(100, 100000));
     }
 
+    // TODO: Refactor into single query
     public function totalCoinsEarned()
     {
         $coins = 0;
@@ -87,6 +90,7 @@ class User extends Authenticatable
         return number_format($coins);
     }
 
+    // TODO: Refactor into single query
     public function totalStakesEarned()
     {
         $stakes = 0;
@@ -101,6 +105,7 @@ class User extends Authenticatable
         return number_format($stakes);
     }
 
+    // TODO: Refactor claim status' into enum
     public function totalClaimsApproved()
     {
         $claims = 0;
@@ -108,4 +113,27 @@ class User extends Authenticatable
         return number_format($claims);
     }
 
+    // TODO: Refactor claim status' into enum
+    public function totalClaimsPending()
+    {
+        $claims = 0;
+        $claims = \BAKD\BountyClaim::with('bounty')->where('user_id', $this->id)->where('confirmed', 0)->count();
+        return number_format($claims);
+    }
+
+    // TODO: Refactor claim status' into enum
+    public function totalClaimsRejected()
+    {
+        $claims = 0;
+        $claims = \BAKD\BountyClaim::with('bounty')->where('user_id', $this->id)->where('confirmed', 2)->count();
+        return number_format($claims);
+    }
+
+    // Get all user entries into a specific bounty
+    public function getClaimsByBountyId($bountyId)
+    {
+        return $this->with('bountyClaims', function($query) {
+            $query->where('bounty_id', $bountyId);
+        })->get();
+    }
 }

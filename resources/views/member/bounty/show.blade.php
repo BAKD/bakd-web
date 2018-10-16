@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-12">
             {{--  MAIN BOUNTY INFO  --}}
@@ -121,94 +122,102 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            {{--  BOUNTY DETAILS  --}}
-            <div class="widget widget-user">
-                <h3 class="title-wd"><i class="fa fa-list"></i>
-                    {{ __('Bounty Details') }}
-                </h3>
-                <table class="unselectable bounty-announcements-table table-responsive table centered-td">
-                    <tbody style="font-size: 12px; width: 100%;">
-                        @if ($bounty->reward)
-                            <tr>
-                                <td width="20%" class="text-right">
-                                    <strong>BOUNTY REWARD</strong>
-                                </td>
-                                <td class="text-center">
-                                    <span class="bakd-coins" title="BAKD Coins">
-                                        {{ number_format($bounty->reward) }}
-                                    </span>
-                                </td>
-                            </tr>
-                        @endif
+    @if ($bounty->isStakeRewardBounty())
+        @include('member.bounty.stake-stats')
+    @endif
 
-                        @if ($bounty->reward_total)
-                            <tr>
-                                <td width="20%" class="text-right">
-                                    <strong>TOTAL REWARD POOL</strong>
-                                </td>
-                                <td class="text-center">
-                                    <span class="bakd-coins">
-                                        {{ number_format($bounty->reward_total) }}
-                                    </span>
-                                </td>
-                            </tr>
-                        @endif
+    @include('member.bounty.bounty-claims')
+
+    {{--  BOUNTY DETAILS  --}}
+    <div class="row justify-content-center">
+        <div class="widget widget-user">
+            <h3 class="title-wd"><i class="fa fa-list"></i>
+                {{ __('Bounty Details') }}
+            </h3>
+            <table class="unselectable bounty-announcements-table table-responsive table centered-td">
+                <tbody style="font-size: 12px; width: 100%;">
+                    @if ($bounty->reward)
                         <tr>
                             <td width="20%" class="text-right">
-                                <strong>REWARD TYPE</strong>
+                                <strong>BOUNTY REWARD</strong>
                             </td>
                             <td class="text-center">
-                                <span class="bakd-bounty-reward-{!! $bounty->getDisplayRewardType(false) !!}">
-                                    {!! $bounty->getDisplayRewardType() !!}
+                                <span class="bakd-coins" title="BAKD Coins">
+                                    {{ number_format($bounty->reward) }}
                                 </span>
                             </td>
                         </tr>
+                    @endif
 
-                        @if ($bounty->type->name)
-                            <tr>
-                                <td width="20%" class="text-right">
-                                    <strong>CATEGORY</strong>
-                                </td>
-                                <td class="text-center">
-                                    {{ $bounty->type->name }}
-                                </td>
-                            </tr>
-                        @endif
+                    @if ($bounty->reward_total)
+                        <tr>
+                            <td width="20%" class="text-right">
+                                <strong>TOTAL REWARD POOL</strong>
+                            </td>
+                            <td class="text-center">
+                                <span class="bakd-coins">
+                                    {{ number_format($bounty->reward_total) }}
+                                </span>
+                            </td>
+                        </tr>
+                    @endif
+                    <tr>
+                        <td width="20%" class="text-right">
+                            <strong>REWARD TYPE</strong>
+                        </td>
+                        <td class="text-center">
+                            <span class="bakd-bounty-reward-{!! $bounty->getDisplayRewardType(false) !!}">
+                                {!! $bounty->getDisplayRewardType() !!}
+                            </span>
+                        </td>
+                    </tr>
 
-                        @if ($bounty->start_date)
-                            <tr>
-                                <td width="20%" class="text-right">
-                                    <strong>START DATE</strong>
-                                </td>
-                                <td class="text-center">
-                                    @if (!$bounty->isStarted())
-                                        <span class="badge badge-primary">NOT STARTED</span>
-                                    @else
-                                        {{ $bounty->start_date->diffForHumans() }} @ {{ $bounty->start_date->format('m/d/Y g:i A') }}
-                                    @endif
-                                </td>
-                            </tr>
-                        @endif
+                    @if ($bounty->type->name)
+                        <tr>
+                            <td width="20%" class="text-right">
+                                <strong>CATEGORY</strong>
+                            </td>
+                            <td class="text-center">
+                                {{ $bounty->type->name }}
+                            </td>
+                        </tr>
+                    @endif
 
-                        @if ($bounty->end_date)
-                            <tr>
-                                <td width="20%" style="min-width: 160px;" class="text-right">
-                                    <strong>END DATE</strong>
-                                </td>
-                                <td style="width: 100%; min-width: 250px;" class="text-center">
-                                    {!! $bounty->getDisplayEndDate() !!} {{ isset($bounty->end_date) ? '@ ' . $bounty->end_date->format('m/d/Y g:i A') : '' }}
-                                </td>
-                            </tr>
-                        @endif
-                    </tbody>
-                </table>
-            </div>
-            {{-- REWARD TYPES --}}
-            @include('member.bounty._reward-types')
-            {{-- BOUNTY CLAIM INSTRUCTIONS -- TODO: MAKE DYNAMICALLY EDITABLE VIA ADMIN PANEL --}}
-            @include('member.bounty._claim-instructions')
+                    @if ($bounty->start_date)
+                        <tr>
+                            <td width="20%" class="text-right">
+                                <strong>START DATE</strong>
+                            </td>
+                            <td class="text-center">
+                                @if (!$bounty->isStarted())
+                                    <span class="badge badge-primary">NOT STARTED</span>
+                                @else
+                                    {{ $bounty->start_date->diffForHumans() }} @ {{ $bounty->start_date->format('m/d/Y g:i A') }}
+                                @endif
+                            </td>
+                        </tr>
+                    @endif
+
+                    @if ($bounty->end_date)
+                        <tr>
+                            <td width="20%" style="min-width: 160px;" class="text-right">
+                                <strong>END DATE</strong>
+                            </td>
+                            <td style="width: 100%; min-width: 250px;" class="text-center">
+                                {!! $bounty->getDisplayEndDate() !!} {{ isset($bounty->end_date) ? '@ ' . $bounty->end_date->format('m/d/Y g:i A') : '' }}
+                            </td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
         </div>
+        {{-- REWARD TYPES --}}
+        @include('member.bounty._reward-types')
+        {{-- BOUNTY CLAIM INSTRUCTIONS -- TODO: MAKE DYNAMICALLY EDITABLE VIA ADMIN PANEL --}}
+        @include('member.bounty._claim-instructions')
     </div>
 </div>
 @endsection

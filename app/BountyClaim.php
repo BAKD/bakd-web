@@ -115,4 +115,9 @@ class BountyClaim extends Model
         }
         return $this->save();
     }
+
+    public static function getClaimsByUserId($userId)
+    {
+        return self::where('user_id', $userId)->get();
+    }
 }
