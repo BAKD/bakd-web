@@ -214,6 +214,7 @@
                 </tbody>
             </table>
         </div>
+        @include('partials/modals/_delete-modal')
         {{-- REWARD TYPES --}}
         @include('member.bounty._reward-types')
         {{-- BOUNTY CLAIM INSTRUCTIONS -- TODO: MAKE DYNAMICALLY EDITABLE VIA ADMIN PANEL --}}

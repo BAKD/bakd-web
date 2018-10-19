@@ -85,7 +85,7 @@ class BountyClaim extends Model
         return false;
     }
 
-    // TODO: Implement status type resource
+    // TODO: Implement status type resource. Move to view helper
     public function getStatusLabel($statusId)
     {
         if ($statusId == 0) return 'Pending';
@@ -94,6 +94,7 @@ class BountyClaim extends Model
         else return 'N/A';
     }
 
+    // TODO: Move to view helper
     public function checkStatus()
     {
         if ($this->isApproved()) return 'Approved';
