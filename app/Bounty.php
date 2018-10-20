@@ -134,6 +134,19 @@ class Bounty extends Model
         }
     }
 
+    // TODO: Move me to view helper
+    // Get the display version of a bounty date, with a label if it is paused or completed.
+    public function getDisplayStartDate()
+    {
+        if ($this->isOver()) {
+            return '<span class="badge badge-success">COMPLETED</span>';
+        } else if ($this->isPaused()) {
+            return '<span class="badge badge-warning">PAUSED</span>';
+        } else {
+            return !is_null($this->start_date) ? $this->start_date->diffForHumans() : 'Now';
+        }
+    }
+
     // TODO: Setup config or env setting for placeholder image path instead of burying it in here
     public function getImage()
     {

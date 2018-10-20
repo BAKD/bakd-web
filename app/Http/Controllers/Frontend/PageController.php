@@ -114,8 +114,33 @@ class PageController extends FrontendController
      */
     public function bounties()
     {
+        $now = \Carbon\Carbon::now()->format('Y-m-d h:i:s');
+
         $view = [];
-        $view['bounties'] = \BAKD\Bounty::all();
+        
+        // TODO: Move these to bounty model
+        $view['active'] = \BAKD\Bounty::where(function ($query) use ($now) {
+            $query->whereDate('start_date', '<', $now);
+            $query->orWhereNull('start_date');
+        })->where(function ($query) use ($now) {
+            $query->whereDate('end_date', '>', $now);
+            $query->orWhereNull('end_date');
+        })->get();
+
+        $view['upcoming'] = \BAKD\Bounty::where(function ($query) use ($now) {
+            $query->whereDate('start_date', '>', $now);
+            $query->whereNotNull('start_date');
+        })->where(function ($query) use ($now) {
+            $query->whereDate('end_date', '>', $now);
+            $query->orWhereNull('end_date');
+        })->get();
+
+        $view['past'] = \BAKD\Bounty::where(function ($query) use ($now) {
+            $query->whereDate('end_date', '<', $now);
+            $query->whereNotNull('end_date');
+        })->get();
+        
+        $view['all'] = \BAKD\Bounty::all();
         return view('frontend/bounties', $view);
     }
 
