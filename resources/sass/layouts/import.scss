@@ -12,5 +12,8 @@
 // Default frontend layout styles
 @import "frontend";
 
+// Styles common to all other layouts
+@import "common";
+
 // Landing page styles
 @import "landers/import";

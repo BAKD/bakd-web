@@ -7,10 +7,10 @@
                         <div class="bakd-info cmp-info text-center">
                             <div class="cm-logo text-center">
                                 <a href="{{ route('frontend.home') }}">
-                                    <img class="bakd-logo" style="max-width: 260px; margin: 0 auto; text-align: center;" src="{{ asset('images/branding/logo.jpg') }}" alt="{{ config('bakd.logo.alt', 'BAKD | ICO Management & Networking Platform') }}" title="{{ config('bakd.logo.alt', 'BAKD') }}" />
+                                    <img class="bakd-logo" style="max-width: 260px; margin: 0 auto; text-align: center;" src="{{ asset('images/branding/logo.jpg') }}" alt="{{ config('bakd.logo.alt', 'BAKD | Crypto Crowdfunding & Professional Networking') }}" title="{{ config('bakd.logo.alt', 'BAKD') }}" />
                                 </a>
                                 <p class="title">
-                                    {{ config('bakd.seo.description', 'ICO Management & Networking Platform') }}
+                                    {{ config('bakd.seo.description', 'Crypto Crowdfunding & Professional Networking') }}
                                 </p>
                                 <p class="text-center" style="font-weight: normal; line-height: 1.75; padding: 10px 0px;">
                                     BAKD is a revolutionary new way to fund your next cryptocurrency project. BAKD not only helps entrepreneurs crowdsource the funding needed to build their dream project, but it's also a place where entrepreneurs can connect with mentors.

@@ -75,6 +75,39 @@ class PageController extends FrontendController
 
 
     /**
+     * Show the application's contact us static page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sendMessage(Request $request)
+    {
+        $validator = \Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|email',
+            'message' => 'required|max:2000|min:10',
+        ]);
+        
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $emailData = [
+            'name'    => $request->input('name'),
+            'email'   => $request->input('email'),
+            'message' => $request->input('message'),
+        ];
+
+        \Mail::to(env('SUPPORT_EMAIL', 'tom@bakd.io'))->send(new \BAKD\Mail\ContactUs($emailData));
+
+        \BAKD\Helpers\FrontendHelper::success('Your message was sent successfully!');
+        return redirect()->back();
+    }
+
+
+    /**
      * Show the application's bounties static page.
      *
      * @return \Illuminate\Http\Response

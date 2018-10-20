@@ -4,7 +4,7 @@
 |--------------------------------------------------------------------------
 | BAKD Web Routes
 |--------------------------------------------------------------------------
-| Web routes for the entire BAKD ICO Management & Networking Platform
+| Web routes for the entire BAKD Crypto Crowdfunding & Professional Networking
 |
 */
 
@@ -20,11 +20,12 @@ Route::name('frontend.')->group(function () {
     Route::namespace('Frontend')->group(function () {
         Route::middleware([])->group(function () {  // TODO: Refine middleware selection
             // Frontend routes for all public static pages.
-            Route::get('/',          'PageController@index')->name('home');
-            Route::get('about',      'PageController@about')->name('about');
-            Route::get('privacy',    'PageController@privacy')->name('privacy');
-            Route::get('terms',      'PageController@terms')->name('terms');
-            Route::get('contact-us', 'PageController@contact')->name('contact');
+            Route::get('/',           'PageController@index')->name('home');
+            Route::get('about',       'PageController@about')->name('about');
+            Route::get('privacy',     'PageController@privacy')->name('privacy');
+            Route::get('terms',       'PageController@terms')->name('terms');
+            Route::get('contact-us',  'PageController@contact')->name('contact');
+            Route::post('contact-us', 'PageController@sendMessage')->name('contact.send');
 
             // Public/non authed landing pages for each main app resource
             Route::get('bounties', 'PageController@bounties')->name('bounties');

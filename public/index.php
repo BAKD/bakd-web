@@ -1,7 +1,7 @@
 <?php
 
 /**
- * BAKD | ICO Management & Networking Platform
+ * BAKD | Crypto Crowdfunding & Professional Networking
  * Built with Laravel - A PHP Framework For Web Artisans
  *
  * @package BAKD/bakd-web

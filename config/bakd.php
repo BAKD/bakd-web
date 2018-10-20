@@ -12,10 +12,10 @@ return [
     */
 
     // Site display name
-    'name' => 'BAKD.me',
+    'name' => 'BAKD',
 
     // Site tagline, used as page titles and image titles
-    'tagline' => 'ICO Management & Networking Platform',
+    'tagline' => 'Crypto Crowdfunding & Professional Networking',
 
     // TODO: Update me after registration?
     'copyright' => 'BAKD Solutions',
@@ -34,7 +34,7 @@ return [
     'logo' => [
 
         // Alt/title text that shows up for logo
-        'alt' => 'BAKD ICO Management & Networking Platform',
+        'alt' => 'BAKD | Crypto Crowdfunding & Professional Networking',
 
         // Regular black/orange logo
         'regular' => '/images/branding/logo-short-2.png',
@@ -63,7 +63,7 @@ return [
     'seo' => [
 
         // Default meta description
-        'description' => 'ICO Management & Networking Platform',
+        'description' => 'Crypto Crowdfunding & Professional Networking',
 
         // Default meta keywords
         'keywords' => 'bakd, crypto, blockchain, cryptocurrency, crowdfunding, bitcoin',

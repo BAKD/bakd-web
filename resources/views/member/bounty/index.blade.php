@@ -8,7 +8,7 @@
     @include('member.bounty.partials.pending-claims')
     @include('member.bounty.partials.rejected-claims')
     {{--  @include('member.bounty.partials.all-claims')  --}}
-        {{-- REWARD TYPES --}}
+    {{-- REWARD TYPES --}}
     @include('member.bounty._reward-types')
     {{-- BOUNTY CLAIM INSTRUCTIONS -- TODO: MAKE DYNAMICALLY EDITABLE VIA ADMIN PANEL --}}
     @include('member.bounty._claim-instructions')

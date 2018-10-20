@@ -1,8 +1,9 @@
-# BAKD ICO Management Platform Constant Integration Setup Guide
+# BAKD Crypto Crowdfunding & Professional Networking Platform 
+# Continuous Integration Setup Guide v0.1a
 # -------------------------------------------------------------
 
 # Main Overview
-Guide coming soon. Please contact us at support@bakd.io if you are interested
+Guide coming soon. Please contact us at developers@bakd.io if you are interested
 in lending a hand with writing documentation, or any other of the many areas
 we need help in!
 
@@ -24,5 +25,4 @@ Coming soon...
 # -----------------------------
 # Info:     https://BAKD.io
 # Platform: https://BAKD.me
-# Explorer: https://BAKD.info
 # Protocol: https://BAKD.network

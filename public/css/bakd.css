@@ -38015,6 +38015,29 @@ main.wrapper.overlay:after {
   margin: unset;
 }
 
+.error-msg {
+  color: #e3342f;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px;
+  top: 3px;
+  position: relative;
+}
+
+.form-group.has-icon {
+  position: relative;
+}
+
+.form-group.has-icon i {
+  position: absolute;
+  left: 13px;
+  top: 10px;
+}
+
+.form-group.has-icon input {
+  padding-left: 36px;
+}
+
 .about-us-page img {
   float: unset;
 }
@@ -38189,7 +38212,7 @@ header .auth-links-wrapper .dropdown-nav-link {
 
 header .navbar-nav .nav-item a {
   color: #222;
-  border-color: #222;
+  border-color: transparent;
   color: #222;
 }
 
@@ -38278,14 +38301,13 @@ header + section {
 header .navbar-nav .nav-item a {
   color: #222;
   background: #fff;
-  border-radius: 50px;
   padding: 11px 30px;
   line-height: 8px;
   font-weight: 500;
   height: unset;
   min-height: unset;
   margin: unset;
-  border-color: #dadada !important;
+  border: none;
 }
 
 header {

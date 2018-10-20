@@ -1,0 +1,22 @@
+.error-msg {
+    color: $error-red;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px;
+    top: 3px;
+    position: relative;
+}
+
+.form-group.has-icon {
+    position: relative;
+
+    i {
+        position: absolute;
+        left: 13px;
+        top: 10px;
+    }
+
+    input {
+        padding-left: 36px;
+    }
+}

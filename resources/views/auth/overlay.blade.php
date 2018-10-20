@@ -9,10 +9,10 @@
                     <div class="cmp-info text-center">
                         <div class="cm-logo">
                             <a href="{{ route('frontend.home') }}">
-                                <img class="bakd-logo" src="{{ asset('images/branding/logo.jpg') }}" alt="{{ config('bakd.logo.alt', 'BAKD | ICO Management & Networking Platform') }}" title="{{ config('bakd.logo.alt', 'BAKD') }}" />
+                                <img class="bakd-logo" src="{{ asset('images/branding/logo.jpg') }}" alt="{{ config('bakd.logo.alt', 'BAKD | Crypto Crowdfunding & Professional Networking') }}" title="{{ config('bakd.logo.alt', 'BAKD') }}" />
                             </a>
                             <p>
-                                {{ config('bakd.seo.description', 'ICO Management & Networking Platform') }}
+                                {{ config('bakd.seo.description', 'Crypto Crowdfunding & Professional Networking') }}
                             </p>
                             <div class="login-resources">
                                 <h4>Login via Social Networks</h4>
