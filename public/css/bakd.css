@@ -38412,6 +38412,9 @@ header .navbar-nav .nav-item .member-name {
 
 footer {
   border-top: 1px solid #F59118;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
 }
 
 footer .bakd-logo {
