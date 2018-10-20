@@ -3,6 +3,7 @@
 namespace BAKD\Http\Controllers\Member;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class BountyController extends MemberController
 {
@@ -50,6 +51,9 @@ class BountyController extends MemberController
     public function show($id)
     {
         $view = [];
+
+        throw new HttpException(500, 'Whoops');
+
         $view['bounty'] = \BAKD\Bounty::findOrFail($id);
         $view['myClaims'] = $view['bounty']->claims()->where('user_id', \Auth::user()->id)->get();
         // \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->where('bounty_id', $id)->get();

@@ -14,6 +14,21 @@
                             <div>
                                 <strong>Unexpected Error Encountered</strong>
                                 <div style="font-style: italic; padding: 10px;">(Our developers have already been notified... this is an alpha afterall!)</div>
+                            
+                                @if (app()->bound('sentry') && !empty(Sentry::getLastEventID()))
+                                    <br /><br />
+                                    <div class="subtitle">Error ID: {{ Sentry::getLastEventID() }}</div>
+
+                                    <!-- Sentry JS SDK 2.1.+ required -->
+                                    <script src="https://cdn.ravenjs.com/3.3.0/raven.min.js"></script>
+
+                                    <script>
+                                        Raven.showReportDialog({
+                                            eventId: '{{ Sentry::getLastEventID() }}',
+                                            dsn: "{{ env('SENTRY_LARAVEL_DSN') }}",
+                                        });
+                                    </script>
+                                @endif
                             </div>
                         </td>
                     </tr>

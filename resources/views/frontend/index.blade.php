@@ -7,20 +7,20 @@
     <div class="forum-questions-sec">
         <div class="row">
             <div class="col-lg-12">
-                @include('components/random-bounty')
+                <?php $project = new stdClass; $project->funding = new stdClass; $project->funding->goal = new stdClass; $campaign = new stdClass; ?>
+                @include('components/featured-project', [
+                    $campaign->progress = '25%',
+                    $project->name = 'Bitcoin: A Peer-to-Peer Electronic Cash System',
+                    $project->description = 'Bitcoin is a decentralized digital currency that enables instant payments to anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate with no central authority: transaction management and money issuance are carried out collectively by the network.',
+                    $project->funding->reached = '$12,240,481',
+                    $project->funding->goal->high = '$15,000,000',
+                    $project->funding->goal->low = '$1,500,000',
+                ])
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <?php $project = new stdClass; $project->funding = new stdClass; $project->funding->goal = new stdClass; $campaign = new stdClass; ?>
-                @include('components/featured-project', [
-                    $campaign->progress = '25%',
-                    $project->name = 'FEATURED TEST PROJECT',
-                    $project->description = 'Test project is a blockchain-based peer-to-peer (P2P) lending marketplace. The platform allows for instant and direct lending between supply-side lenders and demand-side borrowers from all over the world in a trusted manner using the advantages of smart contracts and blockchain technology. We offer a unique architecture to analyze and structure a credit risk-adjusted rate with the utilization of Artificial Intelligence (AI) and Machine Learning (ML) technologies. We aim to revolutionize the peer-to-peer lending market and serve as the leading infrastructure for credit providers and credit seekers.',
-                    $project->funding->reached = '$24,481.33',
-                    $project->funding->goal->high = '$2,500,000',
-                    $project->funding->goal->low = '$500,000',
-                ])
+                @include('components/random-bounty')
             </div>
         </div>
         <div class="row">
