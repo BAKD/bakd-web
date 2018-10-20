@@ -51,12 +51,8 @@ class BountyController extends MemberController
     public function show($id)
     {
         $view = [];
-
-        throw new HttpException(500, 'Whoops');
-
         $view['bounty'] = \BAKD\Bounty::findOrFail($id);
         $view['myClaims'] = $view['bounty']->claims()->where('user_id', \Auth::user()->id)->get();
-        // \BAKD\BountyClaim::where('user_id', \Auth::user()->id)->where('bounty_id', $id)->get();
         return view('member/bounty/show', $view);
     }
 
