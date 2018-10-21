@@ -215,24 +215,26 @@ header .navbar-nav .nav-item .member-name {
     padding: 5px;
 }
 
-@media(max-width: 768px) {
+.sub-nav-menu.forum-sec {
+    border-top: 3px solid $primary;
+    z-index: 99;
+    position: fixed;
+    box-shadow: 0px 1px 25px -5px rgba(0, 0, 0, .25);
+}
+
+@media(max-width: 992px) {
     .mobile-logo {
         display: block;
-    }
-
-    .sub-nav-menu {
-        box-shadow: 0px 1px 25px -5px rgba(0, 0, 0, .25);
-    }
-
-    .sub-nav-menu.forum-sec {
-        position: fixed;
     }
 
     .forum-links-btn {
         float: right !important;
         width: unset;
+        display: block;
+        position: absolute;
         text-align: center;
-        padding: 20px 0;
+        right: 0;
+        padding: 22px;
 
         &:hover,
         &:active,
@@ -241,4 +243,212 @@ header .navbar-nav .nav-item .member-name {
             opacity: 0.9;
         }
     }
+}
+
+
+
+nav {
+
+    .nav-item.nav-link.pull-right {
+        padding-right: 3px;
+        margin-right: 5px;
+        color: #b2b2b2;
+        border-bottom: none;
+
+        a {
+            color: #b2b2b2;
+    
+            &:hover,
+            &:focus,
+            &:active {
+                color: $primary;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-bottom: none;
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 10rem;
+        padding: 0.5rem 0;
+        margin: 0.125rem 0 0;
+        font-size: 0.9rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-color: unset;
+        background-clip: unset;
+        border: unset;
+        border-radius: unset;
+    }
+
+    a {
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:active {
+            cursor: pointer;
+        }
+    }
+
+    .user-dropdown-wrapper {
+        margin-right: 5px !important;
+    }
+
+    .nav-logo {
+        margin-left: 10px;
+    }
+
+    &.forum-links,
+    .main-links {
+        @media(max-width: 992px) {
+            display: none !important;
+        }
+    }
+
+    .dropdown-menu {
+        ul {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            background: transparent;
+
+            a {
+                color: #333;
+            }
+        }
+    }
+
+    .user-account-settingss {
+        border: none;
+        box-shadow: 1px 1px 20px -5px rgba(0, 0, 0, 0.25);
+        transition: all $transition-speed ease;
+        padding: 0 !important;
+
+        .on-off-status {
+            @media(max-width: 1200px) {
+                top: unset;
+                left: unset;
+                border-left: none !important;
+                border-right: none !important;
+                border-top: none !important;
+            }
+        }
+
+        .us-links {
+            a {
+                padding: 5px;
+            }
+
+            @media(max-width: 1200px) {
+                top: unset;
+                left: unset;
+                border: none !important;
+            }
+        }
+
+
+        .logout-link {
+            padding: 0;
+        }
+
+        li {
+            border-bottom: none !important;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-bottom: none !important;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.main-navbar {
+        text-align: left;
+        padding: 0;
+        top: 0;
+
+        .nav-item.nav-link.dropdown {
+            padding: 17px 0px 0 5px;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border: none !important;
+            }
+        }
+
+        .member-dropdown {
+            border: none;
+            outline: none;
+            line-height: 40px;
+            padding: 0;
+            margin: 0;
+
+            img + .fa {
+                padding: 5px;
+            }
+
+            img {
+                border-radius: 500px;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                border: none !important;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .nav-logo {
+
+            &, a {
+                padding: 0 !important;
+                border: none !important;
+            }
+        }
+
+        ul {
+            
+            li {
+                vertical-align: middle; 
+                height: unset;
+                padding: 0;
+                border-bottom: 3px solid transparent;
+              
+                a {
+                    padding: 27px 8px 23px 5px;
+                    display: block;
+                }
+                
+                &:hover,
+                &:active,
+                &:focus,
+                &.active {
+                    padding: unset;
+                    height: unset;
+                    border-bottom: 3px solid $primary;
+                    
+                    a {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
+@include('components.bakd-stats')
 <footer>
     <div class="footy-sec mn no-margin">
-        <div class="container">
+        <div class="container-fluid">
             <ul>
                 <li>
                     <a data-toggle="tooltip" data-title="About Us" href="{{ route('frontend.about') }}">
@@ -23,7 +24,7 @@
                     </a>
                 </li>
             </ul>
-            <p><img src="{{ asset('images/copy-icon2.png') }}" data-toggle="tooltip" alt="Copyright &copy; {{ config('bakd.copyright', 'BAKD') }} {{ \Carbon\Carbon::now()->format('Y') }}" data-placement="right" data-title="Copyright &copy; {{ config('bakd.copyright', 'BAKD') }} {{ \Carbon\Carbon::now()->format('Y') }}">Copyright {{ config('bakd.copyright', 'BAKD') }} {{ \Carbon\Carbon::now()->format('Y') }}</p>
+            <p class="copy-text"><img src="{{ asset('images/copy-icon2.png') }}" data-toggle="tooltip" alt="Copyright &copy; {{ config('bakd.copyright', 'BAKD') }} {{ \Carbon\Carbon::now()->format('Y') }}" data-placement="right" data-title="Copyright &copy; {{ config('bakd.copyright', 'BAKD') }} {{ \Carbon\Carbon::now()->format('Y') }}">Copyright {{ config('bakd.copyright', 'BAKD') }} {{ \Carbon\Carbon::now()->format('Y') }}</p>
             <a href="{{ route('frontend.home') }}">
                 <img class="fl-rgt bakd-logo" src="{{ config('bakd.logo.regular') }}" alt="{{ config('bakd.logo.alt') }}" title="{{ config('bakd.logo.alt') }}" data-toggle="tooltip" data-title="{{ config('bakd.logo.alt', '') }}">
             </a>

@@ -29,7 +29,7 @@
             </button>
         </form>
     </div>
-    <h3>Members</h3>
+    <h3>Manage</h3>
     <ul class="us-links">
         <li>
             <a href="{{ route('frontend.home') }}" title="Home">Home</a>
@@ -45,7 +45,7 @@
         </li>
     </ul>
     <h3 class="tc">
-        <a class="dropdown-item nav-link" href="{{ route('logout') }}"
+        <a class="logout-link" href="{{ route('logout') }}"
         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fa fa-sign-out"></i> {{ __('Logout') }}
         </a>

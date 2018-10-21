@@ -23,10 +23,10 @@
     </div>
     <div class="post_topbar">
         <div class="usy-dst row">
-            <div class="col-lg-3">
-                <img src="{{ asset('/images/bitcoin.jpg') }}" alt="{{ $project->name }}" style="border-radius: 3px; height: auto; width: 100%; max-width: 250px; max-height: 250px;">
+            <div class="col-lg-4 col-md-12 text-center">
+                <img src="{{ asset('/images/bitcoin.jpg') }}" alt="{{ $project->name }}" style="float: unset; padding-bottom: 25px; border-radius: 3px; height: auto; width: 100%; max-width: 275px; max-height: 275px;">
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-8 col-md-12">
                 <div class="project-details">
                     <h2 style="font-size: 32px; font-weight: 700; margin: 0px 0px 10px 0px;">
                         {{ $project->name }}

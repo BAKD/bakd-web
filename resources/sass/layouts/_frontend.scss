@@ -5,11 +5,6 @@ body {
     width: 100%;
     min-width: 320px;
     display: block;
-    margin-bottom: 120px;
-
-    @media(max-width: 768px) {
-        margin-bottom: 240px;
-    }
 }
 
 strong {
@@ -396,8 +391,8 @@ table, td, tr, th, tbody, thead {
 }
 
 main {
-    margin-bottom: 90px;
-    min-height: 100vh;
+    margin-top: 70px;
+    min-height: 66vh;
 
     &.wrapper.overlay:after {
         overflow: hidden;
@@ -406,8 +401,8 @@ main {
     }
 
     @media(max-width: 768px) {
-        margin-bottom: 60px;
-        margin-top: 75px;
+        min-height: 55vh;
+        margin-top: 70px;
     }
 }
 

@@ -1,8 +1,7 @@
 footer {
     border-top: 1px solid $primary;
-    position: fixed;
+    position: relative;
     bottom: 0;
-    z-index: 99;
 
     .bakd-logo {
         max-width: 125px;
@@ -11,8 +10,32 @@ footer {
 
     }
 
-    @media(max-height: 600px) {
-        position: relative !important;
+    .copy-text {
+        margin-top: 34px !important;
+    }
+
+    .footy-sec.mn {
+        @media(max-width: 1200px) {
+            ul {
+                padding: 18px 3px 12px;
+            }
+        }
+
+        @media(max-width: 992px) {
+            ul {
+                padding: 18px 3px 4px;
+            }
+        }
+    } 
+        
+    @media (max-width: 1200px) {
+        .copy-text {
+            margin-top: 5px !important;
+        }
+        
+        .bakd-logo {
+            display: none;
+        }
     }
 
     @media(max-width: 768px) {
@@ -25,9 +48,11 @@ footer {
                 font-size: 13px;
             }
 
+            ul {
+                padding: 18px 3px 4px;
+            }
+
             p {
-                padding-bottom: 5px;
-                padding-top: 0px;
                 font-size: 12px;
 
                 img {
@@ -35,10 +60,5 @@ footer {
                 }
             }
         }
-
-        ul {
-            padding: 10px 0 0 0 !important;
-        }
-
     }
 }

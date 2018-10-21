@@ -27,6 +27,73 @@ window.Vue = require('vue');
 // Use bootstrap tooltips
 $('[data-toggle="tooltip"]').tooltip();
 
+var $slideout = $('#mobile-menu');
+
+$(document).on('click', function (event) {
+    if ($(this).hasClass('stay-open')) return;
+    else hideSlideout();
+});
+
+$('.mCustomScrollbar').mCustomScrollbar();
+
+$(document).on('ready', function (event) {
+    handleCounters();
+});
+
+var seenStats = false;
+$(window).on('resize scroll load', function() {
+   handleCounters();
+});
+
+function handleCounters() {
+    if (($(window).scrollTop() + $(window).height() > $(document).height() - 100) && (!seenStats)) {
+       triggerStatCounters();
+       seenStats = true;
+   }
+}
+
+function triggerStatCounters() {
+    $('.counter').each(function() {
+        var $this = $(this);
+        var count = $this.attr('data-count');
+        var postfix = $this.attr('data-postfix') || '';
+        $({ countNum: $this.text() }).animate({ countNum: count }, {
+            duration: 4000,
+            easing:'linear',
+            step: function() {
+                var num = Math.floor(this.countNum);
+                if (isNaN(num)) num = 0;
+                $this.text(num.toLocaleString() + postfix);
+            },
+            complete: function() {
+                $this.text(this.countNum.toLocaleString() + postfix);
+            }
+        });  
+    });
+}
+
+function showSlideout() {
+    var $slideout = $('#mobile-menu');
+    $slideout.addClass('in');
+    $slideout.animate({ right: 0 }, 400);
+}
+
+function hideSlideout() {
+    var $slideout = $('#mobile-menu');
+    $slideout.removeClass('in');
+    $slideout.animate({ right: '-' + ($slideout.outerWidth() + 100) }, 400);
+}
+
+$('#mobile-menu-btn').on('click', function (event) {
+    if ($slideout.hasClass('in')) {
+        console.log('Hiding mobile menu...');
+        hideSlideout();
+    } else {
+        console.log('Showing mobile menu...');
+        showSlideout();
+    }        
+});
+
 $('#deleteModal').on('show.bs.modal', function (event) {
     let $modal = $(this),
         $element = $(event.relatedTarget)
@@ -48,6 +115,8 @@ $('#deleteModal').on('show.bs.modal', function (event) {
         }
     });
 });
+
+
 
 
 // TODO: Refactor this cheap hack into vue components
@@ -367,9 +436,9 @@ $(window).on("load", function () {
     $("html").on("click", function () {
         $(".forum-links").removeClass("active");
     });
-    $(".forum-links-btn > a, .forum-links").on("click", function () {
-        e.stopPropagation();
-    });
+    // $(".forum-links-btn > a, .forum-links").on("click", function (e) {
+    //     e.stopPropagation();
+    // });
 
     //  ============= PORTFOLIO SLIDER FUNCTION =========
 

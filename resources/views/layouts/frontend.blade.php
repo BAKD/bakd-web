@@ -3,7 +3,8 @@
 @include('partials/head')
 <body>
     <div id="app">
-        @include('partials/navbar')
+        {{--  @include('partials/fixed-header')  --}}
+        {{--  @include('partials/navbar')  --}}
         @include('partials/sub-navbar')
         <main class="wrapper py-4">
             <div class="container">
@@ -18,6 +19,7 @@
     </div>
     @include('partials/footer')
     @include('partials/modals/all')
+    @include('partials/mobile-menu')
     @include('partials/js-includes')
 </body>
 </html>

@@ -1,0 +1,91 @@
+#mobile-menu {
+    max-width: 400px;
+    position: fixed;
+    right: -500px;
+    height: 100%;
+    min-height: 100vh;
+    display: block;
+    background: #fff;
+    z-index: 999;
+    box-shadow: 1px 1px 30px -10px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    border-top: 3px solid $primary;
+    padding-top: 3px;
+    border-left: 1px solid #aaa;
+
+    .avatar {
+        border-radius: 500px;
+        float: unset; 
+        width: 100%; 
+        max-width: 175px; 
+        height: auto; 
+        margin: 0 auto;
+    }
+
+    .slideout-header {
+        width: 100%; 
+        position: relative; 
+        padding: 20px;
+    }
+
+    .slideout-close {
+        position: absolute; 
+        top: 10px; 
+        right: 10px;
+    }
+
+    ul {
+        width: 100%;
+
+        li {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #f5f5f5;
+            position: relative;
+
+            .fa:first-child {
+                color: #333;
+                padding-right: 6px;
+                font-size: 22px;
+                position: relative;
+                top: 2px;
+            }
+
+            &:after {
+                content: '\f054';
+                font-size: 17px;
+                font-weight: 500;
+                font-family: 'FontAwesome';
+                position: absolute;
+                right: 30px;
+                top: 25px;
+                color: #999;
+                pointer-events: none;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.active,
+            &:hover,
+            &:focus,
+            &:active {
+                transition: all $transition-speed ease;
+                background: darken(#fff, .5%);
+
+                &:after {
+                    color: #333;
+                    transition: all $transition-speed ease;
+                }
+            }
+        }
+        
+        a {
+            padding: 20px 30px;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

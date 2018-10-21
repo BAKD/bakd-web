@@ -6,7 +6,7 @@
             <h3 class="title-wd"><i class="fa fa-edit"></i>
                 {{ __('Alpha Registration') }}
             </h3>
-            <table class="unselectable bounty-announcements-table table-responsive table centered-td">
+            <table class="unselectable table centered-td">
                 <tbody>
                     <tr>
                         <td class="text-left" style="padding: 20px;">
