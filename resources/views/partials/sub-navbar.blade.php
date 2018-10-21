@@ -51,7 +51,7 @@
                     
                     <a id="navbarDropdown" class="member-dropdown logged-in -toggle btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <div class="member-name">
-                            <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=32" class="member-avatar" style="margin-right: 8px;" /><span style="top: -2px; font-weight: 700; position: relative; display: inline-block;">{{ Auth::user()->name }}</span> <i style="top: -1px; padding-left: 5px;" class="fa fa-chevron-down"></i>
+                            <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=40" class="member-avatar" style="margin-right: 8px;" /><div style="font-weight: 700; position: relative; display: inline-block;">{{ Auth::user()->name }}</div> <i style="top: 1px; position: relative; padding-left: 5px;" class="fa fa-chevron-down"></i>
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

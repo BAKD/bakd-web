@@ -65,12 +65,12 @@
                 </li>
             </ul>
         </div>
-        <div class="slideout-footer text-center" style="position: absolute; bottom: 0px; padding: 10px; width: 100%;">
+        {{--  <div class="slideout-footer text-center" style="position: absolute; bottom: 0px; padding: 10px; width: 100%;">
             <div class="btn-wrapper" style="margin: 0 auto;">
                 <a href="{{ route('frontend.contact') }}" class="btn btn-fluid btn-primary">
                     <i class="fa fa-envelope"></i> Contact Us
                 </a>
             </div>
-        </div>
+        </div>  --}}
     </div>
 </div>
