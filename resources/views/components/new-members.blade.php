@@ -1,29 +1,31 @@
-<div class="widget widget-user">
-    <h3 class="title-wd">New Users</h3>
-    <ul>
+<div class="suggestions full-width">
+    <div class="sd-title">
+        <h3>
+            New Members
+        </h3>
+        <i class="la la-ellipsis-v"></i>
+    </div>
+    <div class="suggestions-list">
         @forelse (($newUsers ?? []) as $user)
-        <li>
-            <div class="usr-msg-details">
-                <a href="{{ route('frontend.members.profile', $user->id) }}" alt="{{ $user->name }}" title="{{ $user->name }}">
-                    <div class="usr-ms-img">
-                        <img src="{{ $user->getGravatar(75) }}" alt="{{ $user->name }}">
-                    </div>
-                    <div class="usr-mg-info">
-                        <h3>{{ $user->name }}</h3>
-                        <p>{{ $user->created_at->diffForHumans() }}</p>
-                    </div>
-                </a>
+        <a href="{{ route('frontend.members.profile', $user->id) }}" alt="{{ $user->name }}" title="{{ $user->name }}">
+            <div class="suggestion-usd">
+                <img src="{{ $user->getGravatar(35) }}" alt="{{ $user->name }}">
+                <div class="sgt-text">
+                    <h4>{{ $user->name }}</h4>
+                    <span>{{ $user->created_at->diffForHumans() }}</span>
+                </div>
+                <span onClick="javascript: window.location.href='{{ route('frontend.members.profile', $user->id) }}'"><i class="la la-plus"></i></span>
             </div>
-            <span>
-                <button class="btn btn-sm btn-primary">
-                    <i class="fa fa-plus-circle"></i> Follow
-                </button>
-            </span>
-        </li>
+        </a>
         @empty
-        <li>
+        <div class="text-center">
             No new users found!
-        </li>
+        </div>
         @endforelse
-    </ul>
+        @if (isset($newUsers) && count($newUsers) > 0)
+            <div class="view-more">
+                <a href="{{ route('frontend.members') }}" title="View More">View More</a>
+            </div>
+        @endif
+    </div>
 </div>
