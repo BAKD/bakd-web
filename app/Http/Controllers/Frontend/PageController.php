@@ -26,6 +26,7 @@ class PageController extends FrontendController
     {
         $view = [];
         $view['randomBounty'] = \BAKD\Bounty::inRandomOrder()->limit(1)->first();
+        $view['newUsers'] = \BAKD\User::orderBy('created_at', 'desc')->limit(5)->get();
         return view('frontend/index', $view);
     }
 

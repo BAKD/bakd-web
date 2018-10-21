@@ -1,6 +1,6 @@
 @include('components.bakd-stats')
 <footer>
-    <div class="footy-sec mn no-margin">
+    <div class="bakd-footer footy-sec mn no-margin">
         <div class="container-fluid">
             <ul>
                 <li>

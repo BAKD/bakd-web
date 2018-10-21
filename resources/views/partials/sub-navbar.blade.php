@@ -39,21 +39,20 @@
                     </a>
                 </li>
                 @guest
+                <li class="nav-item nav-link pull-right" style="margin-right: 0px;">
+                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
                 <li class="nav-item nav-link pull-right" style="margin-right: 10px;">
                     {{--  <a data-toggle="modal" data-target="#login_modal"><i class="fa fa-user"></i> {{ __('Sign In') }}</a>  --}}
-                    <a href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Sign In') }}</a>
+                    <a href="{{ route('login') }}">{{ __('Sign In') }}</a>
                 </li>
-                {{--  <li class="nav-item nav-link pull-right" style="margin-right: 10px;">
-                    <a data-toggle="modal" data-target="#login_modal"><i class="fa fa-edit"></i> {{ __('Register') }}</a>
-                </li>  --}}
                 @else
                 <li class="nav-item nav-link dropdown pull-right user-dropdown-wrapper">
                     
                     <a id="navbarDropdown" class="member-dropdown logged-in -toggle btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=32" class="member-avatar"/><i class="fa fa-chevron-down"></i>
-                        {{--  <span class="member-name">
-                            {{ Auth::user()->name }} <i class="fa fa-chevron-down"></i>
-                        </span>  --}}
+                        <div class="member-name">
+                            <img src="https://secure.gravatar.com/avatar/{{ md5(auth()->user()->email) }}?size=32" class="member-avatar" style="margin-right: 8px;" /><span style="top: -2px; font-weight: 700; position: relative; display: inline-block;">{{ Auth::user()->name }}</span> <i style="top: -1px; padding-left: 5px;" class="fa fa-chevron-down"></i>
+                        </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         @include('/partials/member-dropdown')

@@ -1,3 +1,9 @@
+.bakd-footer {
+    .container-fluid {
+        max-width: $max-width;
+    }
+}
+
 footer {
     border-top: 1px solid $primary;
     position: relative;

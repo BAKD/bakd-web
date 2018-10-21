@@ -38409,6 +38409,10 @@ header .navbar-nav .nav-item .member-name {
   }
 }
 
+.sub-nav-menu .container-fluid {
+  max-width: 1500px;
+}
+
 nav .nav-item.nav-link.pull-right {
   padding-right: 3px;
   margin-right: 5px;
@@ -38540,6 +38544,10 @@ nav.main-navbar {
   top: 0;
 }
 
+nav.main-navbar .badge {
+  font-size: 65%;
+}
+
 nav.main-navbar .nav-item.nav-link.dropdown {
   padding: 17px 0px 0 5px;
 }
@@ -38589,6 +38597,8 @@ nav.main-navbar ul li {
 }
 
 nav.main-navbar ul li a {
+  color: #aaa;
+  font-size: 16px;
   padding: 27px 8px 23px 5px;
   display: block;
 }
@@ -38735,6 +38745,10 @@ nav.main-navbar ul li.active a {
 
 .bakd-stats .bakd-stats-inner {
   margin: 0 auto;
+}
+
+.bakd-footer .container-fluid {
+  max-width: 1500px;
 }
 
 footer {

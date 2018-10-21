@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    @include('components/top-influencers')
+                    @include('components/new-members')
                     @include('components/advert', ['height' => '370', 'width' => '275'])
                 </div>
             </div>

@@ -247,6 +247,24 @@ header .navbar-nav .nav-item .member-name {
 
 
 
+
+
+
+
+
+
+
+
+// HEADER V2
+
+.sub-nav-menu {
+
+    .container-fluid {
+        max-width: $max-width;
+    }
+
+}
+
 nav {
 
     .nav-item.nav-link.pull-right {
@@ -380,6 +398,10 @@ nav {
         padding: 0;
         top: 0;
 
+        .badge {
+            font-size: 65%;
+        }
+
         .nav-item.nav-link.dropdown {
             padding: 17px 0px 0 5px;
 
@@ -431,6 +453,8 @@ nav {
                 border-bottom: 3px solid transparent;
               
                 a {
+                    color: #aaa;
+                    font-size: 16px;
                     padding: 27px 8px 23px 5px;
                     display: block;
                 }
